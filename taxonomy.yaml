@@ -1,0 +1,446 @@
+# =============================================================================
+# crypto-sectors taxonomy
+# =============================================================================
+# Hierarchical industry classification standard for digital assets.
+# Aligned with leading institutional taxonomies (MSCI Datonomy Nov 2022).
+#
+# Code structure: CCSSXX (6-digit)
+#   CC = class (2-digit)
+#   SS = sector-within-class (4-digit when concatenated as CCSS)
+#   XX = sub-sector-within-sector (6-digit when concatenated as CCSSXX)
+#
+# Extension convention: sub-sector codes ending 90-99 are community extensions
+# beyond the Datonomy 2022 baseline. They are visually distinguishable
+# (e.g., 301090) and will not collide with future Datonomy revisions.
+#
+# This file is the source of truth. classification/snapshot.csv references
+# these codes; scripts/validate_schema.py asserts referential integrity.
+
+version: "1.0.0"
+release_date: "2026-05-23"
+
+# =============================================================================
+# CLASSES (2-digit) — 4 entries
+# =============================================================================
+classes:
+  - code: 10
+    name: "Digital Currencies"
+    definition: >
+      Assets native to blockchains that primarily enable the transfer of value
+      on a blockchain. Typically the native cryptocurrency of a chain that does
+      not support general-purpose decentralized applications.
+
+  - code: 20
+    name: "Blockchain Infrastructure"
+    definition: >
+      Tokens associated with foundational protocols and utilities that support
+      the development, interoperability, scale, and growth of blockchain
+      technologies.
+
+  - code: 30
+    name: "Digital Asset Applications"
+    definition: >
+      Tokens native to the operations of an on-chain application that was
+      developed to provide a specific service or product to blockchain users.
+
+  - code: 40
+    name: "On-Chain Derivatives"
+    definition: >
+      Tokens whose value is linked to or derived from a different underlying
+      asset or group of assets, on-chain or off-chain.
+
+# =============================================================================
+# SECTORS (4-digit) — 14 entries
+# =============================================================================
+sectors:
+  - { code: 1010, class_code: 10, name: "Value Transfer Coins" }
+  - { code: 1020, class_code: 10, name: "Specialized Coins" }
+
+  - { code: 2010, class_code: 20, name: "Smart Contract Platforms" }
+  - { code: 2020, class_code: 20, name: "Blockchain Utilities" }
+  - { code: 2030, class_code: 20, name: "Application Utilities" }
+
+  - { code: 3010, class_code: 30, name: "Decentralized Finance" }
+  - { code: 3020, class_code: 30, name: "Intermediated Finance" }
+  - { code: 3030, class_code: 30, name: "Business Services" }
+  - { code: 3040, class_code: 30, name: "Information Technology" }
+  - { code: 3050, class_code: 30, name: "Metaverse" }
+  - { code: 3060, class_code: 30, name: "Media Services" }
+
+  - { code: 4010, class_code: 40, name: "Stablecoins" }
+  - { code: 4020, class_code: 40, name: "Tokenized Assets" }
+  - { code: 4030, class_code: 40, name: "Claim Tokens" }
+
+# =============================================================================
+# SUB-SECTORS (6-digit)
+# =============================================================================
+# Baseline sub-sectors (is_extension: false) match the MSCI Datonomy Nov 2022
+# release verbatim. Extensions (is_extension: true) live in the 90-99 slot of
+# their parent sector and are community-maintained.
+# -----------------------------------------------------------------------------
+sub_sectors:
+
+  # ---- 10 Digital Currencies ------------------------------------------------
+  - code: 101010
+    sector_code: 1010
+    name: "Value Transfer Coins"
+    definition: >
+      Native currencies of blockchains whose primary purpose is general on-chain
+      payments and store of value.
+
+  - code: 102010
+    sector_code: 1020
+    name: "Meme Coins"
+    definition: >
+      Digital currencies whose value is driven by social-community network
+      effects rather than protocol utility.
+
+  - code: 102020
+    sector_code: 1020
+    name: "Privacy Coins"
+    definition: >
+      Digital currencies offering transaction-level privacy enhancements.
+      Note: privacy-focused smart-contract platforms belong in 201010, not here.
+
+  - code: 102030
+    sector_code: 1020
+    name: "Remittance Coins"
+    definition: >
+      Digital currencies optimized for high-velocity domestic or cross-border
+      value transfer.
+
+  # ---- 20 Blockchain Infrastructure ----------------------------------------
+  - code: 201010
+    sector_code: 2010
+    name: "Smart Contract Platforms"
+    definition: >
+      Tokens native to blockchain protocols that execute smart contracts and
+      host an ecosystem of decentralized applications. Colloquially "Layer 1".
+
+  - code: 202010
+    sector_code: 2020
+    name: "Network Scaling"
+    definition: >
+      Tokens that extend a base blockchain's throughput, cost, or consistency
+      by processing transactions outside the settlement layer.
+      Colloquially "Layer 2".
+
+  - code: 202020
+    sector_code: 2020
+    name: "Cross-Chain Interoperability"
+    definition: >
+      Tokens native to protocols that connect distinct blockchains, often via
+      bridges or messaging layers.
+
+  - code: 202030
+    sector_code: 2020
+    name: "Blockchain Networks"
+    definition: >
+      Tokens associated with platforms designed for users to build and run
+      their own blockchains. Colloquially "Layer 0".
+
+  - code: 203010
+    sector_code: 2030
+    name: "Oracles"
+    definition: >
+      Tokens native to applications that bring off-chain data into blockchain
+      smart contracts.
+
+  - code: 203020
+    sector_code: 2030
+    name: "Digital Identity"
+    definition: >
+      Tokens native to applications that issue, resolve, or validate identity
+      primitives (humans, names, domains) on-chain.
+
+  - code: 203030
+    sector_code: 2030
+    name: "Governance Tools"
+    definition: >
+      Tokens native to services providing tooling for DAO formation, voting,
+      and operations.
+
+  - code: 203040
+    sector_code: 2030
+    name: "Software Development"
+    definition: >
+      Tokens native to applications that support smart-contract development,
+      deployment tooling, and SDK distribution.
+
+  # ---- 30 Digital Asset Applications ---------------------------------------
+  - code: 301010
+    sector_code: 3010
+    name: "Decentralized Exchanges"
+    definition: >
+      Tokens native to AMM-based or order-book spot exchanges executing
+      peer-to-peer trades through liquidity pools.
+
+  - code: 301020
+    sector_code: 3010
+    name: "Derivatives Trading"
+    definition: >
+      Tokens native to applications that facilitate creation and transfer of
+      derivatives — perpetuals, options, synthetics. The token enables access
+      and liquidity; it is not the derivative itself.
+
+  - code: 301030
+    sector_code: 3010
+    name: "Decentralized Lending"
+    definition: >
+      Tokens native to pool-based or isolated-market lending protocols.
+
+  - code: 301040
+    sector_code: 3010
+    name: "Stablecoin Issuers"
+    definition: >
+      Issuer governance tokens of protocols whose primary product is a
+      stablecoin. The stablecoin itself lives in class 40.
+
+  - code: 301050
+    sector_code: 3010
+    name: "Prediction Markets"
+    definition: >
+      Tokens native to marketplaces for speculative trading on future events.
+
+  - code: 301060
+    sector_code: 3010
+    name: "Asset Management"
+    definition: >
+      Tokens native to yield aggregators, vault managers, and on-chain
+      portfolio management protocols.
+
+  - code: 301070
+    sector_code: 3010
+    name: "Crowdfunding"
+    definition: >
+      Tokens native to peer-to-peer fundraising and token-launch platforms,
+      including memecoin launchpads with bonding-curve issuance.
+
+  - code: 301080
+    sector_code: 3010
+    name: "Insurance"
+    definition: >
+      Tokens native to applications that underwrite smart-contract failure,
+      exchange-hack, or other blockchain-related risks.
+
+  - code: 301090
+    sector_code: 3010
+    name: "Liquid Staking — Governance"
+    is_extension: true
+    definition: >
+      [EXT] Governance tokens of protocols issuing liquid-staking derivatives.
+      Return driver is the underlying chain's staking yield plus protocol fee —
+      materially different from generic Asset Management.
+
+  - code: 301091
+    sector_code: 3010
+    name: "Liquid Restaking — Governance"
+    is_extension: true
+    definition: >
+      [EXT] Governance tokens of protocols issuing liquid-restaking derivatives
+      and the underlying restaking infrastructure. Return driver combines
+      restaking yield with points / airdrop economics.
+
+  - code: 301092
+    sector_code: 3010
+    name: "RWA Issuer — Governance"
+    is_extension: true
+    definition: >
+      [EXT] Governance tokens of protocols that tokenize real-world assets
+      (treasuries, credit, equities). Distinct from the RWA tokens themselves,
+      which live in 402010.
+
+  - code: 302010
+    sector_code: 3020
+    name: "Intermediated Lending"
+    definition: >
+      Tokens native to lending platforms requiring custody — typically CeFi
+      wrapping decentralized rails.
+
+  - code: 302020
+    sector_code: 3020
+    name: "Payment Platforms"
+    definition: >
+      Tokens native to applications facilitating payments via an intermediated
+      platform or blockchain.
+
+  - code: 302030
+    sector_code: 3020
+    name: "Private Exchanges"
+    definition: >
+      Tokens issued and managed by a centralized crypto exchange.
+
+  - code: 303010
+    sector_code: 3030
+    name: "Professional Services"
+    definition: >
+      Tokens native to specialized or industry-specific applications providing
+      professional resources.
+
+  - code: 303020
+    sector_code: 3030
+    name: "Enterprise Solutions"
+    definition: >
+      Tokens native to blockchains or applications providing development
+      services for enterprise use cases.
+
+  - code: 304010
+    sector_code: 3040
+    name: "Data Services"
+    definition: >
+      Tokens native to applications that query, aggregate, encrypt, or
+      broadcast on-chain data.
+
+  - code: 304020
+    sector_code: 3040
+    name: "Compute & Private Storage"
+    definition: >
+      Tokens native to applications enabling decentralized access to shared
+      computational or private storage resources. Includes GPU compute, AI
+      inference, and agent infrastructure.
+
+  - code: 304030
+    sector_code: 3040
+    name: "Wallets & Messaging"
+    definition: >
+      Tokens native to applications enabling users to interact with, transact
+      in, and communicate about on-chain assets.
+
+  - code: 304040
+    sector_code: 3040
+    name: "Internet of Things"
+    definition: >
+      Tokens native to applications connecting physical devices with the
+      blockchain.
+
+  - code: 305010
+    sector_code: 3050
+    name: "Virtual Worlds"
+    definition: >
+      Tokens native to applications facilitating transfer of digital land and
+      metaverse interaction.
+
+  - code: 305020
+    sector_code: 3050
+    name: "Gaming"
+    definition: >
+      Tokens native to blockchain games and gaming communities.
+
+  - code: 305030
+    sector_code: 3050
+    name: "NFT Ecosystems"
+    definition: >
+      Tokens associated with applications for creating, buying, or selling NFTs.
+
+  - code: 306010
+    sector_code: 3060
+    name: "Advertising"
+    definition: >
+      Tokens native to applications that tokenize ad impressions.
+
+  - code: 306020
+    sector_code: 3060
+    name: "Content & Streaming"
+    definition: >
+      Tokens native to applications supporting creative content distribution.
+
+  # ---- 40 On-Chain Derivatives ---------------------------------------------
+  - code: 401010
+    sector_code: 4010
+    name: "Fiat-Backed Stablecoins"
+    definition: >
+      Stablecoins backed by cash and cash-equivalent reserves.
+
+  - code: 401020
+    sector_code: 4010
+    name: "Crypto-Backed Stablecoins"
+    definition: >
+      Stablecoins backed by crypto collateral held in protocol-managed vaults.
+
+  - code: 401030
+    sector_code: 4010
+    name: "Algorithmic Stablecoins"
+    definition: >
+      Stablecoins maintaining peg primarily via algorithmic rules and
+      incentivized arbitrage.
+
+  - code: 402010
+    sector_code: 4020
+    name: "Asset-Backed Tokens"
+    definition: >
+      Tokenized assets backed by other assets — crypto, securities,
+      commodities — held in segregated accounts.
+
+  - code: 402020
+    sector_code: 4020
+    name: "Synthetic Tokens"
+    definition: >
+      Tokens that track the price of another asset without directly holding it.
+
+  - code: 403010
+    sector_code: 4030
+    name: "Liquidity Pool Tokens"
+    definition: >
+      Claim tokens representing a share of a liquidity pool.
+
+  - code: 403020
+    sector_code: 4030
+    name: "Staked Tokens"
+    definition: >
+      Claim tokens representing assets staked to earn rewards or secure a
+      protocol. Includes utility-claim tokens emitted to base-asset holders.
+
+# =============================================================================
+# TAGS (orthogonal, multi-dimensional)
+# =============================================================================
+# Tags are independent of the hierarchy. Each asset has exactly one value per
+# tag. Tags exist where the relevant axis affects returns more than the
+# hierarchy can express (chain effects, in particular).
+tags:
+  chain_ecosystem:
+    description: >
+      Dominant chain ecosystem of the asset's economic activity. For multi-chain
+      protocols, assigned by largest TVL at snapshot date.
+    values:
+      BTC:    "Bitcoin and Bitcoin-derived chains (BCH, BSV, LTC)"
+      ETH:    "Ethereum mainnet and EVM-equivalent rollups (Arbitrum, Optimism, Base)"
+      SOL:    "Solana"
+      BNB:    "BNB Smart Chain"
+      TRX:    "Tron"
+      COSMOS: "Cosmos Hub, Osmosis, Celestia, dYdX-chain, other IBC zones"
+      AVAX:   "Avalanche C-chain and subnets"
+      NEAR:   "NEAR Protocol and Aurora"
+      MOVE:   "Move-VM chains: Aptos, Sui"
+      OTHER:  "Standalone L1s (Cardano, Algorand, Tezos, Hedera, Polkadot relay)"
+
+# =============================================================================
+# DEPRECATED / RESERVED SLOTS
+# =============================================================================
+# Sub-sector codes that exist in the numbering space but are currently inactive.
+# Documented for transparency. To reactivate, open a PR with at least 5 candidate
+# members and evidence of positive intra-group correlation.
+deprecated_slots:
+  - code: 202090
+    sector_code: 2020
+    name: "Restaking Infrastructure"
+    reason: "EIGEN moved to 301091 as governance/fee-share economics. Slot reserved."
+  - code: 304090
+    sector_code: 3040
+    name: "DePIN — Wireless / Mobility / Energy"
+    reason: "No active members in current universe. Slot reserved."
+  - code: 304091
+    sector_code: 3040
+    name: "DePIN — Compute / GPU"
+    reason: "Merged into 304020 in v0.2; intra-group correlation was negative when split."
+  - code: 304092
+    sector_code: 3040
+    name: "DePIN — AI Inference / Data"
+    reason: "Merged into 304020 in v0.2; narrative-driven split with negative intra-group correlation."
+  - code: 304093
+    sector_code: 3040
+    name: "AI Agents Platform"
+    reason: "Merged into 304020 in v0.2; insufficient cohesion to justify split."
+  - code: 401090
+    sector_code: 4010
+    name: "Yield-Bearing Stablecoins"
+    reason: "Reserved. Stablecoins excluded from directional alpha universe in current methodology."

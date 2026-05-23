@@ -1,0 +1,10 @@
+# Runtime dependencies for scripts/
+# Pinned to known-working versions; bump in a dedicated PR.
+
+pandas>=2.0,<3.0
+numpy>=1.24,<3.0
+pyyaml>=6.0
+pyarrow>=14.0       # for parquet I/O
+matplotlib>=3.7
+scipy>=1.10
+scikit-learn>=1.3

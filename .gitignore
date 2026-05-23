@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Notebooks
+.ipynb_checkpoints/
+
+# NOTE: classification/wide/*.parquet, classification/long/*.parquet, and
+# validation/charts/*.png ARE committed — they are the published artifacts
+# that consumers download directly without cloning + running scripts.
+# Re-generated on every release by scripts/build_matrices.py and
+# scripts/compute_validation.py; CI asserts they stay in sync.

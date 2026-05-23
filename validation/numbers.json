@@ -1,0 +1,32 @@
+{
+  "class_code": {
+    "within_corr": -0.0032,
+    "between_corr": -0.0115,
+    "spread": 0.0083,
+    "random_baseline_mean": 0.0,
+    "random_baseline_p95": 0.0042,
+    "n_groups": 4,
+    "passes": true,
+    "ari_vs_ward": 0.0346
+  },
+  "sector_code": {
+    "within_corr": 0.0152,
+    "between_corr": -0.0124,
+    "spread": 0.0276,
+    "random_baseline_mean": 0.0004,
+    "random_baseline_p95": 0.0074,
+    "n_groups": 12,
+    "passes": true,
+    "ari_vs_ward": 0.0514
+  },
+  "sub_sector_code": {
+    "within_corr": 0.0218,
+    "between_corr": -0.0108,
+    "spread": 0.0327,
+    "random_baseline_mean": 0.0006,
+    "random_baseline_p95": 0.0091,
+    "n_groups": 33,
+    "passes": true,
+    "ari_vs_ward": 0.0585
+  }
+}
