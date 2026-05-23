@@ -19,6 +19,16 @@ Full license: https://creativecommons.org/licenses/by/4.0/
 Recommended citation:
 
   crypto-sectors contributors (2026). crypto-sectors: an open industry
-  classification standard for digital assets. https://github.com/quantbai/crypto-sectors
+  classification for digital assets. https://github.com/quantbai/crypto-sectors
 
 Code in scripts/ is licensed separately under MIT (see LICENSE).
+
+---
+
+Trademark notice
+
+This dataset references third-party classification methodologies for academic
+purposes (see methodology.md §7). All trademarks — including but not limited
+to GICS, Datonomy, ICB, BRAIN — remain the property of their respective owners.
+This project is independent of and has no business relationship with any
+commercial classification or analytics provider.

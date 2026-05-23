@@ -1,12 +1,12 @@
 # crypto-sectors
 
-> The open GICS for crypto — hierarchical sector taxonomy, validated against daily returns.
+> Open hierarchical industry classification for digital assets, validated against daily returns.
 
 [![CI](https://github.com/quantbai/crypto-sectors/actions/workflows/ci.yml/badge.svg)](https://github.com/quantbai/crypto-sectors/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
 [![License: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](LICENSE-data)
 
-A hierarchical industry classification standard for digital assets — aligned with [MSCI Datonomy (Nov 2022)](https://www.msci.com/our-solutions/indexes/datonomy), with community-maintained extensions. Designed for cross-sectional risk decomposition, sector-neutral portfolio construction, and peer-group analysis.
+A community-maintained, hierarchical industry classification for digital assets. Designed for cross-sectional risk decomposition, sector-neutral portfolio construction, and peer-group analysis. The hierarchy is informed by established institutional classification methodologies — see [methodology.md](methodology.md) for citations.
 
 ---
 
@@ -49,7 +49,7 @@ alpha_demeaned = alpha.sub(alpha.groupby(sector.loc[date], axis=1).transform("me
 ## Coverage
 
 - **Universe**: 158 actively classified digital assets
-- **Hierarchy**: 4 classes → 14 sectors → ~35 sub-sectors (Datonomy-aligned + community extensions)
+- **Hierarchy**: 4 classes → 14 sectors → ~35 sub-sectors (community-maintained, with extensions in the 90–99 slot of each sector)
 - **Orthogonal tag**: `chain_ecosystem` (BTC, ETH, SOL, BNB, …)
 - **Update cadence**: quarterly snapshot tags (`v2026.Q2`, `v2026.Q3`, …), continuous PR review
 
@@ -61,11 +61,11 @@ alpha_demeaned = alpha.sub(alpha.groupby(sector.loc[date], axis=1).transform("me
 
 | Existing source | Limitation |
 |---|---|
-| **MSCI Datonomy** | Methodology public, asset mappings paywalled |
-| **CoinGecko / CMC categories** | Marketing tags — not mutually exclusive, no methodology, no validation |
-| **Internal fund taxonomies** | Each fund reinvents the wheel; nothing comparable |
+| Commercial institutional classifications | Methodology often public, but asset-level mappings are paid products |
+| CoinGecko / CMC categories | Marketing tags — not mutually exclusive, no formal methodology, no empirical validation |
+| Internal fund taxonomies | Each fund reinvents the wheel; nothing comparable across teams |
 
-This repo: open methodology, open mappings, empirically validated, community-curated.
+This repository: open methodology, open mappings, empirically validated, community-curated.
 
 ## Contribute
 
@@ -75,4 +75,8 @@ Add a new token, propose a reclassification, or open a sub-sector discussion —
 
 Code (`scripts/`) — MIT. Classification data (`taxonomy.yaml`, `classification/`, `decisions/`) — [CC BY 4.0](LICENSE-data). Attribute as:
 
-> crypto-sectors contributors (2026). _crypto-sectors: an open industry classification standard for digital assets._ https://github.com/quantbai/crypto-sectors
+> crypto-sectors contributors (2026). _crypto-sectors: an open industry classification for digital assets._ https://github.com/quantbai/crypto-sectors
+
+## Notice of non-affiliation
+
+This is an independent open-source project. It is not affiliated with, endorsed by, or sponsored by MSCI Inc., S&P Global, FTSE Russell, Coin Metrics, Goldman Sachs, WorldQuant LLC, or any other commercial index, classification, or analytics provider. References to third-party methodologies in [methodology.md](methodology.md) are academic citations and do not imply any business relationship. All trademarks are the property of their respective owners.

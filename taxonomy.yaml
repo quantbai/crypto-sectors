@@ -1,20 +1,23 @@
 # =============================================================================
 # crypto-sectors taxonomy
 # =============================================================================
-# Hierarchical industry classification standard for digital assets.
-# Aligned with leading institutional taxonomies (MSCI Datonomy Nov 2022).
+# Hierarchical industry classification for digital assets.
+# The 6-digit code structure preserves compatibility with established
+# institutional classification methodologies cited in methodology.md §7.
 #
 # Code structure: CCSSXX (6-digit)
 #   CC = class (2-digit)
 #   SS = sector-within-class (4-digit when concatenated as CCSS)
 #   XX = sub-sector-within-sector (6-digit when concatenated as CCSSXX)
 #
-# Extension convention: sub-sector codes ending 90-99 are community extensions
-# beyond the Datonomy 2022 baseline. They are visually distinguishable
-# (e.g., 301090) and will not collide with future Datonomy revisions.
+# Extension convention: sub-sector codes ending 90-99 are community extensions.
+# The 00-89 range is reserved for codes aligned with the institutional baseline.
 #
 # This file is the source of truth. classification/snapshot.csv references
 # these codes; scripts/validate_schema.py asserts referential integrity.
+#
+# Trademark notice: see methodology.md §7. No affiliation with or endorsement
+# by any commercial classification provider is implied or claimed.
 
 version: "1.0.0"
 release_date: "2026-05-23"
@@ -74,9 +77,10 @@ sectors:
 # =============================================================================
 # SUB-SECTORS (6-digit)
 # =============================================================================
-# Baseline sub-sectors (is_extension: false) match the MSCI Datonomy Nov 2022
-# release verbatim. Extensions (is_extension: true) live in the 90-99 slot of
-# their parent sector and are community-maintained.
+# Baseline sub-sectors (is_extension: false) preserve the 6-digit code structure
+# of the institutional classification methodology cited in methodology.md §7.
+# Extensions (is_extension: true) live in the 90-99 slot of their parent sector
+# and are community-maintained.
 # -----------------------------------------------------------------------------
 sub_sectors:
 

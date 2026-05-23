@@ -9,20 +9,20 @@ A reference industry classification for digital assets, usable for:
 1. **Cross-sectional sector neutralization** of alpha signals (`group_neut`).
 2. **Risk attribution** — decomposing returns into sector, chain, and idiosyncratic components.
 3. **Peer-group comparison** — fundamental and technical metrics are only meaningful relative to peers performing a similar economic function.
-4. **Comparability with sell-side / institutional research** — codes are 1:1 compatible with MSCI Datonomy (Nov 2022) for the baseline 41 sub-sectors.
+4. **Comparability with established institutional research** — the 6-digit code structure and the baseline 41 sub-sectors preserve the numeric layout used by the institutional classification methodologies cited in §7, enabling round-trip mapping for consumers who require it.
 
 ## 2. Design principles
 
 | # | Principle | Why |
 |---|-----------|-----|
 | 1 | **Single-leaf assignment** within the hierarchy | An asset belonging to multiple groups is unusable for `group_neut`. We accept the cost: borderline assets are placed in their dominant economic function, with the rationale recorded in `decisions/`. |
-| 2 | **Theory-driven, empirically validated** | The taxonomy starts from MSCI Datonomy's economic-function definitions. Sectors are not discovered from clustering — that would overfit. We then validate that same-sector returns co-move more than cross-sector returns. |
+| 2 | **Theory-driven, empirically validated** | The taxonomy starts from established economic-function definitions in the institutional classification literature (see §7). Sectors are not discovered from clustering — that would overfit. We then validate that same-sector returns co-move more than cross-sector returns. |
 | 3 | **Orthogonal tags alongside the hierarchy** | Chain-ecosystem effects in crypto can rival sector effects. Forcing them into the hierarchy distorts the tree; treating them as a cross-cutting tag preserves both axes. |
 | 4 | **Auditable per-asset decisions** | Every non-trivial classification has a markdown file in `decisions/` recording the rationale. Disputes become PRs with evidence. |
 
 ## 3. Hierarchy
 
-Three levels, MSCI Datonomy-aligned:
+Three levels:
 
 ```
 Class (2-digit, 4 entries)            ── reporting & risk-regime boundary
@@ -32,7 +32,7 @@ Class (2-digit, 4 entries)            ── reporting & risk-regime boundary
 
 ### 3.1 Why three levels (and not two, or four)
 
-The choice tracks the precedent set by [GICS](https://www.spglobal.com/spdji/en/landing/topic/gics/) and [ICB](https://www.ftserussell.com/data/industry-classification-benchmark-icb) for equities (both four-level systems with 5,000+ constituents), adjusted downward by one level because the digital-asset universe is roughly an order of magnitude smaller.
+The choice tracks the precedent set by established equity-market classification systems (cited in §7) — both are four-level systems with 5,000+ constituents — adjusted downward by one level because the digital-asset universe is roughly an order of magnitude smaller.
 
 | Level count | Avg assets / leaf (at N=158) | Trade-off |
 |---|---|---|
@@ -51,7 +51,7 @@ Six-digit codes follow `CCSSXX`:
 - `SS` = sector-within-class (4-digit when concatenated as `CCSS`)
 - `XX` = sub-sector-within-sector (6-digit when concatenated as `CCSSXX`)
 
-Sub-sector codes ending `90`–`99` are community extensions beyond the Datonomy 2022 baseline. They are visually distinguishable (e.g., `301090` for Liquid Staking) and will not collide with future Datonomy revisions.
+Sub-sector codes ending `90`–`99` are community extensions. They are visually distinguishable (e.g., `301090` for Liquid Staking) and reserve the `00`–`89` range for codes that align with the institutional baseline cited in §7.
 
 ### 3.3 Orthogonal tags
 
@@ -106,9 +106,16 @@ The following are deliberately excluded from v1.0 to keep the scope tight. Each 
 
 A consumer should pin to a specific release tag for reproducible backtests.
 
-## 7. Comparable references
+## 7. References
 
-- MSCI / Coin Metrics / Goldman Sachs (2022). *Datonomy Methodology.*
-- Bhojraj, Lee, Oler (2003). "What's My Line? A Comparison of Industry Classification Schemes for Capital Market Research." *Journal of Accounting Research.*
-- S&P Global / MSCI. *Global Industry Classification Standard (GICS) Methodology.*
+Academic and industry references that informed the design. Inclusion here is academic citation; no endorsement or affiliation is implied or claimed.
+
+- MSCI, Coin Metrics, and Goldman Sachs (2022). *Datonomy Methodology.* (Digital-asset classification baseline; this project preserves the 6-digit code structure for round-trip compatibility.)
+- Bhojraj, S., Lee, C., and Oler, D. (2003). "What's My Line? A Comparison of Industry Classification Schemes for Capital Market Research." *Journal of Accounting Research*, 41(5).
+- S&P Global and MSCI. *Global Industry Classification Standard (GICS) Methodology.* (Cross-asset precedent for multi-level hierarchical industry classification.)
 - FTSE Russell. *Industry Classification Benchmark (ICB) Ground Rules.*
+- Hoberg, G., and Phillips, G. (2016). "Text-Based Network Industries and Endogenous Product Differentiation." *Journal of Political Economy*.
+
+### Trademark notice
+
+GICS is a registered trademark of S&P Global and MSCI Inc. Datonomy is a trademark of MSCI Inc. ICB is a trademark of FTSE International Limited. WorldQuant and BRAIN are trademarks of WorldQuant LLC. All other trademarks are the property of their respective owners. This project is independent of, and has no business relationship with, any of these organizations.
