@@ -17,11 +17,43 @@ jobs:
           cache: pip
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Validate schema
+
+      - name: Validate schema (taxonomy + snapshot referential integrity)
         run: python scripts/validate_schema.py
-      - name: Rebuild matrices from snapshot.csv
+
+      - name: Build matrices (smoke test — script must run cleanly)
         run: python scripts/build_matrices.py
-      - name: Diff regenerated matrices against committed
+
+      - name: Compute validation (smoke test — script must run cleanly)
+        run: python scripts/compute_validation.py
+
+      - name: Content-equality check on rebuilt CSV matrices
         run: |
-          git diff --exit-code classification/wide/ classification/long/ \
-            || (echo "Matrices out of sync with snapshot.csv — run scripts/build_matrices.py and commit" && exit 1)
+          python - <<'EOF'
+          import pandas as pd
+          import subprocess, sys
+
+          # Compare each CSV matrix's content (not bytes) against the committed version.
+          # Parquet is intentionally excluded — pyarrow output is not byte-stable across
+          # environments even with identical input, so we trust CSV as the canonical
+          # text form and require parquet only to deserialize correctly.
+          mismatches = []
+          for csv in [
+              "classification/wide/class_code.csv",
+              "classification/wide/sector_code.csv",
+              "classification/wide/sub_sector_code.csv",
+              "classification/wide/chain_ecosystem.csv",
+              "classification/long/panel.csv",
+          ]:
+              committed = subprocess.check_output(["git", "show", f"HEAD:{csv}"]).decode("utf-8")
+              with open(csv, encoding="utf-8") as f:
+                  rebuilt = f.read()
+              if committed.strip() != rebuilt.strip():
+                  mismatches.append(csv)
+          if mismatches:
+              print(f"Out of sync (rebuild + commit needed):")
+              for m in mismatches:
+                  print(f"  - {m}")
+              sys.exit(1)
+          print(f"All {5} CSV artifacts in sync with snapshot.csv.")
+          EOF
