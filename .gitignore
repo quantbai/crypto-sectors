@@ -29,3 +29,4 @@ plans/
 # that consumers download directly without cloning + running scripts.
 # Re-generated on every release by scripts/build_matrices.py and
 # scripts/compute_validation.py; CI asserts they stay in sync.
+.gstack/

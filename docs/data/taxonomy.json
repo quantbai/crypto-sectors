@@ -1,0 +1,4454 @@
+{
+  "assets_flat": [
+    {
+      "asset_id": "0g",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "0G",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "0G"
+    },
+    {
+      "asset_id": "1inch",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "1INCH",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301010,
+      "sub_sector_name": "Decentralized Exchanges",
+      "symbol": "1INCH"
+    },
+    {
+      "asset_id": "2z",
+      "chain_ecosystem": "SOL",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "DoubleZero",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304020,
+      "sub_sector_name": "Compute & Private Storage",
+      "symbol": "2Z"
+    },
+    {
+      "asset_id": "vaulta",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Vaulta",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "A"
+    },
+    {
+      "asset_id": "aave",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Aave",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301030,
+      "sub_sector_name": "Decentralized Lending",
+      "symbol": "AAVE"
+    },
+    {
+      "asset_id": "ada",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Cardano",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "ADA"
+    },
+    {
+      "asset_id": "aero",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Aerodrome Finance",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301010,
+      "sub_sector_name": "Decentralized Exchanges",
+      "symbol": "AERO"
+    },
+    {
+      "asset_id": "algo",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Algorand",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "ALGO"
+    },
+    {
+      "asset_id": "ape",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "ApeCoin",
+      "sector_code": 3050,
+      "sector_name": "Metaverse",
+      "sub_sector_code": 305020,
+      "sub_sector_name": "Gaming",
+      "symbol": "APE"
+    },
+    {
+      "asset_id": "apt",
+      "chain_ecosystem": "MOVE",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Aptos",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "APT"
+    },
+    {
+      "asset_id": "ar",
+      "chain_ecosystem": "OTHER",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Arweave",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304020,
+      "sub_sector_name": "Compute & Private Storage",
+      "symbol": "AR"
+    },
+    {
+      "asset_id": "arb",
+      "chain_ecosystem": "ETH",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Arbitrum",
+      "sector_code": 2020,
+      "sector_name": "Blockchain Utilities",
+      "sub_sector_code": 202010,
+      "sub_sector_name": "Network Scaling",
+      "symbol": "ARB"
+    },
+    {
+      "asset_id": "aster",
+      "chain_ecosystem": "BNB",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Aster",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301020,
+      "sub_sector_name": "Derivatives Trading",
+      "symbol": "ASTER"
+    },
+    {
+      "asset_id": "ath",
+      "chain_ecosystem": "OTHER",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Aethir",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304020,
+      "sub_sector_name": "Compute & Private Storage",
+      "symbol": "ATH"
+    },
+    {
+      "asset_id": "atom",
+      "chain_ecosystem": "COSMOS",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Cosmos Hub",
+      "sector_code": 2020,
+      "sector_name": "Blockchain Utilities",
+      "sub_sector_code": 202030,
+      "sub_sector_name": "Blockchain Networks",
+      "symbol": "ATOM"
+    },
+    {
+      "asset_id": "avax",
+      "chain_ecosystem": "AVAX",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Avalanche",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "AVAX"
+    },
+    {
+      "asset_id": "axs",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Axie Infinity",
+      "sector_code": 3050,
+      "sector_name": "Metaverse",
+      "sub_sector_code": 305020,
+      "sub_sector_name": "Gaming",
+      "symbol": "AXS"
+    },
+    {
+      "asset_id": "banana",
+      "chain_ecosystem": "BNB",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Banana For Scale",
+      "sector_code": 1020,
+      "sector_name": "Specialized Coins",
+      "sub_sector_code": 102010,
+      "sub_sector_name": "Meme Coins",
+      "symbol": "BANANAS31"
+    },
+    {
+      "asset_id": "bat",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Basic Attention",
+      "sector_code": 3060,
+      "sector_name": "Media Services",
+      "sub_sector_code": 306010,
+      "sub_sector_name": "Advertising",
+      "symbol": "BAT"
+    },
+    {
+      "asset_id": "bch",
+      "chain_ecosystem": "BTC",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Bitcoin Cash",
+      "sector_code": 1010,
+      "sector_name": "Value Transfer Coins",
+      "sub_sector_code": 101010,
+      "sub_sector_name": "Value Transfer Coins",
+      "symbol": "BCH"
+    },
+    {
+      "asset_id": "bera",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Berachain",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "BERA"
+    },
+    {
+      "asset_id": "bill",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Billions Network",
+      "sector_code": 2030,
+      "sector_name": "Application Utilities",
+      "sub_sector_code": 203020,
+      "sub_sector_name": "Digital Identity",
+      "symbol": "BILL"
+    },
+    {
+      "asset_id": "bnb",
+      "chain_ecosystem": "BNB",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": "https://github.com/quantbai/crypto-sectors/blob/main/decisions/bnb.md",
+      "effective_from": "2024-05-23",
+      "name": "BNB",
+      "sector_code": 3020,
+      "sector_name": "Intermediated Finance",
+      "sub_sector_code": 302030,
+      "sub_sector_name": "Private Exchanges",
+      "symbol": "BNB"
+    },
+    {
+      "asset_id": "bonk",
+      "chain_ecosystem": "SOL",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Bonk",
+      "sector_code": 1020,
+      "sector_name": "Specialized Coins",
+      "sub_sector_code": 102010,
+      "sub_sector_name": "Meme Coins",
+      "symbol": "BONK"
+    },
+    {
+      "asset_id": "btc",
+      "chain_ecosystem": "BTC",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Bitcoin",
+      "sector_code": 1010,
+      "sector_name": "Value Transfer Coins",
+      "sub_sector_code": 101010,
+      "sub_sector_name": "Value Transfer Coins",
+      "symbol": "BTC"
+    },
+    {
+      "asset_id": "btt",
+      "chain_ecosystem": "TRX",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "BitTorrent",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304020,
+      "sub_sector_name": "Compute & Private Storage",
+      "symbol": "BTT"
+    },
+    {
+      "asset_id": "cake",
+      "chain_ecosystem": "BNB",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "PancakeSwap",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301010,
+      "sub_sector_name": "Decentralized Exchanges",
+      "symbol": "CAKE"
+    },
+    {
+      "asset_id": "cc",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Canton",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "CC"
+    },
+    {
+      "asset_id": "cfg",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Centrifuge",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301092,
+      "sub_sector_name": "RWA Issuer — Governance",
+      "symbol": "CFG"
+    },
+    {
+      "asset_id": "cfx",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Conflux",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "CFX"
+    },
+    {
+      "asset_id": "chz",
+      "chain_ecosystem": "OTHER",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Chiliz",
+      "sector_code": 3050,
+      "sector_name": "Metaverse",
+      "sub_sector_code": 305030,
+      "sub_sector_name": "NFT Ecosystems",
+      "symbol": "CHZ"
+    },
+    {
+      "asset_id": "comp",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Compound",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301030,
+      "sub_sector_name": "Decentralized Lending",
+      "symbol": "COMP"
+    },
+    {
+      "asset_id": "cro",
+      "chain_ecosystem": "OTHER",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Cronos",
+      "sector_code": 3020,
+      "sector_name": "Intermediated Finance",
+      "sub_sector_code": 302030,
+      "sub_sector_name": "Private Exchanges",
+      "symbol": "CRO"
+    },
+    {
+      "asset_id": "crv",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Curve DAO",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301010,
+      "sub_sector_name": "Decentralized Exchanges",
+      "symbol": "CRV"
+    },
+    {
+      "asset_id": "cvx",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Convex Finance",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301060,
+      "sub_sector_name": "Asset Management",
+      "symbol": "CVX"
+    },
+    {
+      "asset_id": "dash",
+      "chain_ecosystem": "BTC",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Dash",
+      "sector_code": 1020,
+      "sector_name": "Specialized Coins",
+      "sub_sector_code": 102020,
+      "sub_sector_name": "Privacy Coins",
+      "symbol": "DASH"
+    },
+    {
+      "asset_id": "dcr",
+      "chain_ecosystem": "BTC",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Decred",
+      "sector_code": 1010,
+      "sector_name": "Value Transfer Coins",
+      "sub_sector_code": 101010,
+      "sub_sector_name": "Value Transfer Coins",
+      "symbol": "DCR"
+    },
+    {
+      "asset_id": "doge",
+      "chain_ecosystem": "BTC",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Dogecoin",
+      "sector_code": 1020,
+      "sector_name": "Specialized Coins",
+      "sub_sector_code": 102010,
+      "sub_sector_name": "Meme Coins",
+      "symbol": "DOGE"
+    },
+    {
+      "asset_id": "dot",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Polkadot",
+      "sector_code": 2020,
+      "sector_name": "Blockchain Utilities",
+      "sub_sector_code": 202030,
+      "sub_sector_name": "Blockchain Networks",
+      "symbol": "DOT"
+    },
+    {
+      "asset_id": "dydx",
+      "chain_ecosystem": "COSMOS",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "dYdX",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301020,
+      "sub_sector_name": "Derivatives Trading",
+      "symbol": "DYDX"
+    },
+    {
+      "asset_id": "edge",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "edgeX",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301020,
+      "sub_sector_name": "Derivatives Trading",
+      "symbol": "EDGE"
+    },
+    {
+      "asset_id": "egld",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "MultiversX",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "EGLD"
+    },
+    {
+      "asset_id": "eigen",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "EigenCloud",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301091,
+      "sub_sector_name": "Liquid Restaking — Governance",
+      "symbol": "EIGEN"
+    },
+    {
+      "asset_id": "ena",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Ethena",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301040,
+      "sub_sector_name": "Stablecoin Issuers",
+      "symbol": "ENA"
+    },
+    {
+      "asset_id": "ens",
+      "chain_ecosystem": "ETH",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Ethereum Name Service",
+      "sector_code": 2030,
+      "sector_name": "Application Utilities",
+      "sub_sector_code": 203020,
+      "sub_sector_name": "Digital Identity",
+      "symbol": "ENS"
+    },
+    {
+      "asset_id": "etc",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Ethereum Classic",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "ETC"
+    },
+    {
+      "asset_id": "eth",
+      "chain_ecosystem": "ETH",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Ethereum",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "ETH"
+    },
+    {
+      "asset_id": "ethfi",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Ether.fi",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301091,
+      "sub_sector_name": "Liquid Restaking — Governance",
+      "symbol": "ETHFI"
+    },
+    {
+      "asset_id": "fet",
+      "chain_ecosystem": "COSMOS",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Artificial Superintelligence Alliance",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304020,
+      "sub_sector_name": "Compute & Private Storage",
+      "symbol": "FET"
+    },
+    {
+      "asset_id": "ff",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Falcon Finance",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301040,
+      "sub_sector_name": "Stablecoin Issuers",
+      "symbol": "FF"
+    },
+    {
+      "asset_id": "fil",
+      "chain_ecosystem": "OTHER",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Filecoin",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304020,
+      "sub_sector_name": "Compute & Private Storage",
+      "symbol": "FIL"
+    },
+    {
+      "asset_id": "floki",
+      "chain_ecosystem": "ETH",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "FLOKI",
+      "sector_code": 1020,
+      "sector_name": "Specialized Coins",
+      "sub_sector_code": 102010,
+      "sub_sector_name": "Meme Coins",
+      "symbol": "FLOKI"
+    },
+    {
+      "asset_id": "flr",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Flare",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "FLR"
+    },
+    {
+      "asset_id": "fluid",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Fluid",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301030,
+      "sub_sector_name": "Decentralized Lending",
+      "symbol": "FLUID"
+    },
+    {
+      "asset_id": "gala",
+      "chain_ecosystem": "OTHER",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "GALA",
+      "sector_code": 3050,
+      "sector_name": "Metaverse",
+      "sub_sector_code": 305020,
+      "sub_sector_name": "Gaming",
+      "symbol": "GALA"
+    },
+    {
+      "asset_id": "gas",
+      "chain_ecosystem": "OTHER",
+      "class_code": 40,
+      "class_name": "On-Chain Derivatives",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Gas",
+      "sector_code": 4030,
+      "sector_name": "Claim Tokens",
+      "sub_sector_code": 403020,
+      "sub_sector_name": "Staked Tokens",
+      "symbol": "GAS"
+    },
+    {
+      "asset_id": "genius",
+      "chain_ecosystem": "SOL",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Genius",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301010,
+      "sub_sector_name": "Decentralized Exchanges",
+      "symbol": "GENIUS"
+    },
+    {
+      "asset_id": "glm",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Golem",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304020,
+      "sub_sector_name": "Compute & Private Storage",
+      "symbol": "GLM"
+    },
+    {
+      "asset_id": "gno",
+      "chain_ecosystem": "ETH",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Gnosis",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "GNO"
+    },
+    {
+      "asset_id": "grass",
+      "chain_ecosystem": "SOL",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Grass",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304020,
+      "sub_sector_name": "Compute & Private Storage",
+      "symbol": "GRASS"
+    },
+    {
+      "asset_id": "grt",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "The Graph",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304010,
+      "sub_sector_name": "Data Services",
+      "symbol": "GRT"
+    },
+    {
+      "asset_id": "h",
+      "chain_ecosystem": "ETH",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Humanity",
+      "sector_code": 2030,
+      "sector_name": "Application Utilities",
+      "sub_sector_code": 203020,
+      "sub_sector_name": "Digital Identity",
+      "symbol": "H"
+    },
+    {
+      "asset_id": "hbar",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Hedera",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "HBAR"
+    },
+    {
+      "asset_id": "hnt",
+      "chain_ecosystem": "SOL",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Helium",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304020,
+      "sub_sector_name": "Compute & Private Storage",
+      "symbol": "HNT"
+    },
+    {
+      "asset_id": "hype",
+      "chain_ecosystem": "OTHER",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Hyperliquid",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301020,
+      "sub_sector_name": "Derivatives Trading",
+      "symbol": "HYPE"
+    },
+    {
+      "asset_id": "icp",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Internet Computer",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "ICP"
+    },
+    {
+      "asset_id": "imx",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Immutable",
+      "sector_code": 3050,
+      "sector_name": "Metaverse",
+      "sub_sector_code": 305020,
+      "sub_sector_name": "Gaming",
+      "symbol": "IMX"
+    },
+    {
+      "asset_id": "inj",
+      "chain_ecosystem": "COSMOS",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Injective",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "INJ"
+    },
+    {
+      "asset_id": "iota",
+      "chain_ecosystem": "OTHER",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "IOTA",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304040,
+      "sub_sector_name": "Internet of Things",
+      "symbol": "IOTA"
+    },
+    {
+      "asset_id": "ip",
+      "chain_ecosystem": "OTHER",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Story",
+      "sector_code": 3060,
+      "sector_name": "Media Services",
+      "sub_sector_code": 306020,
+      "sub_sector_name": "Content & Streaming",
+      "symbol": "IP"
+    },
+    {
+      "asset_id": "jasmy",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "JasmyCoin",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304040,
+      "sub_sector_name": "Internet of Things",
+      "symbol": "JASMY"
+    },
+    {
+      "asset_id": "jst",
+      "chain_ecosystem": "TRX",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "JUST",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301030,
+      "sub_sector_name": "Decentralized Lending",
+      "symbol": "JST"
+    },
+    {
+      "asset_id": "jto",
+      "chain_ecosystem": "SOL",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Jito",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301090,
+      "sub_sector_name": "Liquid Staking — Governance",
+      "symbol": "JTO"
+    },
+    {
+      "asset_id": "jup",
+      "chain_ecosystem": "SOL",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Jupiter",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301010,
+      "sub_sector_name": "Decentralized Exchanges",
+      "symbol": "JUP"
+    },
+    {
+      "asset_id": "kaia",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Kaia",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "KAIA"
+    },
+    {
+      "asset_id": "kaito",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "KAITO",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304010,
+      "sub_sector_name": "Data Services",
+      "symbol": "KAITO"
+    },
+    {
+      "asset_id": "kas",
+      "chain_ecosystem": "OTHER",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Kaspa",
+      "sector_code": 1010,
+      "sector_name": "Value Transfer Coins",
+      "sub_sector_code": 101010,
+      "sub_sector_name": "Value Transfer Coins",
+      "symbol": "KAS"
+    },
+    {
+      "asset_id": "kite",
+      "chain_ecosystem": "OTHER",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Kite",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304020,
+      "sub_sector_name": "Compute & Private Storage",
+      "symbol": "KITE"
+    },
+    {
+      "asset_id": "kmno",
+      "chain_ecosystem": "SOL",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Kamino",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301030,
+      "sub_sector_name": "Decentralized Lending",
+      "symbol": "KMNO"
+    },
+    {
+      "asset_id": "ldo",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Lido DAO",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301090,
+      "sub_sector_name": "Liquid Staking — Governance",
+      "symbol": "LDO"
+    },
+    {
+      "asset_id": "linea",
+      "chain_ecosystem": "ETH",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Linea",
+      "sector_code": 2020,
+      "sector_name": "Blockchain Utilities",
+      "sub_sector_code": 202010,
+      "sub_sector_name": "Network Scaling",
+      "symbol": "LINEA"
+    },
+    {
+      "asset_id": "link",
+      "chain_ecosystem": "ETH",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Chainlink",
+      "sector_code": 2030,
+      "sector_name": "Application Utilities",
+      "sub_sector_code": 203010,
+      "sub_sector_name": "Oracles",
+      "symbol": "LINK"
+    },
+    {
+      "asset_id": "lit",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Lighter",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301020,
+      "sub_sector_name": "Derivatives Trading",
+      "symbol": "LIT"
+    },
+    {
+      "asset_id": "lpt",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Livepeer",
+      "sector_code": 3060,
+      "sector_name": "Media Services",
+      "sub_sector_code": 306020,
+      "sub_sector_name": "Content & Streaming",
+      "symbol": "LPT"
+    },
+    {
+      "asset_id": "ltc",
+      "chain_ecosystem": "BTC",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Litecoin",
+      "sector_code": 1010,
+      "sector_name": "Value Transfer Coins",
+      "sub_sector_code": 101010,
+      "sub_sector_name": "Value Transfer Coins",
+      "symbol": "LTC"
+    },
+    {
+      "asset_id": "terra-luna-2",
+      "chain_ecosystem": "COSMOS",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Terra",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "LUNA"
+    },
+    {
+      "asset_id": "terra-luna-classic",
+      "chain_ecosystem": "COSMOS",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Terra Classic",
+      "sector_code": 1020,
+      "sector_name": "Specialized Coins",
+      "sub_sector_code": 102010,
+      "sub_sector_name": "Meme Coins",
+      "symbol": "LUNC"
+    },
+    {
+      "asset_id": "mana",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Decentraland",
+      "sector_code": 3050,
+      "sector_name": "Metaverse",
+      "sub_sector_code": 305010,
+      "sub_sector_name": "Virtual Worlds",
+      "symbol": "MANA"
+    },
+    {
+      "asset_id": "mnt",
+      "chain_ecosystem": "ETH",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Mantle",
+      "sector_code": 2020,
+      "sector_name": "Blockchain Utilities",
+      "sub_sector_code": 202010,
+      "sub_sector_name": "Network Scaling",
+      "symbol": "MNT"
+    },
+    {
+      "asset_id": "mon",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Monad",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "MON"
+    },
+    {
+      "asset_id": "morpho",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Morpho",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301030,
+      "sub_sector_name": "Decentralized Lending",
+      "symbol": "MORPHO"
+    },
+    {
+      "asset_id": "near",
+      "chain_ecosystem": "NEAR",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "NEAR Protocol",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "NEAR"
+    },
+    {
+      "asset_id": "neo",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "NEO",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "NEO"
+    },
+    {
+      "asset_id": "nexo",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "NEXO",
+      "sector_code": 3020,
+      "sector_name": "Intermediated Finance",
+      "sub_sector_code": 302010,
+      "sub_sector_name": "Intermediated Lending",
+      "symbol": "NEXO"
+    },
+    {
+      "asset_id": "nft",
+      "chain_ecosystem": "TRX",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "AINFT",
+      "sector_code": 3050,
+      "sector_name": "Metaverse",
+      "sub_sector_code": 305030,
+      "sub_sector_name": "NFT Ecosystems",
+      "symbol": "NFT"
+    },
+    {
+      "asset_id": "night",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Midnight",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "NIGHT"
+    },
+    {
+      "asset_id": "okb",
+      "chain_ecosystem": "OTHER",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "OKB",
+      "sector_code": 3020,
+      "sector_name": "Intermediated Finance",
+      "sub_sector_code": 302030,
+      "sub_sector_name": "Private Exchanges",
+      "symbol": "OKB"
+    },
+    {
+      "asset_id": "ondo",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Ondo",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301092,
+      "sub_sector_name": "RWA Issuer — Governance",
+      "symbol": "ONDO"
+    },
+    {
+      "asset_id": "op",
+      "chain_ecosystem": "ETH",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Optimism",
+      "sector_code": 2020,
+      "sector_name": "Blockchain Utilities",
+      "sub_sector_code": 202010,
+      "sub_sector_name": "Network Scaling",
+      "symbol": "OP"
+    },
+    {
+      "asset_id": "paxg",
+      "chain_ecosystem": "ETH",
+      "class_code": 40,
+      "class_name": "On-Chain Derivatives",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "PAX Gold",
+      "sector_code": 4020,
+      "sector_name": "Tokenized Assets",
+      "sub_sector_code": 402010,
+      "sub_sector_name": "Asset-Backed Tokens",
+      "symbol": "PAXG"
+    },
+    {
+      "asset_id": "pendle",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Pendle",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301060,
+      "sub_sector_name": "Asset Management",
+      "symbol": "PENDLE"
+    },
+    {
+      "asset_id": "pengu",
+      "chain_ecosystem": "SOL",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Pudgy Penguins",
+      "sector_code": 1020,
+      "sector_name": "Specialized Coins",
+      "sub_sector_code": 102010,
+      "sub_sector_name": "Meme Coins",
+      "symbol": "PENGU"
+    },
+    {
+      "asset_id": "pepe",
+      "chain_ecosystem": "ETH",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Pepe",
+      "sector_code": 1020,
+      "sector_name": "Specialized Coins",
+      "sub_sector_code": 102010,
+      "sub_sector_name": "Meme Coins",
+      "symbol": "PEPE"
+    },
+    {
+      "asset_id": "pi",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Pi Network",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "PI"
+    },
+    {
+      "asset_id": "pieverse",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Pieverse",
+      "sector_code": 3020,
+      "sector_name": "Intermediated Finance",
+      "sub_sector_code": 302020,
+      "sub_sector_name": "Payment Platforms",
+      "symbol": "PIEVERSE"
+    },
+    {
+      "asset_id": "pol",
+      "chain_ecosystem": "ETH",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": "https://github.com/quantbai/crypto-sectors/blob/main/decisions/pol.md",
+      "effective_from": "2024-05-23",
+      "name": "POL",
+      "sector_code": 2020,
+      "sector_name": "Blockchain Utilities",
+      "sub_sector_code": 202010,
+      "sub_sector_name": "Network Scaling",
+      "symbol": "POL"
+    },
+    {
+      "asset_id": "prime",
+      "chain_ecosystem": "SOL",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": "https://github.com/quantbai/crypto-sectors/blob/main/decisions/prime.md",
+      "effective_from": "2024-05-23",
+      "name": "PRIME",
+      "sector_code": 3050,
+      "sector_name": "Metaverse",
+      "sub_sector_code": 305020,
+      "sub_sector_name": "Gaming",
+      "symbol": "PRIME"
+    },
+    {
+      "asset_id": "pump",
+      "chain_ecosystem": "SOL",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Pump.fun",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301070,
+      "sub_sector_name": "Crowdfunding",
+      "symbol": "PUMP"
+    },
+    {
+      "asset_id": "pyth",
+      "chain_ecosystem": "SOL",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Pyth Network",
+      "sector_code": 2030,
+      "sector_name": "Application Utilities",
+      "sub_sector_code": 203010,
+      "sub_sector_name": "Oracles",
+      "symbol": "PYTH"
+    },
+    {
+      "asset_id": "qnt",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Quant",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304010,
+      "sub_sector_name": "Data Services",
+      "symbol": "QNT"
+    },
+    {
+      "asset_id": "qtum",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Qtum",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "QTUM"
+    },
+    {
+      "asset_id": "ray",
+      "chain_ecosystem": "SOL",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Raydium",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301010,
+      "sub_sector_name": "Decentralized Exchanges",
+      "symbol": "RAY"
+    },
+    {
+      "asset_id": "render",
+      "chain_ecosystem": "SOL",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Render",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304020,
+      "sub_sector_name": "Compute & Private Storage",
+      "symbol": "RENDER"
+    },
+    {
+      "asset_id": "rsr",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Reserve Rights",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301040,
+      "sub_sector_name": "Stablecoin Issuers",
+      "symbol": "RSR"
+    },
+    {
+      "asset_id": "rune",
+      "chain_ecosystem": "COSMOS",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "THORChain",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301010,
+      "sub_sector_name": "Decentralized Exchanges",
+      "symbol": "RUNE"
+    },
+    {
+      "asset_id": "sonic",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Sonic",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "S"
+    },
+    {
+      "asset_id": "safe",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Safe",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304030,
+      "sub_sector_name": "Wallets & Messaging",
+      "symbol": "SAFE"
+    },
+    {
+      "asset_id": "sahara",
+      "chain_ecosystem": "OTHER",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Sahara AI",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304020,
+      "sub_sector_name": "Compute & Private Storage",
+      "symbol": "SAHARA"
+    },
+    {
+      "asset_id": "sand",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "The Sandbox",
+      "sector_code": 3050,
+      "sector_name": "Metaverse",
+      "sub_sector_code": 305010,
+      "sub_sector_name": "Virtual Worlds",
+      "symbol": "SAND"
+    },
+    {
+      "asset_id": "sei",
+      "chain_ecosystem": "COSMOS",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Sei",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "SEI"
+    },
+    {
+      "asset_id": "sent",
+      "chain_ecosystem": "OTHER",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Sentient",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304020,
+      "sub_sector_name": "Compute & Private Storage",
+      "symbol": "SENT"
+    },
+    {
+      "asset_id": "shib",
+      "chain_ecosystem": "ETH",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Shiba Inu",
+      "sector_code": 1020,
+      "sector_name": "Specialized Coins",
+      "sub_sector_code": 102010,
+      "sub_sector_name": "Meme Coins",
+      "symbol": "SHIB"
+    },
+    {
+      "asset_id": "sky",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Sky",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301040,
+      "sub_sector_name": "Stablecoin Issuers",
+      "symbol": "SKY"
+    },
+    {
+      "asset_id": "snx",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Synthetix",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301020,
+      "sub_sector_name": "Derivatives Trading",
+      "symbol": "SNX"
+    },
+    {
+      "asset_id": "sol",
+      "chain_ecosystem": "SOL",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Solana",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "SOL"
+    },
+    {
+      "asset_id": "sosovalue",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "SoSoValue",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304010,
+      "sub_sector_name": "Data Services",
+      "symbol": "SOSO"
+    },
+    {
+      "asset_id": "spx",
+      "chain_ecosystem": "ETH",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "SPX6900",
+      "sector_code": 1020,
+      "sector_name": "Specialized Coins",
+      "sub_sector_code": 102010,
+      "sub_sector_name": "Meme Coins",
+      "symbol": "SPX"
+    },
+    {
+      "asset_id": "strk",
+      "chain_ecosystem": "ETH",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Starknet",
+      "sector_code": 2020,
+      "sector_name": "Blockchain Utilities",
+      "sub_sector_code": 202010,
+      "sub_sector_name": "Network Scaling",
+      "symbol": "STRK"
+    },
+    {
+      "asset_id": "stx",
+      "chain_ecosystem": "BTC",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Stacks",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "STX"
+    },
+    {
+      "asset_id": "sui",
+      "chain_ecosystem": "MOVE",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Sui",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "SUI"
+    },
+    {
+      "asset_id": "sun",
+      "chain_ecosystem": "TRX",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Sun Token",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301010,
+      "sub_sector_name": "Decentralized Exchanges",
+      "symbol": "SUN"
+    },
+    {
+      "asset_id": "tao",
+      "chain_ecosystem": "OTHER",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Bittensor",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304020,
+      "sub_sector_name": "Compute & Private Storage",
+      "symbol": "TAO"
+    },
+    {
+      "asset_id": "tel",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Telcoin",
+      "sector_code": 3020,
+      "sector_name": "Intermediated Finance",
+      "sub_sector_code": 302020,
+      "sub_sector_name": "Payment Platforms",
+      "symbol": "TEL"
+    },
+    {
+      "asset_id": "theta",
+      "chain_ecosystem": "OTHER",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Theta Network",
+      "sector_code": 3060,
+      "sector_name": "Media Services",
+      "sub_sector_code": 306020,
+      "sub_sector_name": "Content & Streaming",
+      "symbol": "THETA"
+    },
+    {
+      "asset_id": "tia",
+      "chain_ecosystem": "COSMOS",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Celestia",
+      "sector_code": 2020,
+      "sector_name": "Blockchain Utilities",
+      "sub_sector_code": 202030,
+      "sub_sector_name": "Blockchain Networks",
+      "symbol": "TIA"
+    },
+    {
+      "asset_id": "ton",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Toncoin",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "TON"
+    },
+    {
+      "asset_id": "trump",
+      "chain_ecosystem": "SOL",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Official Trump",
+      "sector_code": 1020,
+      "sector_name": "Specialized Coins",
+      "sub_sector_code": 102010,
+      "sub_sector_name": "Meme Coins",
+      "symbol": "TRUMP"
+    },
+    {
+      "asset_id": "trx",
+      "chain_ecosystem": "TRX",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "TRON",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "TRX"
+    },
+    {
+      "asset_id": "twt",
+      "chain_ecosystem": "BNB",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Trust Wallet",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304030,
+      "sub_sector_name": "Wallets & Messaging",
+      "symbol": "TWT"
+    },
+    {
+      "asset_id": "uni",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Uniswap",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301010,
+      "sub_sector_name": "Decentralized Exchanges",
+      "symbol": "UNI"
+    },
+    {
+      "asset_id": "vet",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "VeChain",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "VET"
+    },
+    {
+      "asset_id": "virtual",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Virtuals Protocol",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304020,
+      "sub_sector_name": "Compute & Private Storage",
+      "symbol": "VIRTUAL"
+    },
+    {
+      "asset_id": "vvv",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Venice Token",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304020,
+      "sub_sector_name": "Compute & Private Storage",
+      "symbol": "VVV"
+    },
+    {
+      "asset_id": "wal",
+      "chain_ecosystem": "MOVE",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Walrus",
+      "sector_code": 3040,
+      "sector_name": "Information Technology",
+      "sub_sector_code": 304020,
+      "sub_sector_name": "Compute & Private Storage",
+      "symbol": "WAL"
+    },
+    {
+      "asset_id": "wif",
+      "chain_ecosystem": "SOL",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "dogwifhat",
+      "sector_code": 1020,
+      "sector_name": "Specialized Coins",
+      "sub_sector_code": 102010,
+      "sub_sector_name": "Meme Coins",
+      "symbol": "WIF"
+    },
+    {
+      "asset_id": "wld",
+      "chain_ecosystem": "ETH",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Worldcoin",
+      "sector_code": 2030,
+      "sector_name": "Application Utilities",
+      "sub_sector_code": 203020,
+      "sub_sector_name": "Digital Identity",
+      "symbol": "WLD"
+    },
+    {
+      "asset_id": "wlfi",
+      "chain_ecosystem": "ETH",
+      "class_code": 30,
+      "class_name": "Digital Asset Applications",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "World Liberty Financial",
+      "sector_code": 3010,
+      "sector_name": "Decentralized Finance",
+      "sub_sector_code": 301092,
+      "sub_sector_name": "RWA Issuer — Governance",
+      "symbol": "WLFI"
+    },
+    {
+      "asset_id": "xaut",
+      "chain_ecosystem": "ETH",
+      "class_code": 40,
+      "class_name": "On-Chain Derivatives",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Tether Gold",
+      "sector_code": 4020,
+      "sector_name": "Tokenized Assets",
+      "sub_sector_code": 402010,
+      "sub_sector_name": "Asset-Backed Tokens",
+      "symbol": "XAUT"
+    },
+    {
+      "asset_id": "xdc",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "XDC Network",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "XDC"
+    },
+    {
+      "asset_id": "xlm",
+      "chain_ecosystem": "OTHER",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Stellar",
+      "sector_code": 1020,
+      "sector_name": "Specialized Coins",
+      "sub_sector_code": 102030,
+      "sub_sector_name": "Remittance Coins",
+      "symbol": "XLM"
+    },
+    {
+      "asset_id": "xmr",
+      "chain_ecosystem": "BTC",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Monero",
+      "sector_code": 1020,
+      "sector_name": "Specialized Coins",
+      "sub_sector_code": 102020,
+      "sub_sector_name": "Privacy Coins",
+      "symbol": "XMR"
+    },
+    {
+      "asset_id": "xpl",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Plasma",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "XPL"
+    },
+    {
+      "asset_id": "xrp",
+      "chain_ecosystem": "OTHER",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "XRP",
+      "sector_code": 1020,
+      "sector_name": "Specialized Coins",
+      "sub_sector_code": 102030,
+      "sub_sector_name": "Remittance Coins",
+      "symbol": "XRP"
+    },
+    {
+      "asset_id": "xtz",
+      "chain_ecosystem": "OTHER",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Tezos",
+      "sector_code": 2010,
+      "sector_name": "Smart Contract Platforms",
+      "sub_sector_code": 201010,
+      "sub_sector_name": "Smart Contract Platforms",
+      "symbol": "XTZ"
+    },
+    {
+      "asset_id": "zec",
+      "chain_ecosystem": "BTC",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Zcash",
+      "sector_code": 1020,
+      "sector_name": "Specialized Coins",
+      "sub_sector_code": 102020,
+      "sub_sector_name": "Privacy Coins",
+      "symbol": "ZEC"
+    },
+    {
+      "asset_id": "zen",
+      "chain_ecosystem": "BTC",
+      "class_code": 10,
+      "class_name": "Digital Currencies",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "Horizen",
+      "sector_code": 1020,
+      "sector_name": "Specialized Coins",
+      "sub_sector_code": 102020,
+      "sub_sector_name": "Privacy Coins",
+      "symbol": "ZEN"
+    },
+    {
+      "asset_id": "zk",
+      "chain_ecosystem": "ETH",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "ZKsync",
+      "sector_code": 2020,
+      "sector_name": "Blockchain Utilities",
+      "sub_sector_code": 202010,
+      "sub_sector_name": "Network Scaling",
+      "symbol": "ZK"
+    },
+    {
+      "asset_id": "zro",
+      "chain_ecosystem": "ETH",
+      "class_code": 20,
+      "class_name": "Blockchain Infrastructure",
+      "decision_doc": null,
+      "effective_from": "2024-05-23",
+      "name": "LayerZero",
+      "sector_code": 2020,
+      "sector_name": "Blockchain Utilities",
+      "sub_sector_code": 202020,
+      "sub_sector_name": "Cross-Chain Interoperability",
+      "symbol": "ZRO"
+    }
+  ],
+  "chain_sector_matrix": {
+    "cells": [
+      {
+        "asset_ids": [
+          "stx"
+        ],
+        "chain": "BTC",
+        "count": 1,
+        "sector_code": 2010
+      },
+      {
+        "asset_ids": [
+          "eth",
+          "gno"
+        ],
+        "chain": "ETH",
+        "count": 2,
+        "sector_code": 2010
+      },
+      {
+        "asset_ids": [
+          "sol"
+        ],
+        "chain": "SOL",
+        "count": 1,
+        "sector_code": 2010
+      },
+      {
+        "asset_ids": [
+          "avax"
+        ],
+        "chain": "AVAX",
+        "count": 1,
+        "sector_code": 2010
+      },
+      {
+        "asset_ids": [
+          "trx"
+        ],
+        "chain": "TRX",
+        "count": 1,
+        "sector_code": 2010
+      },
+      {
+        "asset_ids": [
+          "inj",
+          "sei",
+          "terra-luna-2"
+        ],
+        "chain": "COSMOS",
+        "count": 3,
+        "sector_code": 2010
+      },
+      {
+        "asset_ids": [
+          "near"
+        ],
+        "chain": "NEAR",
+        "count": 1,
+        "sector_code": 2010
+      },
+      {
+        "asset_ids": [
+          "apt",
+          "sui"
+        ],
+        "chain": "MOVE",
+        "count": 2,
+        "sector_code": 2010
+      },
+      {
+        "asset_ids": [
+          "0g",
+          "ada",
+          "algo",
+          "bera",
+          "cc",
+          "cfx",
+          "egld",
+          "etc",
+          "flr",
+          "hbar",
+          "icp",
+          "kaia",
+          "mon",
+          "neo",
+          "night",
+          "pi",
+          "qtum",
+          "sonic",
+          "ton",
+          "vaulta",
+          "vet",
+          "xdc",
+          "xpl",
+          "xtz"
+        ],
+        "chain": "OTHER",
+        "count": 24,
+        "sector_code": 2010
+      },
+      {
+        "asset_ids": [
+          "1inch",
+          "aave",
+          "aero",
+          "cfg",
+          "comp",
+          "crv",
+          "cvx",
+          "edge",
+          "eigen",
+          "ena",
+          "ethfi",
+          "ff",
+          "fluid",
+          "ldo",
+          "lit",
+          "morpho",
+          "ondo",
+          "pendle",
+          "rsr",
+          "sky",
+          "snx",
+          "uni",
+          "wlfi"
+        ],
+        "chain": "ETH",
+        "count": 23,
+        "sector_code": 3010
+      },
+      {
+        "asset_ids": [
+          "genius",
+          "jto",
+          "jup",
+          "kmno",
+          "pump",
+          "ray"
+        ],
+        "chain": "SOL",
+        "count": 6,
+        "sector_code": 3010
+      },
+      {
+        "asset_ids": [
+          "aster",
+          "cake"
+        ],
+        "chain": "BNB",
+        "count": 2,
+        "sector_code": 3010
+      },
+      {
+        "asset_ids": [
+          "jst",
+          "sun"
+        ],
+        "chain": "TRX",
+        "count": 2,
+        "sector_code": 3010
+      },
+      {
+        "asset_ids": [
+          "dydx",
+          "rune"
+        ],
+        "chain": "COSMOS",
+        "count": 2,
+        "sector_code": 3010
+      },
+      {
+        "asset_ids": [
+          "hype"
+        ],
+        "chain": "OTHER",
+        "count": 1,
+        "sector_code": 3010
+      },
+      {
+        "asset_ids": [
+          "glm",
+          "grt",
+          "jasmy",
+          "kaito",
+          "qnt",
+          "safe",
+          "sosovalue",
+          "virtual",
+          "vvv"
+        ],
+        "chain": "ETH",
+        "count": 9,
+        "sector_code": 3040
+      },
+      {
+        "asset_ids": [
+          "2z",
+          "grass",
+          "hnt",
+          "render"
+        ],
+        "chain": "SOL",
+        "count": 4,
+        "sector_code": 3040
+      },
+      {
+        "asset_ids": [
+          "twt"
+        ],
+        "chain": "BNB",
+        "count": 1,
+        "sector_code": 3040
+      },
+      {
+        "asset_ids": [
+          "btt"
+        ],
+        "chain": "TRX",
+        "count": 1,
+        "sector_code": 3040
+      },
+      {
+        "asset_ids": [
+          "fet"
+        ],
+        "chain": "COSMOS",
+        "count": 1,
+        "sector_code": 3040
+      },
+      {
+        "asset_ids": [
+          "wal"
+        ],
+        "chain": "MOVE",
+        "count": 1,
+        "sector_code": 3040
+      },
+      {
+        "asset_ids": [
+          "ar",
+          "ath",
+          "fil",
+          "iota",
+          "kite",
+          "sahara",
+          "sent",
+          "tao"
+        ],
+        "chain": "OTHER",
+        "count": 8,
+        "sector_code": 3040
+      },
+      {
+        "asset_ids": [
+          "dash",
+          "doge",
+          "xmr",
+          "zec",
+          "zen"
+        ],
+        "chain": "BTC",
+        "count": 5,
+        "sector_code": 1020
+      },
+      {
+        "asset_ids": [
+          "floki",
+          "pepe",
+          "shib",
+          "spx"
+        ],
+        "chain": "ETH",
+        "count": 4,
+        "sector_code": 1020
+      },
+      {
+        "asset_ids": [
+          "bonk",
+          "pengu",
+          "trump",
+          "wif"
+        ],
+        "chain": "SOL",
+        "count": 4,
+        "sector_code": 1020
+      },
+      {
+        "asset_ids": [
+          "banana"
+        ],
+        "chain": "BNB",
+        "count": 1,
+        "sector_code": 1020
+      },
+      {
+        "asset_ids": [
+          "terra-luna-classic"
+        ],
+        "chain": "COSMOS",
+        "count": 1,
+        "sector_code": 1020
+      },
+      {
+        "asset_ids": [
+          "xlm",
+          "xrp"
+        ],
+        "chain": "OTHER",
+        "count": 2,
+        "sector_code": 1020
+      },
+      {
+        "asset_ids": [
+          "arb",
+          "linea",
+          "mnt",
+          "op",
+          "pol",
+          "strk",
+          "zk",
+          "zro"
+        ],
+        "chain": "ETH",
+        "count": 8,
+        "sector_code": 2020
+      },
+      {
+        "asset_ids": [
+          "atom",
+          "tia"
+        ],
+        "chain": "COSMOS",
+        "count": 2,
+        "sector_code": 2020
+      },
+      {
+        "asset_ids": [
+          "dot"
+        ],
+        "chain": "OTHER",
+        "count": 1,
+        "sector_code": 2020
+      },
+      {
+        "asset_ids": [
+          "ape",
+          "axs",
+          "imx",
+          "mana",
+          "sand"
+        ],
+        "chain": "ETH",
+        "count": 5,
+        "sector_code": 3050
+      },
+      {
+        "asset_ids": [
+          "prime"
+        ],
+        "chain": "SOL",
+        "count": 1,
+        "sector_code": 3050
+      },
+      {
+        "asset_ids": [
+          "nft"
+        ],
+        "chain": "TRX",
+        "count": 1,
+        "sector_code": 3050
+      },
+      {
+        "asset_ids": [
+          "chz",
+          "gala"
+        ],
+        "chain": "OTHER",
+        "count": 2,
+        "sector_code": 3050
+      },
+      {
+        "asset_ids": [
+          "ens",
+          "h",
+          "link",
+          "wld"
+        ],
+        "chain": "ETH",
+        "count": 4,
+        "sector_code": 2030
+      },
+      {
+        "asset_ids": [
+          "pyth"
+        ],
+        "chain": "SOL",
+        "count": 1,
+        "sector_code": 2030
+      },
+      {
+        "asset_ids": [
+          "bill"
+        ],
+        "chain": "OTHER",
+        "count": 1,
+        "sector_code": 2030
+      },
+      {
+        "asset_ids": [
+          "nexo",
+          "pieverse",
+          "tel"
+        ],
+        "chain": "ETH",
+        "count": 3,
+        "sector_code": 3020
+      },
+      {
+        "asset_ids": [
+          "bnb"
+        ],
+        "chain": "BNB",
+        "count": 1,
+        "sector_code": 3020
+      },
+      {
+        "asset_ids": [
+          "cro",
+          "okb"
+        ],
+        "chain": "OTHER",
+        "count": 2,
+        "sector_code": 3020
+      },
+      {
+        "asset_ids": [
+          "bch",
+          "btc",
+          "dcr",
+          "ltc"
+        ],
+        "chain": "BTC",
+        "count": 4,
+        "sector_code": 1010
+      },
+      {
+        "asset_ids": [
+          "kas"
+        ],
+        "chain": "OTHER",
+        "count": 1,
+        "sector_code": 1010
+      },
+      {
+        "asset_ids": [
+          "bat",
+          "lpt"
+        ],
+        "chain": "ETH",
+        "count": 2,
+        "sector_code": 3060
+      },
+      {
+        "asset_ids": [
+          "ip",
+          "theta"
+        ],
+        "chain": "OTHER",
+        "count": 2,
+        "sector_code": 3060
+      },
+      {
+        "asset_ids": [
+          "paxg",
+          "xaut"
+        ],
+        "chain": "ETH",
+        "count": 2,
+        "sector_code": 4020
+      },
+      {
+        "asset_ids": [
+          "gas"
+        ],
+        "chain": "OTHER",
+        "count": 1,
+        "sector_code": 4030
+      }
+    ],
+    "chains": [
+      "BTC",
+      "ETH",
+      "SOL",
+      "BNB",
+      "AVAX",
+      "TRX",
+      "COSMOS",
+      "NEAR",
+      "MOVE",
+      "OTHER"
+    ],
+    "sectors": [
+      {
+        "code": 2010,
+        "name": "Smart Contract Platforms"
+      },
+      {
+        "code": 3010,
+        "name": "Decentralized Finance"
+      },
+      {
+        "code": 3040,
+        "name": "Information Technology"
+      },
+      {
+        "code": 1020,
+        "name": "Specialized Coins"
+      },
+      {
+        "code": 2020,
+        "name": "Blockchain Utilities"
+      },
+      {
+        "code": 3050,
+        "name": "Metaverse"
+      },
+      {
+        "code": 2030,
+        "name": "Application Utilities"
+      },
+      {
+        "code": 3020,
+        "name": "Intermediated Finance"
+      },
+      {
+        "code": 1010,
+        "name": "Value Transfer Coins"
+      },
+      {
+        "code": 3060,
+        "name": "Media Services"
+      },
+      {
+        "code": 4020,
+        "name": "Tokenized Assets"
+      },
+      {
+        "code": 4030,
+        "name": "Claim Tokens"
+      }
+    ]
+  },
+  "hierarchy": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "assets": [
+                  {
+                    "asset_id": "1inch",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "1INCH",
+                    "symbol": "1INCH"
+                  },
+                  {
+                    "asset_id": "aero",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Aerodrome Finance",
+                    "symbol": "AERO"
+                  },
+                  {
+                    "asset_id": "cake",
+                    "chain_ecosystem": "BNB",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "PancakeSwap",
+                    "symbol": "CAKE"
+                  },
+                  {
+                    "asset_id": "crv",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Curve DAO",
+                    "symbol": "CRV"
+                  },
+                  {
+                    "asset_id": "genius",
+                    "chain_ecosystem": "SOL",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Genius",
+                    "symbol": "GENIUS"
+                  },
+                  {
+                    "asset_id": "jup",
+                    "chain_ecosystem": "SOL",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Jupiter",
+                    "symbol": "JUP"
+                  },
+                  {
+                    "asset_id": "ray",
+                    "chain_ecosystem": "SOL",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Raydium",
+                    "symbol": "RAY"
+                  },
+                  {
+                    "asset_id": "rune",
+                    "chain_ecosystem": "COSMOS",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "THORChain",
+                    "symbol": "RUNE"
+                  },
+                  {
+                    "asset_id": "sun",
+                    "chain_ecosystem": "TRX",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Sun Token",
+                    "symbol": "SUN"
+                  },
+                  {
+                    "asset_id": "uni",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Uniswap",
+                    "symbol": "UNI"
+                  }
+                ],
+                "code": 301010,
+                "is_extension": false,
+                "name": "Decentralized Exchanges"
+              },
+              {
+                "assets": [
+                  {
+                    "asset_id": "aster",
+                    "chain_ecosystem": "BNB",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Aster",
+                    "symbol": "ASTER"
+                  },
+                  {
+                    "asset_id": "dydx",
+                    "chain_ecosystem": "COSMOS",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "dYdX",
+                    "symbol": "DYDX"
+                  },
+                  {
+                    "asset_id": "edge",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "edgeX",
+                    "symbol": "EDGE"
+                  },
+                  {
+                    "asset_id": "hype",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Hyperliquid",
+                    "symbol": "HYPE"
+                  },
+                  {
+                    "asset_id": "lit",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Lighter",
+                    "symbol": "LIT"
+                  },
+                  {
+                    "asset_id": "snx",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Synthetix",
+                    "symbol": "SNX"
+                  }
+                ],
+                "code": 301020,
+                "is_extension": false,
+                "name": "Derivatives Trading"
+              },
+              {
+                "assets": [
+                  {
+                    "asset_id": "aave",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Aave",
+                    "symbol": "AAVE"
+                  },
+                  {
+                    "asset_id": "comp",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Compound",
+                    "symbol": "COMP"
+                  },
+                  {
+                    "asset_id": "fluid",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Fluid",
+                    "symbol": "FLUID"
+                  },
+                  {
+                    "asset_id": "jst",
+                    "chain_ecosystem": "TRX",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "JUST",
+                    "symbol": "JST"
+                  },
+                  {
+                    "asset_id": "kmno",
+                    "chain_ecosystem": "SOL",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Kamino",
+                    "symbol": "KMNO"
+                  },
+                  {
+                    "asset_id": "morpho",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Morpho",
+                    "symbol": "MORPHO"
+                  }
+                ],
+                "code": 301030,
+                "is_extension": false,
+                "name": "Decentralized Lending"
+              },
+              {
+                "assets": [
+                  {
+                    "asset_id": "ena",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Ethena",
+                    "symbol": "ENA"
+                  },
+                  {
+                    "asset_id": "ff",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Falcon Finance",
+                    "symbol": "FF"
+                  },
+                  {
+                    "asset_id": "rsr",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Reserve Rights",
+                    "symbol": "RSR"
+                  },
+                  {
+                    "asset_id": "sky",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Sky",
+                    "symbol": "SKY"
+                  }
+                ],
+                "code": 301040,
+                "is_extension": false,
+                "name": "Stablecoin Issuers"
+              },
+              {
+                "assets": [
+                  {
+                    "asset_id": "cfg",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Centrifuge",
+                    "symbol": "CFG"
+                  },
+                  {
+                    "asset_id": "ondo",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Ondo",
+                    "symbol": "ONDO"
+                  },
+                  {
+                    "asset_id": "wlfi",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "World Liberty Financial",
+                    "symbol": "WLFI"
+                  }
+                ],
+                "code": 301092,
+                "is_extension": true,
+                "name": "RWA Issuer — Governance"
+              },
+              {
+                "assets": [
+                  {
+                    "asset_id": "cvx",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Convex Finance",
+                    "symbol": "CVX"
+                  },
+                  {
+                    "asset_id": "pendle",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Pendle",
+                    "symbol": "PENDLE"
+                  }
+                ],
+                "code": 301060,
+                "is_extension": false,
+                "name": "Asset Management"
+              },
+              {
+                "assets": [
+                  {
+                    "asset_id": "jto",
+                    "chain_ecosystem": "SOL",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Jito",
+                    "symbol": "JTO"
+                  },
+                  {
+                    "asset_id": "ldo",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Lido DAO",
+                    "symbol": "LDO"
+                  }
+                ],
+                "code": 301090,
+                "is_extension": true,
+                "name": "Liquid Staking — Governance"
+              },
+              {
+                "assets": [
+                  {
+                    "asset_id": "eigen",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "EigenCloud",
+                    "symbol": "EIGEN"
+                  },
+                  {
+                    "asset_id": "ethfi",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Ether.fi",
+                    "symbol": "ETHFI"
+                  }
+                ],
+                "code": 301091,
+                "is_extension": true,
+                "name": "Liquid Restaking — Governance"
+              },
+              {
+                "assets": [
+                  {
+                    "asset_id": "pump",
+                    "chain_ecosystem": "SOL",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Pump.fun",
+                    "symbol": "PUMP"
+                  }
+                ],
+                "code": 301070,
+                "is_extension": false,
+                "name": "Crowdfunding"
+              },
+              {
+                "assets": [],
+                "code": 301050,
+                "is_extension": false,
+                "name": "Prediction Markets"
+              },
+              {
+                "assets": [],
+                "code": 301080,
+                "is_extension": false,
+                "name": "Insurance"
+              }
+            ],
+            "code": 3010,
+            "name": "Decentralized Finance"
+          },
+          {
+            "children": [
+              {
+                "assets": [
+                  {
+                    "asset_id": "2z",
+                    "chain_ecosystem": "SOL",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "DoubleZero",
+                    "symbol": "2Z"
+                  },
+                  {
+                    "asset_id": "ar",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Arweave",
+                    "symbol": "AR"
+                  },
+                  {
+                    "asset_id": "ath",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Aethir",
+                    "symbol": "ATH"
+                  },
+                  {
+                    "asset_id": "btt",
+                    "chain_ecosystem": "TRX",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "BitTorrent",
+                    "symbol": "BTT"
+                  },
+                  {
+                    "asset_id": "fet",
+                    "chain_ecosystem": "COSMOS",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Artificial Superintelligence Alliance",
+                    "symbol": "FET"
+                  },
+                  {
+                    "asset_id": "fil",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Filecoin",
+                    "symbol": "FIL"
+                  },
+                  {
+                    "asset_id": "glm",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Golem",
+                    "symbol": "GLM"
+                  },
+                  {
+                    "asset_id": "grass",
+                    "chain_ecosystem": "SOL",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Grass",
+                    "symbol": "GRASS"
+                  },
+                  {
+                    "asset_id": "hnt",
+                    "chain_ecosystem": "SOL",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Helium",
+                    "symbol": "HNT"
+                  },
+                  {
+                    "asset_id": "kite",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Kite",
+                    "symbol": "KITE"
+                  },
+                  {
+                    "asset_id": "render",
+                    "chain_ecosystem": "SOL",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Render",
+                    "symbol": "RENDER"
+                  },
+                  {
+                    "asset_id": "sahara",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Sahara AI",
+                    "symbol": "SAHARA"
+                  },
+                  {
+                    "asset_id": "sent",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Sentient",
+                    "symbol": "SENT"
+                  },
+                  {
+                    "asset_id": "tao",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Bittensor",
+                    "symbol": "TAO"
+                  },
+                  {
+                    "asset_id": "virtual",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Virtuals Protocol",
+                    "symbol": "VIRTUAL"
+                  },
+                  {
+                    "asset_id": "vvv",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Venice Token",
+                    "symbol": "VVV"
+                  },
+                  {
+                    "asset_id": "wal",
+                    "chain_ecosystem": "MOVE",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Walrus",
+                    "symbol": "WAL"
+                  }
+                ],
+                "code": 304020,
+                "is_extension": false,
+                "name": "Compute & Private Storage"
+              },
+              {
+                "assets": [
+                  {
+                    "asset_id": "grt",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "The Graph",
+                    "symbol": "GRT"
+                  },
+                  {
+                    "asset_id": "kaito",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "KAITO",
+                    "symbol": "KAITO"
+                  },
+                  {
+                    "asset_id": "qnt",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Quant",
+                    "symbol": "QNT"
+                  },
+                  {
+                    "asset_id": "sosovalue",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "SoSoValue",
+                    "symbol": "SOSO"
+                  }
+                ],
+                "code": 304010,
+                "is_extension": false,
+                "name": "Data Services"
+              },
+              {
+                "assets": [
+                  {
+                    "asset_id": "safe",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Safe",
+                    "symbol": "SAFE"
+                  },
+                  {
+                    "asset_id": "twt",
+                    "chain_ecosystem": "BNB",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Trust Wallet",
+                    "symbol": "TWT"
+                  }
+                ],
+                "code": 304030,
+                "is_extension": false,
+                "name": "Wallets & Messaging"
+              },
+              {
+                "assets": [
+                  {
+                    "asset_id": "iota",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "IOTA",
+                    "symbol": "IOTA"
+                  },
+                  {
+                    "asset_id": "jasmy",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "JasmyCoin",
+                    "symbol": "JASMY"
+                  }
+                ],
+                "code": 304040,
+                "is_extension": false,
+                "name": "Internet of Things"
+              }
+            ],
+            "code": 3040,
+            "name": "Information Technology"
+          },
+          {
+            "children": [
+              {
+                "assets": [
+                  {
+                    "asset_id": "ape",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "ApeCoin",
+                    "symbol": "APE"
+                  },
+                  {
+                    "asset_id": "axs",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Axie Infinity",
+                    "symbol": "AXS"
+                  },
+                  {
+                    "asset_id": "gala",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "GALA",
+                    "symbol": "GALA"
+                  },
+                  {
+                    "asset_id": "imx",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Immutable",
+                    "symbol": "IMX"
+                  },
+                  {
+                    "asset_id": "prime",
+                    "chain_ecosystem": "SOL",
+                    "decision_doc": "https://github.com/quantbai/crypto-sectors/blob/main/decisions/prime.md",
+                    "effective_from": "2024-05-23",
+                    "name": "PRIME",
+                    "symbol": "PRIME"
+                  }
+                ],
+                "code": 305020,
+                "is_extension": false,
+                "name": "Gaming"
+              },
+              {
+                "assets": [
+                  {
+                    "asset_id": "mana",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Decentraland",
+                    "symbol": "MANA"
+                  },
+                  {
+                    "asset_id": "sand",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "The Sandbox",
+                    "symbol": "SAND"
+                  }
+                ],
+                "code": 305010,
+                "is_extension": false,
+                "name": "Virtual Worlds"
+              },
+              {
+                "assets": [
+                  {
+                    "asset_id": "chz",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Chiliz",
+                    "symbol": "CHZ"
+                  },
+                  {
+                    "asset_id": "nft",
+                    "chain_ecosystem": "TRX",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "AINFT",
+                    "symbol": "NFT"
+                  }
+                ],
+                "code": 305030,
+                "is_extension": false,
+                "name": "NFT Ecosystems"
+              }
+            ],
+            "code": 3050,
+            "name": "Metaverse"
+          },
+          {
+            "children": [
+              {
+                "assets": [
+                  {
+                    "asset_id": "bnb",
+                    "chain_ecosystem": "BNB",
+                    "decision_doc": "https://github.com/quantbai/crypto-sectors/blob/main/decisions/bnb.md",
+                    "effective_from": "2024-05-23",
+                    "name": "BNB",
+                    "symbol": "BNB"
+                  },
+                  {
+                    "asset_id": "cro",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Cronos",
+                    "symbol": "CRO"
+                  },
+                  {
+                    "asset_id": "okb",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "OKB",
+                    "symbol": "OKB"
+                  }
+                ],
+                "code": 302030,
+                "is_extension": false,
+                "name": "Private Exchanges"
+              },
+              {
+                "assets": [
+                  {
+                    "asset_id": "pieverse",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Pieverse",
+                    "symbol": "PIEVERSE"
+                  },
+                  {
+                    "asset_id": "tel",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Telcoin",
+                    "symbol": "TEL"
+                  }
+                ],
+                "code": 302020,
+                "is_extension": false,
+                "name": "Payment Platforms"
+              },
+              {
+                "assets": [
+                  {
+                    "asset_id": "nexo",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "NEXO",
+                    "symbol": "NEXO"
+                  }
+                ],
+                "code": 302010,
+                "is_extension": false,
+                "name": "Intermediated Lending"
+              }
+            ],
+            "code": 3020,
+            "name": "Intermediated Finance"
+          },
+          {
+            "children": [
+              {
+                "assets": [
+                  {
+                    "asset_id": "ip",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Story",
+                    "symbol": "IP"
+                  },
+                  {
+                    "asset_id": "lpt",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Livepeer",
+                    "symbol": "LPT"
+                  },
+                  {
+                    "asset_id": "theta",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Theta Network",
+                    "symbol": "THETA"
+                  }
+                ],
+                "code": 306020,
+                "is_extension": false,
+                "name": "Content & Streaming"
+              },
+              {
+                "assets": [
+                  {
+                    "asset_id": "bat",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Basic Attention",
+                    "symbol": "BAT"
+                  }
+                ],
+                "code": 306010,
+                "is_extension": false,
+                "name": "Advertising"
+              }
+            ],
+            "code": 3060,
+            "name": "Media Services"
+          },
+          {
+            "children": [
+              {
+                "assets": [],
+                "code": 303010,
+                "is_extension": false,
+                "name": "Professional Services"
+              },
+              {
+                "assets": [],
+                "code": 303020,
+                "is_extension": false,
+                "name": "Enterprise Solutions"
+              }
+            ],
+            "code": 3030,
+            "name": "Business Services"
+          }
+        ],
+        "code": 30,
+        "name": "Digital Asset Applications"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "assets": [
+                  {
+                    "asset_id": "0g",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "0G",
+                    "symbol": "0G"
+                  },
+                  {
+                    "asset_id": "vaulta",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Vaulta",
+                    "symbol": "A"
+                  },
+                  {
+                    "asset_id": "ada",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Cardano",
+                    "symbol": "ADA"
+                  },
+                  {
+                    "asset_id": "algo",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Algorand",
+                    "symbol": "ALGO"
+                  },
+                  {
+                    "asset_id": "apt",
+                    "chain_ecosystem": "MOVE",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Aptos",
+                    "symbol": "APT"
+                  },
+                  {
+                    "asset_id": "avax",
+                    "chain_ecosystem": "AVAX",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Avalanche",
+                    "symbol": "AVAX"
+                  },
+                  {
+                    "asset_id": "bera",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Berachain",
+                    "symbol": "BERA"
+                  },
+                  {
+                    "asset_id": "cc",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Canton",
+                    "symbol": "CC"
+                  },
+                  {
+                    "asset_id": "cfx",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Conflux",
+                    "symbol": "CFX"
+                  },
+                  {
+                    "asset_id": "egld",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "MultiversX",
+                    "symbol": "EGLD"
+                  },
+                  {
+                    "asset_id": "etc",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Ethereum Classic",
+                    "symbol": "ETC"
+                  },
+                  {
+                    "asset_id": "eth",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Ethereum",
+                    "symbol": "ETH"
+                  },
+                  {
+                    "asset_id": "flr",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Flare",
+                    "symbol": "FLR"
+                  },
+                  {
+                    "asset_id": "gno",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Gnosis",
+                    "symbol": "GNO"
+                  },
+                  {
+                    "asset_id": "hbar",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Hedera",
+                    "symbol": "HBAR"
+                  },
+                  {
+                    "asset_id": "icp",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Internet Computer",
+                    "symbol": "ICP"
+                  },
+                  {
+                    "asset_id": "inj",
+                    "chain_ecosystem": "COSMOS",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Injective",
+                    "symbol": "INJ"
+                  },
+                  {
+                    "asset_id": "kaia",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Kaia",
+                    "symbol": "KAIA"
+                  },
+                  {
+                    "asset_id": "terra-luna-2",
+                    "chain_ecosystem": "COSMOS",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Terra",
+                    "symbol": "LUNA"
+                  },
+                  {
+                    "asset_id": "mon",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Monad",
+                    "symbol": "MON"
+                  },
+                  {
+                    "asset_id": "near",
+                    "chain_ecosystem": "NEAR",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "NEAR Protocol",
+                    "symbol": "NEAR"
+                  },
+                  {
+                    "asset_id": "neo",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "NEO",
+                    "symbol": "NEO"
+                  },
+                  {
+                    "asset_id": "night",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Midnight",
+                    "symbol": "NIGHT"
+                  },
+                  {
+                    "asset_id": "pi",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Pi Network",
+                    "symbol": "PI"
+                  },
+                  {
+                    "asset_id": "qtum",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Qtum",
+                    "symbol": "QTUM"
+                  },
+                  {
+                    "asset_id": "sonic",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Sonic",
+                    "symbol": "S"
+                  },
+                  {
+                    "asset_id": "sei",
+                    "chain_ecosystem": "COSMOS",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Sei",
+                    "symbol": "SEI"
+                  },
+                  {
+                    "asset_id": "sol",
+                    "chain_ecosystem": "SOL",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Solana",
+                    "symbol": "SOL"
+                  },
+                  {
+                    "asset_id": "stx",
+                    "chain_ecosystem": "BTC",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Stacks",
+                    "symbol": "STX"
+                  },
+                  {
+                    "asset_id": "sui",
+                    "chain_ecosystem": "MOVE",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Sui",
+                    "symbol": "SUI"
+                  },
+                  {
+                    "asset_id": "ton",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Toncoin",
+                    "symbol": "TON"
+                  },
+                  {
+                    "asset_id": "trx",
+                    "chain_ecosystem": "TRX",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "TRON",
+                    "symbol": "TRX"
+                  },
+                  {
+                    "asset_id": "vet",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "VeChain",
+                    "symbol": "VET"
+                  },
+                  {
+                    "asset_id": "xdc",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "XDC Network",
+                    "symbol": "XDC"
+                  },
+                  {
+                    "asset_id": "xpl",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Plasma",
+                    "symbol": "XPL"
+                  },
+                  {
+                    "asset_id": "xtz",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Tezos",
+                    "symbol": "XTZ"
+                  }
+                ],
+                "code": 201010,
+                "is_extension": false,
+                "name": "Smart Contract Platforms"
+              }
+            ],
+            "code": 2010,
+            "name": "Smart Contract Platforms"
+          },
+          {
+            "children": [
+              {
+                "assets": [
+                  {
+                    "asset_id": "arb",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Arbitrum",
+                    "symbol": "ARB"
+                  },
+                  {
+                    "asset_id": "linea",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Linea",
+                    "symbol": "LINEA"
+                  },
+                  {
+                    "asset_id": "mnt",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Mantle",
+                    "symbol": "MNT"
+                  },
+                  {
+                    "asset_id": "op",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Optimism",
+                    "symbol": "OP"
+                  },
+                  {
+                    "asset_id": "pol",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": "https://github.com/quantbai/crypto-sectors/blob/main/decisions/pol.md",
+                    "effective_from": "2024-05-23",
+                    "name": "POL",
+                    "symbol": "POL"
+                  },
+                  {
+                    "asset_id": "strk",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Starknet",
+                    "symbol": "STRK"
+                  },
+                  {
+                    "asset_id": "zk",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "ZKsync",
+                    "symbol": "ZK"
+                  }
+                ],
+                "code": 202010,
+                "is_extension": false,
+                "name": "Network Scaling"
+              },
+              {
+                "assets": [
+                  {
+                    "asset_id": "atom",
+                    "chain_ecosystem": "COSMOS",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Cosmos Hub",
+                    "symbol": "ATOM"
+                  },
+                  {
+                    "asset_id": "dot",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Polkadot",
+                    "symbol": "DOT"
+                  },
+                  {
+                    "asset_id": "tia",
+                    "chain_ecosystem": "COSMOS",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Celestia",
+                    "symbol": "TIA"
+                  }
+                ],
+                "code": 202030,
+                "is_extension": false,
+                "name": "Blockchain Networks"
+              },
+              {
+                "assets": [
+                  {
+                    "asset_id": "zro",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "LayerZero",
+                    "symbol": "ZRO"
+                  }
+                ],
+                "code": 202020,
+                "is_extension": false,
+                "name": "Cross-Chain Interoperability"
+              }
+            ],
+            "code": 2020,
+            "name": "Blockchain Utilities"
+          },
+          {
+            "children": [
+              {
+                "assets": [
+                  {
+                    "asset_id": "bill",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Billions Network",
+                    "symbol": "BILL"
+                  },
+                  {
+                    "asset_id": "ens",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Ethereum Name Service",
+                    "symbol": "ENS"
+                  },
+                  {
+                    "asset_id": "h",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Humanity",
+                    "symbol": "H"
+                  },
+                  {
+                    "asset_id": "wld",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Worldcoin",
+                    "symbol": "WLD"
+                  }
+                ],
+                "code": 203020,
+                "is_extension": false,
+                "name": "Digital Identity"
+              },
+              {
+                "assets": [
+                  {
+                    "asset_id": "link",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Chainlink",
+                    "symbol": "LINK"
+                  },
+                  {
+                    "asset_id": "pyth",
+                    "chain_ecosystem": "SOL",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Pyth Network",
+                    "symbol": "PYTH"
+                  }
+                ],
+                "code": 203010,
+                "is_extension": false,
+                "name": "Oracles"
+              },
+              {
+                "assets": [],
+                "code": 203030,
+                "is_extension": false,
+                "name": "Governance Tools"
+              },
+              {
+                "assets": [],
+                "code": 203040,
+                "is_extension": false,
+                "name": "Software Development"
+              }
+            ],
+            "code": 2030,
+            "name": "Application Utilities"
+          }
+        ],
+        "code": 20,
+        "name": "Blockchain Infrastructure"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "assets": [
+                  {
+                    "asset_id": "banana",
+                    "chain_ecosystem": "BNB",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Banana For Scale",
+                    "symbol": "BANANAS31"
+                  },
+                  {
+                    "asset_id": "bonk",
+                    "chain_ecosystem": "SOL",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Bonk",
+                    "symbol": "BONK"
+                  },
+                  {
+                    "asset_id": "doge",
+                    "chain_ecosystem": "BTC",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Dogecoin",
+                    "symbol": "DOGE"
+                  },
+                  {
+                    "asset_id": "floki",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "FLOKI",
+                    "symbol": "FLOKI"
+                  },
+                  {
+                    "asset_id": "terra-luna-classic",
+                    "chain_ecosystem": "COSMOS",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Terra Classic",
+                    "symbol": "LUNC"
+                  },
+                  {
+                    "asset_id": "pengu",
+                    "chain_ecosystem": "SOL",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Pudgy Penguins",
+                    "symbol": "PENGU"
+                  },
+                  {
+                    "asset_id": "pepe",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Pepe",
+                    "symbol": "PEPE"
+                  },
+                  {
+                    "asset_id": "shib",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Shiba Inu",
+                    "symbol": "SHIB"
+                  },
+                  {
+                    "asset_id": "spx",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "SPX6900",
+                    "symbol": "SPX"
+                  },
+                  {
+                    "asset_id": "trump",
+                    "chain_ecosystem": "SOL",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Official Trump",
+                    "symbol": "TRUMP"
+                  },
+                  {
+                    "asset_id": "wif",
+                    "chain_ecosystem": "SOL",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "dogwifhat",
+                    "symbol": "WIF"
+                  }
+                ],
+                "code": 102010,
+                "is_extension": false,
+                "name": "Meme Coins"
+              },
+              {
+                "assets": [
+                  {
+                    "asset_id": "dash",
+                    "chain_ecosystem": "BTC",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Dash",
+                    "symbol": "DASH"
+                  },
+                  {
+                    "asset_id": "xmr",
+                    "chain_ecosystem": "BTC",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Monero",
+                    "symbol": "XMR"
+                  },
+                  {
+                    "asset_id": "zec",
+                    "chain_ecosystem": "BTC",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Zcash",
+                    "symbol": "ZEC"
+                  },
+                  {
+                    "asset_id": "zen",
+                    "chain_ecosystem": "BTC",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Horizen",
+                    "symbol": "ZEN"
+                  }
+                ],
+                "code": 102020,
+                "is_extension": false,
+                "name": "Privacy Coins"
+              },
+              {
+                "assets": [
+                  {
+                    "asset_id": "xlm",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Stellar",
+                    "symbol": "XLM"
+                  },
+                  {
+                    "asset_id": "xrp",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "XRP",
+                    "symbol": "XRP"
+                  }
+                ],
+                "code": 102030,
+                "is_extension": false,
+                "name": "Remittance Coins"
+              }
+            ],
+            "code": 1020,
+            "name": "Specialized Coins"
+          },
+          {
+            "children": [
+              {
+                "assets": [
+                  {
+                    "asset_id": "bch",
+                    "chain_ecosystem": "BTC",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Bitcoin Cash",
+                    "symbol": "BCH"
+                  },
+                  {
+                    "asset_id": "btc",
+                    "chain_ecosystem": "BTC",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Bitcoin",
+                    "symbol": "BTC"
+                  },
+                  {
+                    "asset_id": "dcr",
+                    "chain_ecosystem": "BTC",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Decred",
+                    "symbol": "DCR"
+                  },
+                  {
+                    "asset_id": "kas",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Kaspa",
+                    "symbol": "KAS"
+                  },
+                  {
+                    "asset_id": "ltc",
+                    "chain_ecosystem": "BTC",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Litecoin",
+                    "symbol": "LTC"
+                  }
+                ],
+                "code": 101010,
+                "is_extension": false,
+                "name": "Value Transfer Coins"
+              }
+            ],
+            "code": 1010,
+            "name": "Value Transfer Coins"
+          }
+        ],
+        "code": 10,
+        "name": "Digital Currencies"
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "assets": [
+                  {
+                    "asset_id": "paxg",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "PAX Gold",
+                    "symbol": "PAXG"
+                  },
+                  {
+                    "asset_id": "xaut",
+                    "chain_ecosystem": "ETH",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Tether Gold",
+                    "symbol": "XAUT"
+                  }
+                ],
+                "code": 402010,
+                "is_extension": false,
+                "name": "Asset-Backed Tokens"
+              },
+              {
+                "assets": [],
+                "code": 402020,
+                "is_extension": false,
+                "name": "Synthetic Tokens"
+              }
+            ],
+            "code": 4020,
+            "name": "Tokenized Assets"
+          },
+          {
+            "children": [
+              {
+                "assets": [
+                  {
+                    "asset_id": "gas",
+                    "chain_ecosystem": "OTHER",
+                    "decision_doc": null,
+                    "effective_from": "2024-05-23",
+                    "name": "Gas",
+                    "symbol": "GAS"
+                  }
+                ],
+                "code": 403020,
+                "is_extension": false,
+                "name": "Staked Tokens"
+              },
+              {
+                "assets": [],
+                "code": 403010,
+                "is_extension": false,
+                "name": "Liquidity Pool Tokens"
+              }
+            ],
+            "code": 4030,
+            "name": "Claim Tokens"
+          },
+          {
+            "children": [
+              {
+                "assets": [],
+                "code": 401010,
+                "is_extension": false,
+                "name": "Fiat-Backed Stablecoins"
+              },
+              {
+                "assets": [],
+                "code": 401020,
+                "is_extension": false,
+                "name": "Crypto-Backed Stablecoins"
+              },
+              {
+                "assets": [],
+                "code": 401030,
+                "is_extension": false,
+                "name": "Algorithmic Stablecoins"
+              }
+            ],
+            "code": 4010,
+            "name": "Stablecoins"
+          }
+        ],
+        "code": 40,
+        "name": "On-Chain Derivatives"
+      }
+    ],
+    "name": "crypto-sectors"
+  },
+  "metadata": {
+    "generated_at": "2026-05-24T17:42:15Z",
+    "n_active_sub_sectors": 33,
+    "n_assets": 158,
+    "n_classes": 4,
+    "n_sectors": 14,
+    "n_sub_sectors": 44,
+    "repo_url": "https://github.com/quantbai/crypto-sectors",
+    "snapshot_date": "2024-05-23",
+    "version": "1.0.0"
+  }
+}

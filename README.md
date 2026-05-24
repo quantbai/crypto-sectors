@@ -6,6 +6,8 @@
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
 [![License: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](LICENSE-data)
 
+**[Live demo](https://quantbai.github.io/crypto-sectors/)** — interactive sunburst, search, asset cards
+
 A community-maintained, hierarchical industry classification for digital assets. Designed for cross-sectional risk decomposition, sector-neutral portfolio construction, and peer-group analysis. The hierarchy is informed by established institutional classification methodologies — see [methodology.md](methodology.md) for citations.
 
 ---
