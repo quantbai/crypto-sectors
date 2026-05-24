@@ -135,6 +135,7 @@ function fmtPct(v, decimals = 1) {
     ['Search',         () => initSearch(taxonomy.assets_flat)],
     ['Sunburst',       () => initSunburst(taxonomy.hierarchy, taxonomy.assets_flat)],
     ['DetailCard',     () => initDetailCard()],
+    ['Legend',         () => initLegend(taxonomy.hierarchy, taxonomy.assets_flat)],
     ['Heatmap',        () => initHeatmap(taxonomy.chain_sector_matrix, taxonomy.assets_flat)],
     ['ValidationCard', () => initValidationCard(validation.headline, taxonomy.metadata)],
     ['KeyboardNav',    () => initKeyboardNav()],
@@ -1338,4 +1339,360 @@ function initKeyboardNav() {
   // Escape: handled per-component above (search + sunburst)
   // "/" shortcut: handled in initSearch
   // Tab order: natural document order (no override needed)
+}
+
+// ---------------------------------------------------------------------------
+// initLegend
+// Hierarchical legend: class -> sector -> sub-sector -> assets (symbol tokens).
+// Layout decision: Option D — stacked in right column above the detail card.
+// Chart stays full 640px. Legend and detail card share the right 1fr column.
+//
+// Bidirectional sync strategy:
+//   legend -> chart:  emitter.emit('selectAndZoom', asset) for asset clicks.
+//                     emitter.emit('heatmap:highlightRow', code) for sector hover.
+//   chart -> legend:  listen on state:selectedAsset, state:zoomedSubSector.
+//
+// No new external deps. No rewrite of initSunburst internals.
+// ---------------------------------------------------------------------------
+function initLegend(hierarchy, assetsFlat) {
+  const root = document.getElementById('legend-root');
+  if (!root) return;
+
+  // Full asset lookup by asset_id for click resolution
+  const assetById = {};
+  assetsFlat.forEach(a => { assetById[a.asset_id] = a; });
+
+  // Class color map — CSS custom property references (no new hex values)
+  const CLASS_COLORS_LEGEND = {
+    10: 'var(--class-10)',
+    20: 'var(--class-20)',
+    30: 'var(--class-30)',
+    40: 'var(--class-40)',
+  };
+
+  // DOM element registries for bidirectional sync
+  const assetSymEls   = new Map(); // asset_id -> <button>
+  const classHeaderEls = new Map(); // classCode -> .legend-class-header
+  const sectorHeaderEls = new Map(); // sectorCode -> .legend-sector-header
+  const classRowEls    = new Map(); // classCode  -> .legend-class
+  const sectorRowEls   = new Map(); // sectorCode -> .legend-sector
+
+  // Build legend DOM from taxonomy.hierarchy
+  const classes = hierarchy.children || [];
+
+  classes.forEach(cls => {
+    const classCode = cls.code;
+    const colorVar  = CLASS_COLORS_LEGEND[classCode] || 'var(--fg-3)';
+    const totalAssets = (cls.children || []).reduce((sum, sec) => {
+      return sum + (sec.children || []).reduce((s2, ss) => s2 + (ss.assets || []).length, 0);
+    }, 0);
+
+    // Class row container
+    const classDiv = document.createElement('div');
+    classDiv.className = 'legend-class';
+    classDiv.setAttribute('role', 'treeitem');
+    classDiv.setAttribute('aria-expanded', 'true');
+
+    // Class header
+    const classHeader = document.createElement('div');
+    classHeader.className = 'legend-class-header';
+    classHeader.setAttribute('tabindex', '0');
+    classHeader.dataset.classCode = classCode;
+    classHeader.innerHTML =
+      '<span class="legend-class-dot" style="background:' + colorVar + '" aria-hidden="true"></span>' +
+      '<span class="legend-class-name">' + cls.name + '</span>' +
+      '<span class="legend-class-count mono">' + totalAssets + '</span>' +
+      '<svg class="legend-class-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>';
+
+    classHeaderEls.set(classCode, classHeader);
+    classRowEls.set(classCode, classDiv);
+
+    const classBody = document.createElement('div');
+    classBody.className = 'legend-class-body';
+    classBody.setAttribute('role', 'group');
+
+    function toggleClass() {
+      const collapsed = classDiv.classList.toggle('collapsed');
+      classDiv.setAttribute('aria-expanded', String(!collapsed));
+    }
+
+    classHeader.addEventListener('click', toggleClass);
+    classHeader.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleClass(); }
+      if (e.key === 'ArrowDown') { e.preventDefault(); moveFocusDown(classHeader); }
+      if (e.key === 'ArrowUp')   { e.preventDefault(); moveFocusUp(classHeader); }
+    });
+
+    // Class hover: highlight first sector row in heatmap
+    classHeader.addEventListener('mouseenter', () => {
+      if (cls.children && cls.children[0]) {
+        emitter.emit('heatmap:highlightRow', cls.children[0].code);
+      }
+    });
+    classHeader.addEventListener('mouseleave', () => emitter.emit('heatmap:highlightRow', null));
+
+    classDiv.appendChild(classHeader);
+    classDiv.appendChild(classBody);
+
+    // Sector rows
+    (cls.children || []).forEach(sec => {
+      const sectorCode = sec.code;
+      const sectorAssetCount = (sec.children || [])
+        .reduce((s, ss) => s + (ss.assets || []).length, 0);
+
+      const sectorDiv = document.createElement('div');
+      sectorDiv.className = 'legend-sector collapsed'; // default collapsed
+      sectorDiv.setAttribute('role', 'treeitem');
+      sectorDiv.setAttribute('aria-expanded', 'false');
+
+      const sectorHeader = document.createElement('div');
+      sectorHeader.className = 'legend-sector-header';
+      sectorHeader.setAttribute('tabindex', '0');
+      sectorHeader.dataset.sectorCode = sectorCode;
+      sectorHeader.innerHTML =
+        '<span class="legend-sector-code">' + sectorCode + '</span>' +
+        '<span class="legend-sector-name">' + sec.name + '</span>' +
+        '<span class="legend-sector-count mono">' + sectorAssetCount + '</span>' +
+        '<svg class="legend-sector-chevron" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1.5 3.5l3.5 3.5 3.5-3.5"/></svg>';
+
+      sectorHeaderEls.set(sectorCode, sectorHeader);
+      sectorRowEls.set(sectorCode, sectorDiv);
+
+      const sectorBody = document.createElement('div');
+      sectorBody.className = 'legend-sector-body';
+      sectorBody.setAttribute('role', 'group');
+
+      function toggleSector() {
+        const collapsed = sectorDiv.classList.toggle('collapsed');
+        sectorDiv.setAttribute('aria-expanded', String(!collapsed));
+      }
+
+      sectorHeader.addEventListener('click', toggleSector);
+      sectorHeader.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleSector(); }
+        if (e.key === 'ArrowDown') { e.preventDefault(); moveFocusDown(sectorHeader); }
+        if (e.key === 'ArrowUp')   { e.preventDefault(); moveFocusUp(sectorHeader); }
+        if (e.key === 'Escape')    { e.preventDefault(); classHeader.focus(); }
+      });
+
+      // Sector hover: sync heatmap row highlight
+      sectorHeader.addEventListener('mouseenter', () => emitter.emit('heatmap:highlightRow', sectorCode));
+      sectorHeader.addEventListener('mouseleave', () => emitter.emit('heatmap:highlightRow', null));
+
+      // Sub-sector rows (skip empty sub-sectors)
+      (sec.children || []).forEach(ss => {
+        if (!ss.assets || ss.assets.length === 0) return;
+
+        const ssDiv = document.createElement('div');
+        ssDiv.className = 'legend-subsector';
+        ssDiv.setAttribute('role', 'group');
+
+        const ssNameEl = document.createElement('div');
+        ssNameEl.className = 'legend-subsector-name';
+        ssNameEl.innerHTML = '<span class="legend-sector-code">' + ss.code + '</span>' + ss.name;
+        ssDiv.appendChild(ssNameEl);
+
+        const assetWrap = document.createElement('div');
+        assetWrap.className = 'legend-assets';
+
+        ss.assets.forEach(asset => {
+          const sym = document.createElement('button');
+          sym.className = 'legend-asset-sym';
+          sym.setAttribute('tabindex', '0');
+          sym.setAttribute('type', 'button');
+          sym.setAttribute('role', 'treeitem');
+          sym.setAttribute('aria-label', asset.symbol + ' -- ' + asset.name + '. Click to inspect.');
+          sym.dataset.assetId = asset.asset_id;
+          sym.textContent = asset.symbol;
+
+          sym.addEventListener('click', e => {
+            e.stopPropagation();
+            const fullAsset = assetById[asset.asset_id];
+            if (!fullAsset) return;
+            setState({ selectedAsset: fullAsset });
+            emitter.emit('selectAndZoom', fullAsset);
+            srAnnounce('Selected ' + fullAsset.name + ', class ' + fullAsset.class_name);
+            const sb = document.getElementById('sunburst-section');
+            if (sb) sb.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+
+          sym.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); sym.click(); }
+            if (e.key === 'ArrowDown') { e.preventDefault(); moveFocusDown(sym); }
+            if (e.key === 'ArrowUp')   { e.preventDefault(); moveFocusUp(sym); }
+            if (e.key === 'Escape')    { e.preventDefault(); sectorHeader.focus(); }
+          });
+
+          assetSymEls.set(asset.asset_id, sym);
+          assetWrap.appendChild(sym);
+        });
+
+        ssDiv.appendChild(assetWrap);
+        sectorBody.appendChild(ssDiv);
+      });
+
+      sectorDiv.appendChild(sectorHeader);
+      sectorDiv.appendChild(sectorBody);
+      classBody.appendChild(sectorDiv);
+    });
+
+    root.appendChild(classDiv);
+  });
+
+  // ---------------------------------------------------------------------------
+  // Keyboard: focus traversal helpers (arrow keys through visible items)
+  // ---------------------------------------------------------------------------
+  function allFocusable() {
+    return Array.from(root.querySelectorAll(
+      '.legend-class-header, .legend-sector-header, .legend-asset-sym'
+    )).filter(el => {
+      // Exclude items hidden inside collapsed ancestors
+      let p = el.parentElement;
+      while (p && p !== root) {
+        if (p.classList.contains('legend-class-body') &&
+            p.previousElementSibling &&
+            p.parentElement.classList.contains('collapsed')) return false;
+        if (p.classList.contains('legend-sector-body') &&
+            p.parentElement.classList.contains('collapsed')) return false;
+        p = p.parentElement;
+      }
+      return true;
+    });
+  }
+
+  function moveFocusDown(current) {
+    const items = allFocusable();
+    const idx = items.indexOf(current);
+    if (idx >= 0 && idx < items.length - 1) items[idx + 1].focus();
+  }
+
+  function moveFocusUp(current) {
+    const items = allFocusable();
+    const idx = items.indexOf(current);
+    if (idx > 0) items[idx - 1].focus();
+  }
+
+  // ---------------------------------------------------------------------------
+  // Mobile toggle: show/hide entire legend body on narrow screens
+  // ---------------------------------------------------------------------------
+  const mobileToggle = document.getElementById('legend-mobile-toggle');
+  const legendAside  = root.closest('.sunburst-legend');
+
+  function updateMobileToggle() {
+    if (!mobileToggle || !legendAside) return;
+    if (window.innerWidth < 640) {
+      mobileToggle.removeAttribute('hidden');
+      // Default: collapsed on mobile if not yet set
+      if (!legendAside.dataset.mobileInitialized) {
+        legendAside.classList.add('mobile-collapsed');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.textContent = 'Show legend (' + assetsFlat.length + ' assets)';
+        legendAside.dataset.mobileInitialized = '1';
+      }
+    } else {
+      mobileToggle.setAttribute('hidden', '');
+      legendAside.classList.remove('mobile-collapsed');
+    }
+  }
+
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', () => {
+      const isNowCollapsed = legendAside.classList.toggle('mobile-collapsed');
+      mobileToggle.setAttribute('aria-expanded', String(!isNowCollapsed));
+      mobileToggle.textContent = isNowCollapsed
+        ? 'Show legend (' + assetsFlat.length + ' assets)'
+        : 'Hide legend';
+    });
+  }
+
+  updateMobileToggle();
+  window.addEventListener('resize', updateMobileToggle);
+
+  // ---------------------------------------------------------------------------
+  // Legend filter input: substring match on symbol + name
+  // ---------------------------------------------------------------------------
+  const filterInput = document.getElementById('legend-filter');
+  if (filterInput) {
+    filterInput.addEventListener('input', () => {
+      applyFilter(filterInput.value.trim().toLowerCase());
+    });
+    filterInput.addEventListener('keydown', e => {
+      if (e.key === 'Escape') { filterInput.value = ''; applyFilter(''); }
+    });
+  }
+
+  function applyFilter(q) {
+    if (!q) {
+      assetSymEls.forEach(el => el.classList.remove('legend-dim', 'legend-active'));
+      classRowEls.forEach(el => el.classList.remove('legend-dim'));
+      sectorRowEls.forEach(el => el.classList.remove('legend-dim'));
+      return;
+    }
+    assetSymEls.forEach((el, assetId) => {
+      const a = assetById[assetId];
+      const match = a && (a.symbol.toLowerCase().includes(q) || a.name.toLowerCase().includes(q));
+      el.classList.toggle('legend-dim', !match);
+      el.classList.toggle('legend-active', !!match);
+    });
+    classRowEls.forEach(el => {
+      const anyMatch = Array.from(el.querySelectorAll('.legend-asset-sym'))
+        .some(s => !s.classList.contains('legend-dim'));
+      el.classList.toggle('legend-dim', !anyMatch);
+    });
+    sectorRowEls.forEach(el => {
+      const anyMatch = Array.from(el.querySelectorAll('.legend-asset-sym'))
+        .some(s => !s.classList.contains('legend-dim'));
+      el.classList.toggle('legend-dim', !anyMatch);
+    });
+  }
+
+  // ---------------------------------------------------------------------------
+  // Chart -> legend sync via emitter state events
+  // ---------------------------------------------------------------------------
+
+  // Asset selected (from chart wedge click, search, or our own legend click)
+  emitter.on('state:selectedAsset', asset => {
+    // Clear previous active
+    assetSymEls.forEach(el => el.classList.remove('legend-active'));
+    classHeaderEls.forEach(el => el.classList.remove('legend-active'));
+    sectorHeaderEls.forEach(el => el.classList.remove('legend-active'));
+
+    if (!asset) return;
+
+    const symEl = assetSymEls.get(asset.asset_id);
+    if (!symEl) return;
+
+    symEl.classList.add('legend-active');
+
+    // Expand the sector containing this asset so the symbol is visible
+    const sectorCode = asset.sector_code;
+    const secEl = sectorRowEls.get(sectorCode);
+    if (secEl && secEl.classList.contains('collapsed')) {
+      secEl.classList.remove('collapsed');
+      secEl.setAttribute('aria-expanded', 'true');
+    }
+
+    // Scroll symbol into view in the legend (delayed to let sunburst animation start)
+    setTimeout(() => {
+      symEl.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+    }, 350);
+  });
+
+  // Sunburst zoomed into a sub-sector: highlight the parent sector header
+  emitter.on('state:zoomedSubSector', subSector => {
+    sectorHeaderEls.forEach(el => el.classList.remove('legend-active'));
+    if (!subSector || !subSector.code) return;
+    // Sub-sector codes: 301010 -> sector 3010 = floor(301010 / 10)
+    const derivedSectorCode = Math.floor(subSector.code / 10);
+    const el = sectorHeaderEls.get(derivedSectorCode);
+    if (el) {
+      el.classList.add('legend-active');
+      // Expand if collapsed
+      const secRow = sectorRowEls.get(derivedSectorCode);
+      if (secRow && secRow.classList.contains('collapsed')) {
+        secRow.classList.remove('collapsed');
+        secRow.setAttribute('aria-expanded', 'true');
+      }
+    }
+  });
 }

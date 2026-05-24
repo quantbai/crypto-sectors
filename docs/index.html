@@ -81,6 +81,14 @@ validated on <span class="mono">730</span> days of returns.
 </div>
 <p class="chart-footnote" id="asset-weight-note" hidden>Assets within a sub-sector shown at equal angular width; v1.0 takes no position on per-asset weighting.</p>
 </div>
+<div class="sunburst-right-col">
+<aside class="sunburst-legend" aria-label="Hierarchy legend">
+<div class="legend-filter-wrap">
+<input type="search" id="legend-filter" class="legend-filter-input" placeholder="Filter legend..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="Filter hierarchy legend" aria-controls="legend-root">
+</div>
+<div id="legend-root" role="tree" aria-label="Asset classification hierarchy"></div>
+<button id="legend-mobile-toggle" class="legend-mobile-toggle" aria-expanded="false" aria-controls="legend-root" hidden>Show legend (158 assets)</button>
+</aside>
 <aside id="detail-card" role="region" aria-label="Asset detail" aria-live="polite">
 <button id="detail-card-close" class="detail-card-close" aria-label="Close detail" hidden>&#x00D7;</button>
 <div id="detail-card-inner">
@@ -107,6 +115,7 @@ validated on <span class="mono">730</span> days of returns.
 </div>
 </div>
 </aside>
+</div>
 </div>
 </div>
 </section>
