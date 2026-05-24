@@ -13,7 +13,6 @@ import math
 import os
 import sys
 from collections import defaultdict
-from datetime import datetime, timezone
 from pathlib import Path
 
 import yaml
@@ -255,7 +254,6 @@ def build_taxonomy(tax: dict, assets: list) -> dict:
         "n_sectors": n_sectors,
         "n_sub_sectors": n_sub_sectors_total,
         "n_active_sub_sectors": n_active_sub_sectors,
-        "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "snapshot_date": snapshot_date,
         "repo_url": REPO_URL,
     }
