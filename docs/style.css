@@ -155,6 +155,13 @@ input {
   border: 0;
 }
 
+/* Global [hidden] override — any `display` value (flex/grid/block) wins
+   over HTML5's default `[hidden] { display: none }` from the UA stylesheet,
+   leaving JS-hidden elements stuck visible. This rule restores expected
+   semantics for every element on the page (defensive — caught it 3 times
+   in detail-row, detail-empty, and decision row). */
+[hidden] { display: none !important; }
+
 /* Focus ring — WCAG 2.4.13 compliant.
    Excludes <path> because Chrome renders both `outline` and `box-shadow` on
    SVG <path> as the path's bounding-box rectangle, which ignores the arc
@@ -722,11 +729,6 @@ mark {
   padding-block: var(--space-3);
   border-bottom: 1px solid var(--border);
 }
-
-/* HTML5 [hidden] attribute is overridden by any explicit `display` value,
-   so rows with display:grid stay visible even when JS sets hidden=true.
-   Restore expected behavior. */
-.detail-row[hidden] { display: none !important; }
 
 .detail-row:last-child { border-bottom: none; }
 
