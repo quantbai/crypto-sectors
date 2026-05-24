@@ -723,6 +723,11 @@ mark {
   border-bottom: 1px solid var(--border);
 }
 
+/* HTML5 [hidden] attribute is overridden by any explicit `display` value,
+   so rows with display:grid stay visible even when JS sets hidden=true.
+   Restore expected behavior. */
+.detail-row[hidden] { display: none !important; }
+
 .detail-row:last-child { border-bottom: none; }
 
 .detail-row dt {
