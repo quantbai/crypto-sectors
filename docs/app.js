@@ -370,6 +370,11 @@ function initSunburst(hierarchy, assetsFlat) {
   const container = document.getElementById('sunburst-chart');
   if (!container || typeof d3 === 'undefined') return;
 
+  // Hierarchy leaves are lean (no class/sector context). Look up full asset
+  // record from assets_flat when wiring asset wedges to selectedAsset state.
+  const assetById = {};
+  assetsFlat.forEach(a => { assetById[a.asset_id] = a; });
+
   const DESKTOP_SIZE = 640;
   const MOBILE_SIZE = Math.min(window.innerWidth - 48, 540);
   let size = window.innerWidth >= 1024 ? DESKTOP_SIZE : MOBILE_SIZE;
@@ -710,8 +715,8 @@ function initSunburst(hierarchy, assetsFlat) {
       .on('mouseleave', hideTooltip)
       .on('click', (event, d) => {
         event.stopPropagation();
-        const asset = d.data;
-        // Find full asset details from flat list
+        // Resolve full asset record (hierarchy leaf lacks class/sector context)
+        const asset = assetById[d.data.asset_id] || d.data;
         setState({ selectedAsset: asset });
         srAnnounce('Selected ' + asset.name + ', ' + asset.symbol);
         // Highlight this wedge
@@ -722,7 +727,8 @@ function initSunburst(hierarchy, assetsFlat) {
       .on('keydown', (event, d) => {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
-          setState({ selectedAsset: d.data });
+          const asset = assetById[d.data.asset_id] || d.data;
+          setState({ selectedAsset: asset });
         }
       });
 
