@@ -162,6 +162,19 @@ input {
   box-shadow: 0 0 0 4px var(--focus-ring);
 }
 
+/* SVG paths (sunburst wedges): rectangular outline does not follow the arc
+   shape. Suppress browser default and use stroke as focus indicator — stroke
+   follows the path geometry, giving a curved focus ring that matches the
+   wedge. WCAG 2.4.13: 2.5px stroke change, 3:1 contrast vs unfocused state. */
+path[role="button"] { outline: none; }
+path[role="button"]:focus,
+path[role="button"]:focus-visible {
+  outline: none;
+  box-shadow: none;
+  stroke: var(--accent);
+  stroke-width: 2.5;
+}
+
 /* Focus not obscured — WCAG 2.4.11 */
 :where(a, button, [tabindex], input, select, textarea, summary,
        [role="button"], [role="gridcell"]) {
@@ -634,7 +647,28 @@ mark {
 
 .detail-empty-label {
   font-size: 13px;
+  color: var(--fg-1);
+  font-weight: 500;
+  margin: 0;
+}
+
+.detail-empty-hint {
+  font-size: 12px;
   color: var(--fg-2);
+  text-align: center;
+  max-width: 240px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.detail-empty-hint .kbd {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 1px 5px;
+  border: 1px solid var(--border-1);
+  border-radius: 3px;
+  color: var(--fg-1);
+  background: var(--bg-2);
 }
 
 .detail-class-stripe {
