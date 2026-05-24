@@ -21,6 +21,10 @@ A community-maintained, hierarchical industry classification for digital assets.
 | [`decisions/`](decisions/) | One file per non-trivial classification decision — the audit trail |
 | [`methodology.md`](methodology.md) | The rulebook — how classifications are made |
 | [`validation.md`](validation.md) | Empirical evidence the classification co-moves on daily returns |
+| [`UNIVERSE.md`](UNIVERSE.md) | Coverage universe — selection criteria, exclusions, and graduation rules |
+| [`GOVERNANCE.md`](GOVERNANCE.md) | Maintainer council, PR merge thresholds, conflict-of-interest policy, appeals |
+| [`SCHEMA.md`](SCHEMA.md) | Dtype contract for all published fields; Int64 numpy-safety warning |
+| [`CHANGELOG.md`](CHANGELOG.md) | Version history; v1.1 reclassifications.csv forward contract |
 
 ## Quick start
 
@@ -42,15 +46,32 @@ print(snapshot.head())
 For a sector-neutralization example:
 
 ```python
+import datetime
+
+# date must be a datetime.date (not pd.Timestamp) to index the wide matrix
+date = datetime.date(2025, 1, 15)
+
+# Note: cells before effective_from (2024-05-23) are NaN — a sane backtest
+# starts on or after that date.
+sector = pd.read_parquet(
+    "https://raw.githubusercontent.com/quantbai/crypto-sectors/main/classification/wide/sector_code.parquet"
+)
+
+# Align sector codes to alpha column order; prevents silent NaN from column mismatch
+sector_row = sector.loc[pd.Timestamp(date)].reindex(alpha.columns)
+
 # Cross-sectional demean within sector — a standard alpha-research operation
-alpha_demeaned = alpha.sub(alpha.groupby(sector.loc[date], axis=1).transform("mean"))
+# (.T.groupby().T replaces the deprecated groupby(axis=1))
+# Note: assets with NA sector_row (e.g. pre-effective_from, no-returns) are
+# silently set to NaN in alpha_demeaned. Filter or impute upstream.
+alpha_demeaned = alpha.sub(alpha.T.groupby(sector_row).transform("mean").T)
 ```
 
 ## Coverage
 
-- **Universe**: 158 actively classified digital assets
+- **Universe**: 158 actively classified digital assets. See [UNIVERSE.md](UNIVERSE.md) for selection criteria and exclusions.
 - **Hierarchy**: 4 classes → 14 sectors → ~35 sub-sectors (community-maintained, with extensions in the 90–99 slot of each sector)
-- **Orthogonal tag**: `chain_ecosystem` (BTC, ETH, SOL, BNB, …)
+- **Orthogonal tag**: `chain_ecosystem` (BTC, ETH, SOL, BNB, …) — categorical `FILTER_ONLY` tag; see [SCHEMA.md](SCHEMA.md) for usage guidance. Do not use as a direct numeric alpha factor.
 - **Update cadence**: quarterly snapshot tags (`v2026.Q2`, `v2026.Q3`, …), continuous PR review
 
 ## Validation in one sentence

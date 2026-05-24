@@ -1,7 +1,7 @@
 # LUNA — symbol history and asset_id discipline
 
 **Decision**: the symbol `LUNA` has referred to two distinct assets. We use
-asset_ids `terra-luna-original` and `terra-luna-2` to keep them separate, and
+asset_ids `terra-luna-classic` and `terra-luna-2` to keep them separate, and
 the symbol field tracks whichever the most recent canonical use is.
 
 **Date**: 2026-05-23
@@ -9,7 +9,7 @@ the symbol field tracks whichever the most recent canonical use is.
 
 ## Background
 
-- 2019-04 to 2022-05: `LUNA` referred to the Terra Classic network's native token. After the May 2022 collapse, the network was renamed Terra Classic and the token was rebranded to `LUNC`. This is `asset_id = terra-luna-original`.
+- 2019-04 to 2022-05: `LUNA` referred to the Terra Classic network's native token. After the May 2022 collapse, the network was renamed Terra Classic and the token was rebranded to `LUNC`. This is `asset_id = terra-luna-classic`.
 - 2022-05 onwards: A new chain launched with a freshly minted token, originally labeled `LUNA2` and now commonly traded as `LUNA`. This is `asset_id = terra-luna-2`.
 
 The two assets are **not** the same instrument:
@@ -25,13 +25,13 @@ returns belong to a defunct asset, the post-launch returns belong to a new one.
 
 **Recommendation for backtests**:
 - Use `asset_id`, not `symbol`, as the join key against this classification.
-- For pre-2022-05 LUNA data, use `asset_id = terra-luna-original`.
+- For pre-2022-05 LUNA data, use `asset_id = terra-luna-classic`.
 - For post-2022-05 LUNA data, use `asset_id = terra-luna-2`.
 - Do not splice their return series without explicit acknowledgment.
 
 ## Wide-matrix implications
 
-In `classification/wide/*.parquet`, columns are asset_ids. `terra-luna-original`
+In `classification/wide/*.parquet`, columns are asset_ids. `terra-luna-classic`
 and `terra-luna-2` appear as separate columns with non-overlapping date ranges
 (the original's effective period ends 2022-05-12; the new chain begins 2022-05-28).
 

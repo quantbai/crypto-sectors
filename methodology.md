@@ -1,6 +1,6 @@
 # Methodology
 
-> Version 1.0.0 · Release date 2026-05-23
+> Version 1.0.0 · Release date 2026-05-24
 
 ## 1. Purpose
 
@@ -9,7 +9,7 @@ A reference industry classification for digital assets, usable for:
 1. **Cross-sectional sector neutralization** of alpha signals (`group_neut`).
 2. **Risk attribution** — decomposing returns into sector, chain, and idiosyncratic components.
 3. **Peer-group comparison** — fundamental and technical metrics are only meaningful relative to peers performing a similar economic function.
-4. **Comparability with established institutional research** — the 6-digit code structure and the baseline 41 sub-sectors preserve the numeric layout used by the institutional classification methodologies cited in §7, enabling round-trip mapping for consumers who require it.
+4. **Comparability with established institutional research** — the 6-digit `CCSSXX` positional code format was chosen to make potential future crosswalks to institutional classification systems tractable. See §3.2 for the affiliation disclaimer.
 
 ## 2. Design principles
 
@@ -51,7 +51,9 @@ Six-digit codes follow `CCSSXX`:
 - `SS` = sector-within-class (4-digit when concatenated as `CCSS`)
 - `XX` = sub-sector-within-sector (6-digit when concatenated as `CCSSXX`)
 
-Sub-sector codes ending `90`–`99` are community extensions. They are visually distinguishable (e.g., `301090` for Liquid Staking) and reserve the `00`–`89` range for codes that align with the institutional baseline cited in §7.
+Sub-sector codes ending `90`–`99` are community extensions. They are visually distinguishable (e.g., `301090` for Liquid Staking) and reserve the `00`–`89` range for potential future alignment with institutional classification baselines.
+
+Uses a 6-digit positional code format (`CCSSXX`) as a structural convention. This project has no affiliation with, and makes no claim of mapping compatibility to, Datonomy, GICS, or ICB. The format choice exists to make potential future crosswalks tractable, not to guarantee one today.
 
 ### 3.3 Orthogonal tags
 
@@ -82,6 +84,12 @@ Tags can be added in future versions for further orthogonal axes (token economic
 | Token migration via swap contract (LUNA → LUNA2/LUNC) | Mint a new asset_id; record the relationship in `decisions/`. |
 | Chain ecosystem shift (largest-TVL chain changes) | Tag-only change. |
 
+**Point-in-time (PIT) immutability contract.** The `effective_from` field in `classification/snapshot.csv` records the date from which each classification row applies. Historical published panels are immutable. Reclassifications create new rows in `snapshot.csv` with a later `effective_from`; they never modify rows for past dates. A backtest pinned to a release tag (e.g. `git checkout v1.0.0`) will reproduce exactly across future taxonomy bumps.
+
+> **Warning**: running a historical backtest against `main` after a reclassification PR is merged WILL show different results for pre-reclass dates. For reproducible historical backtests, always check out a release tag.
+
+**`effective_from` semantics**: cells in the wide matrix dated before an asset's `effective_from` are `NaN`, meaning "asset not yet classified under this schema version" — not "asset does not exist". See [SCHEMA.md](SCHEMA.md) for the full null policy.
+
 ### 4.3 Cadence
 
 Continuous PR review against `main`. The repository is tagged once per quarter (`v2026.Q2`, `v2026.Q3`, …) for consumers who require a stable reference. Between tags, `main` is always usable; tagged versions are immutable.
@@ -90,7 +98,7 @@ Continuous PR review against `main`. The repository is tagged once per quarter (
 
 The following are deliberately excluded from v1.0 to keep the scope tight. Each is a potential future extension only if community demand emerges:
 
-- **Universe filters** (mcap tier, ADV, listing venue) — these are properties of an asset's tradability, not its classification. Downstream consumers apply their own filters.
+- **Investable filters** (mcap tier, ADV, listing venue) — these are properties of an asset's tradability, not its classification. This repository defines a **coverage universe** (which assets are classified); the **investable universe** (which assets a specific strategy trades) is determined downstream by each consumer applying their own filters. See [UNIVERSE.md](UNIVERSE.md) for coverage criteria.
 - **Regulatory tags** — jurisdiction-specific, fast-changing, and outside the scope of an industry classification.
 - **Stablecoin internals** — peg mechanism details, reserve composition. We classify the *type* of stablecoin; deeper attribution is a separate dataset.
 - **NFT collection-level classification** — collections are not fungible assets.
@@ -110,7 +118,7 @@ A consumer should pin to a specific release tag for reproducible backtests.
 
 Academic and industry references that informed the design. Inclusion here is academic citation; no endorsement or affiliation is implied or claimed.
 
-- MSCI, Coin Metrics, and Goldman Sachs (2022). *Datonomy Methodology.* (Digital-asset classification baseline; this project preserves the 6-digit code structure for round-trip compatibility.)
+- MSCI, Coin Metrics, and Goldman Sachs (2022). *Datonomy Methodology.* (Digital-asset classification reference. Uses a 6-digit positional code format (`CCSSXX`) as a structural convention. This project has no affiliation with, and makes no claim of mapping compatibility to, Datonomy, GICS, or ICB. The format choice exists to make potential future crosswalks tractable, not to guarantee one today.)
 - Bhojraj, S., Lee, C., and Oler, D. (2003). "What's My Line? A Comparison of Industry Classification Schemes for Capital Market Research." *Journal of Accounting Research*, 41(5).
 - S&P Global and MSCI. *Global Industry Classification Standard (GICS) Methodology.* (Cross-asset precedent for multi-level hierarchical industry classification.)
 - FTSE Russell. *Industry Classification Benchmark (ICB) Ground Rules.*

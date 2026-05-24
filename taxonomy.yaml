@@ -2,8 +2,10 @@
 # crypto-sectors taxonomy
 # =============================================================================
 # Hierarchical industry classification for digital assets.
-# The 6-digit code structure preserves compatibility with established
-# institutional classification methodologies cited in methodology.md §7.
+# Uses a 6-digit positional code format (`CCSSXX`) as a structural convention.
+# This project has no affiliation with, and makes no claim of mapping
+# compatibility to, Datonomy, GICS, or ICB. The format choice exists to make
+# potential future crosswalks tractable, not to guarantee one today.
 #
 # Code structure: CCSSXX (6-digit)
 #   CC = class (2-digit)

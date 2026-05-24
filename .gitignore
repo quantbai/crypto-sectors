@@ -18,6 +18,12 @@ env/
 # Notebooks
 .ipynb_checkpoints/
 
+# Internal working artifacts — design docs, working plans, ad-hoc notes.
+# These are not part of the published product. Public methodology / decisions
+# live in methodology.md / decisions/ — committed and audited.
+plans/
+.venv-dry/
+
 # NOTE: classification/wide/*.parquet, classification/long/*.parquet, and
 # validation/charts/*.png ARE committed — they are the published artifacts
 # that consumers download directly without cloning + running scripts.

@@ -54,10 +54,25 @@ def main() -> int:
     snap = pd.read_csv(SNAPSHOT)
     errors: list[str] = []
 
-    # 1, 2: duplicates
-    dup_aid = snap[snap.duplicated("asset_id", keep=False)]
-    if not dup_aid.empty:
-        errors.append(f"Duplicate asset_id: {dup_aid['asset_id'].tolist()}")
+    # 0: effective_from column — required since v1.0
+    if "effective_from" not in snap.columns:
+        errors.append("Missing column: effective_from (required since v1.0)")
+    else:
+        try:
+            parsed = pd.to_datetime(snap["effective_from"])
+        except Exception as exc:
+            errors.append(f"effective_from not parseable as date: {exc}")
+            parsed = None
+        if parsed is not None and parsed.isna().any():
+            null_aids = snap.loc[parsed.isna(), "asset_id"].tolist()
+            errors.append(f"effective_from is null for asset_ids: {null_aids[:5]}")
+        # No duplicate (asset_id, effective_from) pairs
+        dup_pit = snap[snap.duplicated(["asset_id", "effective_from"], keep=False)]
+        if not dup_pit.empty:
+            pairs = list(zip(dup_pit["asset_id"], dup_pit["effective_from"]))
+            errors.append(f"Duplicate (asset_id, effective_from) pairs: {pairs[:5]}")
+
+    # 1: duplicate symbol (asset_id uniqueness now scoped to (asset_id, effective_from) above)
     dup_sym = snap[snap.duplicated("symbol", keep=False)]
     if not dup_sym.empty:
         errors.append(f"Duplicate symbol: {dup_sym['symbol'].tolist()}")
@@ -114,7 +129,8 @@ def main() -> int:
             print(f"  - {e}")
         return 1
 
-    print(f"Schema validation OK — {len(snap)} assets, {len(sub_sectors)} sub-sectors.")
+    print(f"Schema validation OK — {len(snap)} assets, {len(sub_sectors)} sub-sectors, "
+          f"effective_from present and valid.")
     return 0
 
 

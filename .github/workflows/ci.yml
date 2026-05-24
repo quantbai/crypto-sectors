@@ -27,6 +27,30 @@ jobs:
       - name: Compute validation (smoke test — script must run cleanly)
         run: python scripts/compute_validation.py
 
+      - name: Dtype + index + NaN assertion
+        run: |
+          python - <<'EOF'
+          import pandas as pd
+
+          # wide index dtype
+          for col in ["class_code","sector_code","sub_sector_code"]:
+              w = pd.read_parquet(f"classification/wide/{col}.parquet")
+              assert str(w.index.dtype) == "datetime64[ns]", f"{col} wide index dtype: {w.index.dtype}"
+              dtypes = w.dtypes.unique()
+              assert len(dtypes) == 1 and str(dtypes[0]) == "Int64", f"{col} wide column dtypes: {dtypes}"
+
+          # panel column dtypes
+          panel = pd.read_parquet("classification/long/panel.parquet")
+          for col in ["class_code","sector_code","sub_sector_code"]:
+              assert str(panel[col].dtype) == "Int64", f"panel {col} dtype: {panel[col].dtype}"
+
+          # panel must have no NaN code rows (panel only stores existence rows)
+          nan_rows = panel[panel["sector_code"].isna()]
+          assert len(nan_rows) == 0, f"panel has {len(nan_rows)} NaN sector_code rows — PIT lookup broken"
+
+          print("[ci] dtype + index + NaN assertions passed")
+          EOF
+
       - name: Content-equality check on rebuilt CSV matrices
         run: |
           python - <<'EOF'
