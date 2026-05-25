@@ -1431,6 +1431,8 @@ text[role="button"]:focus-visible {
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: var(--space-4) var(--space-5);
+  /* Prevent stray horizontal scrollbar — content here should always wrap. */
+  overflow-x: hidden;
 }
 
 .caption-header {

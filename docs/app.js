@@ -1482,24 +1482,50 @@ function initLegend(hierarchy, assetsFlat) {
     metaEl.textContent = assets.length + ' asset' + (assets.length !== 1 ? 's' : '');
     root.innerHTML = '';
 
-    const chips = document.createElement('div');
-    chips.className = 'caption-chips';
-
+    // v1.1.4: unified row style — same pattern as overview class rows
+    // (color dot + label + meta). User asked for consistency across drill
+    // levels so the chart's color encoding always has a textual annotation.
     assets.forEach(a => {
-      const chip = document.createElement('button');
-      chip.type = 'button';
-      chip.className = 'caption-chip';
-      chip.textContent = a.symbol;
-      chip.setAttribute('aria-label', a.name + ' (' + a.symbol + ')');
-      chip.dataset.assetId = a.asset_id;
-      chip.addEventListener('click', () => {
-        const fullAsset = assetById[a.asset_id] || a;
-        setState({ selectedAsset: fullAsset });
-      });
-      chips.appendChild(chip);
-    });
+      const full = assetById[a.asset_id] || a;
+      const classCode = full.class_code != null ? full.class_code : (sample && sample.class_code);
 
-    root.appendChild(chips);
+      const row = document.createElement('div');
+      row.className = 'caption-row';
+      row.setAttribute('role', 'listitem');
+      row.dataset.assetId = a.asset_id;
+
+      const dot = document.createElement('span');
+      dot.className = 'caption-row-dot';
+      dot.style.background = CLASS_HEX[classCode] || 'var(--fg-3)';
+
+      const label = document.createElement('span');
+      label.className = 'caption-row-label';
+      // symbol prominent, name in dim
+      const sym = document.createElement('span');
+      sym.className = 'mono';
+      sym.style.fontWeight = '600';
+      sym.textContent = a.symbol;
+      const name = document.createElement('span');
+      name.style.color = 'var(--fg-2)';
+      name.style.marginLeft = 'var(--space-3)';
+      name.textContent = a.name;
+      label.appendChild(sym);
+      label.appendChild(name);
+
+      const meta = document.createElement('span');
+      meta.className = 'caption-row-meta';
+      meta.textContent = a.chain_ecosystem || full.chain_ecosystem || '';
+
+      row.appendChild(dot);
+      row.appendChild(label);
+      row.appendChild(meta);
+
+      row.addEventListener('click', () => {
+        setState({ selectedAsset: full });
+      });
+
+      root.appendChild(row);
+    });
   }
 
   // Initial render
@@ -1515,10 +1541,10 @@ function initLegend(hierarchy, assetsFlat) {
     else renderOverview();
   });
 
-  // Highlight active asset chip
+  // Highlight active asset row (v1.1.4: rows replaced chips)
   emitter.on('state:selectedAsset', asset => {
-    root.querySelectorAll('.caption-chip').forEach(c => {
-      c.classList.toggle('active', !!asset && c.dataset.assetId === asset.asset_id);
+    root.querySelectorAll('.caption-row[data-asset-id]').forEach(r => {
+      r.classList.toggle('active', !!asset && r.dataset.assetId === asset.asset_id);
     });
   });
 }
