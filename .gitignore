@@ -30,3 +30,4 @@ plans/
 # Re-generated on every release by scripts/build_matrices.py and
 # scripts/compute_validation.py; CI asserts they stay in sync.
 .gstack/
+.claude/
