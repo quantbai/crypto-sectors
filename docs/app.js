@@ -942,29 +942,28 @@ function initDetailCard(descriptions) {
         if (decisionLink) decisionLink.setAttribute('tabindex', '-1');
       }
 
-      // === QD-G v1.1: About row — short description from descriptions.json ===
-      const aboutRow = document.getElementById('dv-about-row');
+      // v1.1.3: Description as hero content (was: hidden row). Show it
+      // above the classification table so the card is informative at first
+      // glance. Falls back gracefully when no description is cached.
       const aboutEl = document.getElementById('dv-about');
       const descEntry = descMap[asset.asset_id];
       const shortDesc = descEntry && descEntry.ok && descEntry.short_desc;
-      if (aboutRow && aboutEl) {
+      if (aboutEl) {
         if (shortDesc) {
           aboutEl.textContent = shortDesc;
-          aboutRow.hidden = false;
+          aboutEl.hidden = false;
         } else {
-          aboutRow.hidden = true;
+          aboutEl.textContent = '';
+          aboutEl.hidden = true;
         }
       }
 
-      // === QD-G v1.1: Full page link row ===
-      const fullpageRow = document.getElementById('dv-fullpage-row');
+      // Full asset page link (always shown in footer, no row wrapper).
       const fullpageLink = document.getElementById('dv-fullpage-link');
-      if (fullpageRow && fullpageLink) {
+      if (fullpageLink) {
         fullpageLink.href = `coins/${asset.asset_id}/`;
         fullpageLink.setAttribute('tabindex', '0');
-        fullpageRow.hidden = false;
       }
-      // === end QD-G ===
 
       emptyState.hidden = true;
       content.hidden = false;

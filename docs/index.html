@@ -97,10 +97,13 @@ validated on <span class="mono">730</span> days of returns.
 </div>
 <div id="detail-content" hidden>
 <div id="detail-class-stripe" class="detail-class-stripe"></div>
+<div class="detail-body">
 <div class="detail-header">
 <span id="detail-symbol" class="mono detail-symbol"></span>
 <span id="detail-name" class="detail-name"></span>
 </div>
+<!-- v1.1.3: description promoted to hero content of the card -->
+<p id="dv-about" class="detail-about" hidden></p>
 <dl class="detail-fields" id="detail-fields">
 <div class="detail-row"><dt>Class</dt><dd id="dv-class"></dd></div>
 <div class="detail-row"><dt>Sector</dt><dd id="dv-sector"></dd></div>
@@ -109,11 +112,11 @@ validated on <span class="mono">730</span> days of returns.
 <div class="detail-row"><dt>Asset ID</dt><dd id="dv-assetid" class="mono"></dd></div>
 <div class="detail-row"><dt>Effective from</dt><dd id="dv-effective" class="mono"></dd></div>
 <div class="detail-row" id="dv-decision-row" hidden><dt>Decision</dt><dd><a id="dv-decision-link" href="#" tabindex="-1" target="_blank" rel="noopener noreferrer" class="accent-link">View rationale <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></dd></div>
-<!-- === QD-G: description + full-page link rows (v1.1) === -->
-<div class="detail-row detail-row--about" id="dv-about-row" hidden><dt>About</dt><dd id="dv-about" class="dv-about-text"></dd></div>
-<div class="detail-row" id="dv-fullpage-row" hidden><dt>Full page</dt><dd><a id="dv-fullpage-link" href="#" class="accent-link" tabindex="-1">Open deep page &rarr;</a></dd></div>
-<!-- === end QD-G === -->
 </dl>
+<div class="detail-footer">
+<a id="dv-fullpage-link" href="#" class="accent-link detail-fullpage-link" tabindex="-1">Open full asset page &rarr;</a>
+</div>
+</div>
 </div>
 </div>
 </aside>
