@@ -6,11 +6,12 @@
   "assets": {
     "0g": {
       "cg_id": "zero-gravity",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "0G is a modular Layer 1 blockchain and decentralized AI operating system designed for data-heavy on-chain AI applications, offering separable components for execution, consensus, decentralized storage, data availability, and AI compute. Its mainnet launched in September 2025.",
+      "long_desc_html_safe": "0G is a modular Layer 1 blockchain and decentralized AI operating system designed for data-heavy on-chain AI applications, offering separable components for execution, consensus, decentralized storage, data availability, and AI compute. Its mainnet launched in September 2025.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "1inch": {
       "cg_id": "1inch",
@@ -21,11 +22,12 @@
     },
     "2z": {
       "cg_id": "doublezero",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "DoubleZero is a permissioned fiber-optic network protocol that lets blockchain validators exchange data over dedicated bandwidth instead of the public internet, aiming to reduce latency and increase throughput. The 2Z token is issued on Solana and used to pay for and incentivize bandwidth contributions.",
+      "long_desc_html_safe": "DoubleZero is a permissioned fiber-optic network protocol that lets blockchain validators exchange data over dedicated bandwidth instead of the public internet, aiming to reduce latency and increase throughput. The 2Z token is issued on Solana and used to pay for and incentivize bandwidth contributions.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "aave": {
       "cg_id": "aave",
@@ -85,11 +87,12 @@
     },
     "aster": {
       "cg_id": "astar",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Aster is a multi-chain decentralized perpetuals exchange formed by the merger of Astherus and APX Finance, supporting crypto and stock perps, hidden orders, and yield-bearing collateral across BNB Chain, Ethereum, Solana, and Arbitrum. ASTER is its native utility and governance token.",
+      "long_desc_html_safe": "Aster is a multi-chain decentralized perpetuals exchange formed by the merger of Astherus and APX Finance, supporting crypto and stock perps, hidden orders, and yield-bearing collateral across BNB Chain, Ethereum, Solana, and Arbitrum. ASTER is its native utility and governance token.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "ath": {
       "cg_id": "aethir",
@@ -121,11 +124,12 @@
     },
     "banana": {
       "cg_id": "banana-for-scale",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Banana Gun is a multi-chain Telegram trading bot for sniping new token launches and executing on-chain swaps, with limit orders, copy-trading, and MEV protection across Ethereum, Base, Blast, Solana, and BNB Chain. BANANA is its ecosystem token, which distributes a share of bot revenue to holders.",
+      "long_desc_html_safe": "Banana Gun is a multi-chain Telegram trading bot for sniping new token launches and executing on-chain swaps, with limit orders, copy-trading, and MEV protection across Ethereum, Base, Blast, Solana, and BNB Chain. BANANA is its ecosystem token, which distributes a share of bot revenue to holders.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "empty-description-on-coingecko"
+      "ok": true,
+      "note": "empty-description-on-coingecko",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "bat": {
       "cg_id": "basic-attention-token",
@@ -150,11 +154,12 @@
     },
     "bill": {
       "cg_id": "billions-network",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Billions Network is a mobile-first identity protocol that uses zero-knowledge proofs to let humans and AI agents prove uniqueness and credentials without exposing underlying personal data or biometrics. BILL is the native utility token used to pay verification fees and reward network participants.",
+      "long_desc_html_safe": "Billions Network is a mobile-first identity protocol that uses zero-knowledge proofs to let humans and AI agents prove uniqueness and credentials without exposing underlying personal data or biometrics. BILL is the native utility token used to pay verification fees and reward network participants.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "bnb": {
       "cg_id": "binancecoin",
@@ -193,11 +198,12 @@
     },
     "cc": {
       "cg_id": "canton-network",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Canton Network is a Layer 1 smart contract blockchain built by Digital Asset for institutional finance, using the Daml smart contract language and a network-of-networks architecture with configurable privacy. Canton Coin (CC) is the utility token used to pay application and synchronizer fees.",
+      "long_desc_html_safe": "Canton Network is a Layer 1 smart contract blockchain built by Digital Asset for institutional finance, using the Daml smart contract language and a network-of-networks architecture with configurable privacy. Canton Coin (CC) is the utility token used to pay application and synchronizer fees.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "cfg": {
       "cg_id": "centrifuge",
@@ -285,11 +291,12 @@
     },
     "edge": {
       "cg_id": "edgex",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "edgeX is a high-performance decentralized perpetuals exchange that combines off-chain order matching with on-chain settlement and supports crypto perps, equity perps, commodity contracts, and prediction markets. EDGE is its native governance and utility token, deployed on Base.",
+      "long_desc_html_safe": "edgeX is a high-performance decentralized perpetuals exchange that combines off-chain order matching with on-chain settlement and supports crypto perps, equity perps, commodity contracts, and prediction markets. EDGE is its native governance and utility token, deployed on Base.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "egld": {
       "cg_id": "elrond-erd-2",
@@ -307,11 +314,12 @@
     },
     "ena": {
       "cg_id": "ethena",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Ethena is a synthetic dollar protocol on Ethereum that issues USDe, a crypto-backed stablecoin kept near parity through delta-neutral hedging using staked collateral and short perpetual futures positions. ENA is the governance token used to vote on protocol parameters and risk management.",
+      "long_desc_html_safe": "Ethena is a synthetic dollar protocol on Ethereum that issues USDe, a crypto-backed stablecoin kept near parity through delta-neutral hedging using staked collateral and short perpetual futures positions. ENA is the governance token used to vote on protocol parameters and risk management.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "empty-description-on-coingecko"
+      "ok": true,
+      "note": "empty-description-on-coingecko",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "ens": {
       "cg_id": "ethereum-name-service",
@@ -322,11 +330,12 @@
     },
     "etc": {
       "cg_id": "ethereum-classic",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Ethereum Classic is the continuation of the original Ethereum blockchain that rejected the 2016 hard fork to reverse The DAO hack, preserving the principle of ledger immutability. It is the largest proof-of-work smart contract platform following Ethereum's transition to proof-of-stake.",
+      "long_desc_html_safe": "Ethereum Classic is the continuation of the original Ethereum blockchain that rejected the 2016 hard fork to reverse The DAO hack, preserving the principle of ledger immutability. It is the largest proof-of-work smart contract platform following Ethereum's transition to proof-of-stake.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "empty-description-on-coingecko"
+      "ok": true,
+      "note": "empty-description-on-coingecko",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "eth": {
       "cg_id": "ethereum",
@@ -337,11 +346,12 @@
     },
     "ethfi": {
       "cg_id": "ether-fi",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Ether.fi is a non-custodial liquid restaking protocol that lets users stake ETH, receive the eETH liquid restaking token, and earn rewards from Ethereum staking and EigenLayer restaking simultaneously while retaining control of their keys. ETHFI is its governance token.",
+      "long_desc_html_safe": "Ether.fi is a non-custodial liquid restaking protocol that lets users stake ETH, receive the eETH liquid restaking token, and earn rewards from Ethereum staking and EigenLayer restaking simultaneously while retaining control of their keys. ETHFI is its governance token.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "empty-description-on-coingecko"
+      "ok": true,
+      "note": "empty-description-on-coingecko",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "fet": {
       "cg_id": "fetch-ai",
@@ -352,11 +362,12 @@
     },
     "ff": {
       "cg_id": "falcon-finance",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Falcon Finance is a collateralization protocol that lets users deposit stablecoins, digital assets, and tokenized real-world assets to mint USDf, an overcollateralized synthetic dollar, with a sUSDf staked version that earns yield from delta-neutral and basis trading strategies. FF is its governance token.",
+      "long_desc_html_safe": "Falcon Finance is a collateralization protocol that lets users deposit stablecoins, digital assets, and tokenized real-world assets to mint USDf, an overcollateralized synthetic dollar, with a sUSDf staked version that earns yield from delta-neutral and basis trading strategies. FF is its governance token.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "fil": {
       "cg_id": "filecoin",
@@ -381,10 +392,11 @@
     },
     "fluid": {
       "cg_id": "fluid-token",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Fluid is a DeFi protocol from the team behind Instadapp that unifies lending, borrowing, and trading on top of a shared Liquidity Layer, allowing collateral and debt to simultaneously earn DEX fees. The FLUID token, formerly INST, is used for governance of the protocol.",
+      "long_desc_html_safe": "Fluid is a DeFi protocol from the team behind Instadapp that unifies lending, borrowing, and trading on top of a shared Liquidity Layer, allowing collateral and debt to simultaneously earn DEX fees. The FLUID token, formerly INST, is used for governance of the protocol.",
       "fetched_at": "2026-05-25",
-      "ok": false
+      "ok": true,
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "gala": {
       "cg_id": "gala",
@@ -424,11 +436,12 @@
     },
     "grass": {
       "cg_id": "grass",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Grass is a Solana-based decentralized network that pays users in GRASS tokens for sharing unused residential bandwidth, which is used to scrape publicly available web data for AI training and inference. The protocol operates a sovereign data rollup with zero-knowledge proofs for data integrity.",
+      "long_desc_html_safe": "Grass is a Solana-based decentralized network that pays users in GRASS tokens for sharing unused residential bandwidth, which is used to scrape publicly available web data for AI training and inference. The protocol operates a sovereign data rollup with zero-knowledge proofs for data integrity.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "empty-description-on-coingecko"
+      "ok": true,
+      "note": "empty-description-on-coingecko",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "grt": {
       "cg_id": "the-graph",
@@ -439,11 +452,12 @@
     },
     "h": {
       "cg_id": "humanity-protocol",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Humanity Protocol is a Layer 2 identity network built on Polygon that uses palm-scan biometrics processed locally and zero-knowledge proofs to verify users are unique humans without exposing biometric data on-chain. H is the native token used for transactions, staking, and governance.",
+      "long_desc_html_safe": "Humanity Protocol is a Layer 2 identity network built on Polygon that uses palm-scan biometrics processed locally and zero-knowledge proofs to verify users are unique humans without exposing biometric data on-chain. H is the native token used for transactions, staking, and governance.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "hbar": {
       "cg_id": "hedera-hashgraph",
@@ -496,11 +510,12 @@
     },
     "ip": {
       "cg_id": "story-2",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Story is a Layer 1 blockchain built with the Cosmos SDK for registering, licensing, and monetizing intellectual property as programmable on-chain assets, enforcing royalty splits and licensing terms via its Proof-of-Creativity protocol. IP is the native token used for gas, staking, and governance.",
+      "long_desc_html_safe": "Story is a Layer 1 blockchain built with the Cosmos SDK for registering, licensing, and monetizing intellectual property as programmable on-chain assets, enforcing royalty splits and licensing terms via its Proof-of-Creativity protocol. IP is the native token used for gas, staking, and governance.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "jasmy": {
       "cg_id": "jasmycoin",
@@ -511,11 +526,12 @@
     },
     "jst": {
       "cg_id": "just",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "JUST is the governance token for the JustLend, JustStable, and JustSwap DeFi suite on the TRON blockchain, which lets users mint the USDJ stablecoin against TRX collateral and access lending, borrowing, and swap services. JST is used to pay stability fees and vote on protocol parameters.",
+      "long_desc_html_safe": "JUST is the governance token for the JustLend, JustStable, and JustSwap DeFi suite on the TRON blockchain, which lets users mint the USDJ stablecoin against TRX collateral and access lending, borrowing, and swap services. JST is used to pay stability fees and vote on protocol parameters.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "empty-description-on-coingecko"
+      "ok": true,
+      "note": "empty-description-on-coingecko",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "jto": {
       "cg_id": "jito-governance-token",
@@ -554,11 +570,12 @@
     },
     "kite": {
       "cg_id": "kite-ai",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Kite is an EVM-compatible Layer 1 blockchain purpose-built for autonomous AI agent payments, featuring stablecoin settlement, a programmable agent identity system, and a service discovery layer for pay-per-request micropayments. KITE is the native token used for fees, staking, and governance.",
+      "long_desc_html_safe": "Kite is an EVM-compatible Layer 1 blockchain purpose-built for autonomous AI agent payments, featuring stablecoin settlement, a programmable agent identity system, and a service discovery layer for pay-per-request micropayments. KITE is the native token used for fees, staking, and governance.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "kmno": {
       "cg_id": "kamino",
@@ -569,11 +586,12 @@
     },
     "ldo": {
       "cg_id": "lido-dao",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Lido is the largest liquid staking protocol on Ethereum, letting users stake any amount of ETH and receive the stETH rebasing token, which represents the deposit plus accrued rewards and is composable across DeFi. LDO is the governance token of the Lido DAO, which manages the protocol.",
+      "long_desc_html_safe": "Lido is the largest liquid staking protocol on Ethereum, letting users stake any amount of ETH and receive the stETH rebasing token, which represents the deposit plus accrued rewards and is composable across DeFi. LDO is the governance token of the Lido DAO, which manages the protocol.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "empty-description-on-coingecko"
+      "ok": true,
+      "note": "empty-description-on-coingecko",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "linea": {
       "cg_id": "linea",
@@ -591,11 +609,12 @@
     },
     "lit": {
       "cg_id": "lighter",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Litentry is a decentralized cross-chain identity aggregator built on Substrate that uses trusted execution environments and verifiable credentials to let users link identities across networks while preserving privacy. LIT is the native token used for staking, governance, and identity-related fees.",
+      "long_desc_html_safe": "Litentry is a decentralized cross-chain identity aggregator built on Substrate that uses trusted execution environments and verifiable credentials to let users link identities across networks while preserving privacy. LIT is the native token used for staking, governance, and identity-related fees.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "lpt": {
       "cg_id": "livepeer",
@@ -613,11 +632,12 @@
     },
     "mana": {
       "cg_id": "decentraland",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Decentraland is an Ethereum-based virtual world where users can buy, develop, and trade plots of virtual land represented as ERC-721 LAND tokens. MANA is an ERC-20 token used to purchase LAND, wearables, names, and other items on the Decentraland marketplace.",
+      "long_desc_html_safe": "Decentraland is an Ethereum-based virtual world where users can buy, develop, and trade plots of virtual land represented as ERC-721 LAND tokens. MANA is an ERC-20 token used to purchase LAND, wearables, names, and other items on the Decentraland marketplace.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "empty-description-on-coingecko"
+      "ok": true,
+      "note": "empty-description-on-coingecko",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "mnt": {
       "cg_id": "mantle",
@@ -628,11 +648,12 @@
     },
     "mon": {
       "cg_id": "monad-testnet",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Monad is a high-performance EVM-compatible Layer 1 blockchain built by former Jump Trading engineers, using parallel execution and pipelined consensus to target around 10,000 transactions per second with sub-second finality. MON is the native token used for gas, staking, and governance.",
+      "long_desc_html_safe": "Monad is a high-performance EVM-compatible Layer 1 blockchain built by former Jump Trading engineers, using parallel execution and pipelined consensus to target around 10,000 transactions per second with sub-second finality. MON is the native token used for gas, staking, and governance.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "morpho": {
       "cg_id": "morpho",
@@ -671,11 +692,12 @@
     },
     "night": {
       "cg_id": "midnight-2",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Midnight is a privacy-focused partner chain of Cardano, built by IOG, that uses ZK-SNARKs to support programmable data privacy in smart contracts. NIGHT is the governance and value token, while a separate token, DUST, is generated by holding NIGHT and used to pay for shielded transactions.",
+      "long_desc_html_safe": "Midnight is a privacy-focused partner chain of Cardano, built by IOG, that uses ZK-SNARKs to support programmable data privacy in smart contracts. NIGHT is the governance and value token, while a separate token, DUST, is generated by holding NIGHT and used to pay for shielded transactions.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "okb": {
       "cg_id": "okb",
@@ -735,11 +757,12 @@
     },
     "pieverse": {
       "cg_id": "pieverse",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Pieverse is a Web3 agent and payments platform that lets users deploy autonomous AI agents inside messaging apps such as Line, Kakao, and WhatsApp, with agent wallets secured in trusted execution environments. PIEVERSE is the native token used for rewards, governance, and staking.",
+      "long_desc_html_safe": "Pieverse is a Web3 agent and payments platform that lets users deploy autonomous AI agents inside messaging apps such as Line, Kakao, and WhatsApp, with agent wallets secured in trusted execution environments. PIEVERSE is the native token used for rewards, governance, and staking.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "pol": {
       "cg_id": "matic-network",
@@ -757,11 +780,12 @@
     },
     "pump": {
       "cg_id": "pump-fun",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Pump.fun is a Solana-based launchpad that lets anyone create and trade memecoins through a bonding-curve mechanism, with tokens graduating to a paired DEX once they reach a market cap threshold. PUMP is its native token, launched via an ICO in July 2025.",
+      "long_desc_html_safe": "Pump.fun is a Solana-based launchpad that lets anyone create and trade memecoins through a bonding-curve mechanism, with tokens graduating to a paired DEX once they reach a market cap threshold. PUMP is its native token, launched via an ICO in July 2025.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "pyth": {
       "cg_id": "pyth-network",
@@ -821,11 +845,12 @@
     },
     "sahara": {
       "cg_id": "sahara-ai",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Sahara AI is a decentralized AI platform that combines a specialized Layer 1 blockchain with services for data labeling, model development, and AI agent monetization, aiming to give contributors ownership and attribution over AI assets. SAHARA is the native token used for payments, staking, and governance.",
+      "long_desc_html_safe": "Sahara AI is a decentralized AI platform that combines a specialized Layer 1 blockchain with services for data labeling, model development, and AI agent monetization, aiming to give contributors ownership and attribution over AI assets. SAHARA is the native token used for payments, staking, and governance.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "sand": {
       "cg_id": "the-sandbox",
@@ -843,11 +868,12 @@
     },
     "sent": {
       "cg_id": "sentient",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "SENT was the testnet ticker for the Session Network Token, which powers the Session decentralized end-to-end-encrypted messenger that migrated from the Oxen Network in 2025. The official mainnet ticker is SESH; the token is used to stake to Session Nodes and reward operators that route and store messages.",
+      "long_desc_html_safe": "SENT was the testnet ticker for the Session Network Token, which powers the Session decentralized end-to-end-encrypted messenger that migrated from the Oxen Network in 2025. The official mainnet ticker is SESH; the token is used to stake to Session Nodes and reward operators that route and store messages.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "shib": {
       "cg_id": "shiba-inu",
@@ -879,19 +905,21 @@
     },
     "sonic": {
       "cg_id": "sonic-3",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Sonic is an EVM-compatible Layer 1 blockchain that emerged from the rebranding of Fantom in 2025, focused on high throughput and sub-second finality with a native bridge to Ethereum. S is the native token, swapped 1:1 from the legacy FTM token, used for gas, staking, and governance.",
+      "long_desc_html_safe": "Sonic is an EVM-compatible Layer 1 blockchain that emerged from the rebranding of Fantom in 2025, focused on high throughput and sub-second finality with a native bridge to Ethereum. S is the native token, swapped 1:1 from the legacy FTM token, used for gas, staking, and governance.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "sosovalue": {
       "cg_id": "sosovalue",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "SoSoValue is a crypto research and analytics platform that aggregates market data, fund flows, ETF metrics, and project information, and runs the Spot Index (SSI) protocol for on-chain sector index baskets. SOSO is an ERC-20 utility token used for access to premium features and governance.",
+      "long_desc_html_safe": "SoSoValue is a crypto research and analytics platform that aggregates market data, fund flows, ETF metrics, and project information, and runs the Spot Index (SSI) protocol for on-chain sector index baskets. SOSO is an ERC-20 utility token used for access to premium features and governance.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "spx": {
       "cg_id": "spx6900",
@@ -1007,11 +1035,12 @@
     },
     "vaulta": {
       "cg_id": "eos",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Vaulta is the rebranded successor to the EOS Network, repositioned as a Layer 1 blockchain focused on Web3 banking use cases including wealth management, payments, portfolio management, and insurance. The Vaulta token (A) replaced the legacy EOS token via a swap completed in 2025.",
+      "long_desc_html_safe": "Vaulta is the rebranded successor to the EOS Network, repositioned as a Layer 1 blockchain focused on Web3 banking use cases including wealth management, payments, portfolio management, and insurance. The Vaulta token (A) replaced the legacy EOS token via a swap completed in 2025.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "vet": {
       "cg_id": "vechain",
@@ -1029,19 +1058,21 @@
     },
     "vvv": {
       "cg_id": "venice-token",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Venice is a decentralized AI platform founded by Erik Voorhees that offers privacy-preserving, uncensored access to open-source text, image, and code models through a hosted app and API. VVV is its access token: staking VVV grants a proportional share of daily inference capacity on the network.",
+      "long_desc_html_safe": "Venice is a decentralized AI platform founded by Erik Voorhees that offers privacy-preserving, uncensored access to open-source text, image, and code models through a hosted app and API. VVV is its access token: staking VVV grants a proportional share of daily inference capacity on the network.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "wal": {
       "cg_id": "walrus-2",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Walrus is a decentralized storage and data availability protocol on the Sui blockchain, using a custom two-dimensional erasure coding scheme to store large blobs efficiently and expose them as programmable Sui objects. WAL is the native token used for storage payments, staking, and governance.",
+      "long_desc_html_safe": "Walrus is a decentralized storage and data availability protocol on the Sui blockchain, using a custom two-dimensional erasure coding scheme to store large blobs efficiently and expose them as programmable Sui objects. WAL is the native token used for storage payments, staking, and governance.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "wif": {
       "cg_id": "dogwifcoin",
@@ -1059,11 +1090,12 @@
     },
     "wlfi": {
       "cg_id": "world-liberty-financial",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "World Liberty Financial is a DeFi platform launched in 2024 by partners of the Trump family that offers the USD1 dollar-backed stablecoin and related lending and borrowing products. WLFI is its governance token, which holders use to vote on protocol decisions.",
+      "long_desc_html_safe": "World Liberty Financial is a DeFi platform launched in 2024 by partners of the Trump family that offers the USD1 dollar-backed stablecoin and related lending and borrowing products. WLFI is its governance token, which holders use to vote on protocol decisions.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "xaut": {
       "cg_id": "tether-gold",
@@ -1088,19 +1120,21 @@
     },
     "xmr": {
       "cg_id": "monero",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Monero is a privacy-focused cryptocurrency launched in 2014 that obfuscates sender, receiver, and amount by default using ring signatures, stealth addresses, and Ring Confidential Transactions (RingCT). It uses an ASIC-resistant proof-of-work consensus mechanism called RandomX.",
+      "long_desc_html_safe": "Monero is a privacy-focused cryptocurrency launched in 2014 that obfuscates sender, receiver, and amount by default using ring signatures, stealth addresses, and Ring Confidential Transactions (RingCT). It uses an ASIC-resistant proof-of-work consensus mechanism called RandomX.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "empty-description-on-coingecko"
+      "ok": true,
+      "note": "empty-description-on-coingecko",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "xpl": {
       "cg_id": "plasma-finance",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "Plasma is a Layer 1 blockchain optimized for stablecoin payments, featuring a Byzantine fault-tolerant consensus called PlasmaBFT, full EVM compatibility, and periodic state checkpoints anchored to Bitcoin. XPL is the native token used for staking, governance, and gas on non-stablecoin transactions.",
+      "long_desc_html_safe": "Plasma is a Layer 1 blockchain optimized for stablecoin payments, featuring a Byzantine fault-tolerant consensus called PlasmaBFT, full EVM compatibility, and periodic state checkpoints anchored to Bitcoin. XPL is the native token used for staking, governance, and gas on non-stablecoin transactions.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "known-sparse-or-pre-mainnet"
+      "ok": true,
+      "note": "known-sparse-or-pre-mainnet",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "xrp": {
       "cg_id": "ripple",
@@ -1132,58 +1166,27 @@
     },
     "zk": {
       "cg_id": "zksync",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "ZKsync is an Ethereum Layer 2 scaling network developed by Matter Labs that uses ZK-rollup technology and zero-knowledge proofs to batch transactions off-chain and verify them on Ethereum mainnet. ZK is its native token, used for governance of the protocol and the wider ZK Stack ecosystem.",
+      "long_desc_html_safe": "ZKsync is an Ethereum Layer 2 scaling network developed by Matter Labs that uses ZK-rollup technology and zero-knowledge proofs to batch transactions off-chain and verify them on Ethereum mainnet. ZK is its native token, used for governance of the protocol and the wider ZK Stack ecosystem.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "empty-description-on-coingecko"
+      "ok": true,
+      "note": "empty-description-on-coingecko",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     },
     "zro": {
       "cg_id": "layerzero",
-      "short_desc": null,
-      "long_desc_html_safe": null,
+      "short_desc": "LayerZero is an omnichain interoperability protocol that lets smart contracts on different blockchains exchange verified messages and tokens, with applications selecting their own security stack through configurable decentralized verifier networks. ZRO is its native governance and utility token.",
+      "long_desc_html_safe": "LayerZero is an omnichain interoperability protocol that lets smart contracts on different blockchains exchange verified messages and tokens, with applications selecting their own security stack through configurable decentralized verifier networks. ZRO is its native governance and utility token.",
       "fetched_at": "2026-05-25",
-      "ok": false,
-      "note": "empty-description-on-coingecko"
+      "ok": true,
+      "note": "empty-description-on-coingecko",
+      "source_note": "maintainer-compiled (CoinGecko gap)"
     }
   },
   "missing": [
-    "0g",
-    "2z",
-    "aster",
-    "banana",
-    "bill",
-    "cc",
-    "edge",
-    "ena",
-    "etc",
-    "ethfi",
-    "ff",
-    "fluid",
-    "genius",
-    "grass",
-    "h",
-    "ip",
-    "jst",
-    "kite",
-    "ldo",
-    "lit",
-    "mana",
-    "mon",
-    "night",
-    "pieverse",
-    "pump",
-    "sahara",
-    "sent",
-    "sonic",
-    "sosovalue",
-    "vaulta",
-    "vvv",
-    "wal",
-    "wlfi",
-    "xmr",
-    "xpl",
-    "zk",
-    "zro"
-  ]
+    "genius"
+  ],
+  "attribution": {
+    "fallback": "Compiled by crypto-sectors maintainers from project public sources"
+  }
 }
