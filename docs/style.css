@@ -1367,3 +1367,333 @@ text[role="button"]:focus-visible {
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
+
+/* ==========================================================================
+   === Legend panel ===
+   Hierarchical class -> sector -> sub-sector -> assets sidebar.
+   Layout decision: Option D — right column stacks legend (top) + detail
+   card (bottom). Chart stays full 640px. Legend scrolls independently.
+   On mobile (<1024px) the right column stacks below the chart via the
+   existing single-column responsive rule; legend renders inline (no
+   bottom-sheet), detail card stays bottom-sheet.
+   ========================================================================== */
+
+/* Right column wrapper — stacks legend above detail card */
+.sunburst-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+/* Legend aside — scrollable panel */
+.sunburst-legend {
+  background-color: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Filter input row */
+.legend-filter-wrap {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.legend-filter-input {
+  width: 100%;
+  height: 32px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding-inline: var(--space-3);
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--fg-0);
+  outline: none;
+  caret-color: var(--accent);
+  transition: border-color 80ms;
+}
+
+.legend-filter-input::placeholder { color: var(--fg-3); }
+.legend-filter-input::-webkit-search-cancel-button { display: none; }
+.legend-filter-input:focus { border-color: var(--accent); }
+
+/* Scrollable legend tree body */
+#legend-root {
+  overflow-y: auto;
+  max-height: 420px;
+  padding-block: var(--space-1);
+}
+
+/* --- Class row --- */
+.legend-class {
+  border-bottom: 1px solid var(--border);
+}
+
+.legend-class:last-child {
+  border-bottom: none;
+}
+
+.legend-class-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 60ms;
+}
+
+.legend-class-header:hover {
+  background-color: var(--hover-bg);
+}
+
+.legend-class-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-class-name {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--fg-0);
+  text-transform: uppercase;
+}
+
+.legend-class-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.legend-class-chevron {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  color: var(--fg-3);
+  transition: transform 120ms var(--ease-out);
+}
+
+.legend-class.collapsed .legend-class-chevron {
+  transform: rotate(-90deg);
+}
+
+.legend-class-body {
+  overflow: hidden;
+}
+
+.legend-class.collapsed .legend-class-body {
+  display: none;
+}
+
+/* --- Sector row --- */
+.legend-sector {
+  border-top: 1px solid var(--border);
+}
+
+.legend-sector:first-child {
+  border-top: none;
+}
+
+.legend-sector-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3) var(--space-1) var(--space-5);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 60ms;
+}
+
+.legend-sector-header:hover {
+  background-color: var(--hover-bg);
+}
+
+.legend-sector-code {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  background-color: var(--bg-3);
+  color: var(--fg-2);
+  border-radius: var(--radius-sm);
+  padding: 1px var(--space-1);
+  flex-shrink: 0;
+}
+
+.legend-sector-name {
+  flex: 1;
+  font-size: 12px;
+  color: var(--fg-1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.legend-sector-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-3);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.legend-sector-chevron {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  color: var(--fg-3);
+  transition: transform 120ms var(--ease-out);
+}
+
+.legend-sector.collapsed .legend-sector-chevron {
+  transform: rotate(-90deg);
+}
+
+.legend-sector-body {
+  padding: var(--space-1) var(--space-3) var(--space-2) var(--space-7);
+}
+
+.legend-sector.collapsed .legend-sector-body {
+  display: none;
+}
+
+/* --- Sub-sector row --- */
+.legend-subsector {
+  margin-bottom: var(--space-1);
+}
+
+.legend-subsector-name {
+  font-size: 11px;
+  color: var(--fg-2);
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.legend-subsector-name .legend-sector-code {
+  font-size: 9px;
+}
+
+/* Asset symbol tokens */
+.legend-assets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.legend-asset-sym {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-1);
+  background-color: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1px var(--space-1);
+  cursor: pointer;
+  transition: background-color 60ms, border-color 60ms, color 60ms;
+  line-height: 16px;
+}
+
+.legend-asset-sym:hover {
+  background-color: var(--bg-3);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Highlighted / active states driven by JS */
+.legend-asset-sym.legend-active {
+  background-color: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.legend-class-header.legend-active,
+.legend-sector-header.legend-active {
+  background-color: var(--hover-bg);
+}
+
+.legend-class-header.legend-active .legend-class-name,
+.legend-sector-header.legend-active .legend-sector-name {
+  color: var(--accent);
+}
+
+/* Dimmed state (non-matching during hover/filter) */
+.legend-asset-sym.legend-dim {
+  opacity: 0.35;
+}
+
+.legend-class.legend-dim > .legend-class-header,
+.legend-sector.legend-dim > .legend-sector-header {
+  opacity: 0.4;
+}
+
+/* Focus rings */
+.legend-class-header:focus-visible,
+.legend-sector-header:focus-visible,
+.legend-asset-sym:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/* Mobile toggle button — only shown on mobile (<1024px) */
+.legend-mobile-toggle {
+  display: none;
+  width: 100%;
+  padding: var(--space-3);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fg-1);
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 60ms;
+}
+
+.legend-mobile-toggle:hover {
+  background: var(--bg-3);
+  color: var(--fg-0);
+}
+
+/* ---------- Responsive overrides for legend ---------- */
+
+/* Tablet: legend is full-width below the chart, col stacks */
+@media (max-width: 1023px) {
+  .sunburst-right-col {
+    width: min(100%, 540px);
+    margin-inline: auto;
+  }
+
+  #legend-root {
+    max-height: 320px;
+  }
+}
+
+/* Mobile: show toggle, hide legend body by default */
+@media (max-width: 639px) {
+  .legend-mobile-toggle {
+    display: block;
+  }
+
+  #legend-root {
+    max-height: none;
+  }
+
+  /* When collapsed on mobile, legend-root is hidden via JS toggle */
+  .sunburst-legend.mobile-collapsed #legend-root {
+    display: none;
+  }
+
+  .sunburst-legend.mobile-collapsed .legend-filter-wrap {
+    display: none;
+  }
+}
