@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology — crypto-sectors</title>
+<meta name="description" content="Full methodology for the crypto-sectors open industry classification. Covers hierarchy design, classification criteria, validation approach, and decision audit trail.">
+<style>@font-face{font-family:'Geist';src:url('https://cdn.jsdelivr.net/npm/geist@1/dist/fonts/geist-sans/Geist-Variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}@font-face{font-family:'Geist Mono';src:url('https://cdn.jsdelivr.net/npm/geist@1/dist/fonts/geist-mono/GeistMono-Variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}html{background:hsl(220,18%,7%)}</style>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body data-theme="dark">
+<header id="site-header" role="banner">
+<div class="header-inner">
+<a href="../" class="logo-link" aria-label="crypto-sectors home">
+<svg class="logo-icon" width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="16" cy="16" r="9" stroke="currentColor" stroke-width="2" fill="none" opacity="0.7"/><circle cx="16" cy="16" r="4" fill="currentColor" opacity="0.9"/></svg>
+<span class="logo-text">crypto-sectors</span>
+</a>
+<nav class="header-nav" aria-label="Site navigation">
+<a href="../methodology/" class="nav-link">Methodology</a>
+<a href="../validation/" class="nav-link">Validation</a>
+<a href="https://github.com/quantbai/crypto-sectors" class="nav-link" target="_blank" rel="noopener noreferrer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+GitHub
+</a>
+</nav>
+</div>
+</header>
+<main id="main-content">
+
+<div class="container prose-page">
+<article class="prose">
+<h1 id="methodology">Methodology<a class="headerlink" href="#methodology" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Version 1.0.0 · Release date 2026-05-24</p>
+</blockquote>
+<h2 id="1-purpose">1. Purpose<a class="headerlink" href="#1-purpose" title="Permanent link">&para;</a></h2>
+<p>A reference industry classification for digital assets, usable for:</p>
+<ol>
+<li><strong>Cross-sectional sector neutralization</strong> of alpha signals (<code>group_neut</code>).</li>
+<li><strong>Risk attribution</strong> — decomposing returns into sector, chain, and idiosyncratic components.</li>
+<li><strong>Peer-group comparison</strong> — fundamental and technical metrics are only meaningful relative to peers performing a similar economic function.</li>
+<li><strong>Comparability with established institutional research</strong> — the 6-digit <code>CCSSXX</code> positional code format was chosen to make potential future crosswalks to institutional classification systems tractable. See §3.2 for the affiliation disclaimer.</li>
+</ol>
+<h2 id="2-design-principles">2. Design principles<a class="headerlink" href="#2-design-principles" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Principle</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Single-leaf assignment</strong> within the hierarchy</td>
+<td>An asset belonging to multiple groups is unusable for <code>group_neut</code>. We accept the cost: borderline assets are placed in their dominant economic function, with the rationale recorded in <code>decisions/</code>.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Theory-driven, empirically validated</strong></td>
+<td>The taxonomy starts from established economic-function definitions in the institutional classification literature (see §7). Sectors are not discovered from clustering — that would overfit. We then validate that same-sector returns co-move more than cross-sector returns.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Orthogonal tags alongside the hierarchy</strong></td>
+<td>Chain-ecosystem effects in crypto can rival sector effects. Forcing them into the hierarchy distorts the tree; treating them as a cross-cutting tag preserves both axes.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Auditable per-asset decisions</strong></td>
+<td>Every non-trivial classification has a markdown file in <code>decisions/</code> recording the rationale. Disputes become PRs with evidence.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-hierarchy">3. Hierarchy<a class="headerlink" href="#3-hierarchy" title="Permanent link">&para;</a></h2>
+<p>Three levels:</p>
+<pre><code>Class (2-digit, 4 entries)            ── reporting &amp; risk-regime boundary
+  └── Sector (4-digit, 14 entries)    ── primary group-neutralization axis
+        └── Sub-sector (6-digit)      ── attribution &amp; fine-grained neutralization
+</code></pre>
+<h3 id="31-why-three-levels-and-not-two-or-four">3.1 Why three levels (and not two, or four)<a class="headerlink" href="#31-why-three-levels-and-not-two-or-four" title="Permanent link">&para;</a></h3>
+<p>The choice tracks the precedent set by established equity-market classification systems (cited in §7) — both are four-level systems with 5,000+ constituents — adjusted downward by one level because the digital-asset universe is roughly an order of magnitude smaller.</p>
+<table>
+<thead>
+<tr>
+<th>Level count</th>
+<th>Avg assets / leaf (at N=158)</th>
+<th>Trade-off</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 (sector only)</td>
+<td>11</td>
+<td>Loses the Currencies-vs-Smart-Contract-Platforms-vs-Stablecoin boundary; statistically forces stablecoins into the same demean bucket as L1 tokens.</td>
+</tr>
+<tr>
+<td>2 (class + sector)</td>
+<td>sector: 11; class: 40</td>
+<td>Workable but loses application-level attribution (e.g., DEX vs Lending within DeFi).</td>
+</tr>
+<tr>
+<td><strong>3 (class + sector + sub-sector)</strong></td>
+<td><strong>sub: 3–5; sector: 11; class: 40</strong></td>
+<td><strong>Sweet spot for current N.</strong> Sub-sector statistically borderline; fallback chain (sub → sector → class) handles it.</td>
+</tr>
+<tr>
+<td>4 (add sub-industry)</td>
+<td>sub-industry: 1–2</td>
+<td>Demean on n=1 is the asset itself. Not yet useful at this universe size.</td>
+</tr>
+</tbody>
+</table>
+<p>Each level serves a distinct downstream purpose: Class for stablecoin-vs-rest risk boundaries and UI navigation; Sector as the primary group-neutralization axis (empirically the strongest cohesion signal); Sub-sector for attribution and the largest-bucket niche neutralization (DEX, Lending, L2, LST).</p>
+<h3 id="32-code-structure">3.2 Code structure<a class="headerlink" href="#32-code-structure" title="Permanent link">&para;</a></h3>
+<p>Six-digit codes follow <code>CCSSXX</code>:</p>
+<ul>
+<li><code>CC</code> = class (2-digit)</li>
+<li><code>SS</code> = sector-within-class (4-digit when concatenated as <code>CCSS</code>)</li>
+<li><code>XX</code> = sub-sector-within-sector (6-digit when concatenated as <code>CCSSXX</code>)</li>
+</ul>
+<p>Sub-sector codes ending <code>90</code>–<code>99</code> are community extensions. They are visually distinguishable (e.g., <code>301090</code> for Liquid Staking) and reserve the <code>00</code>–<code>89</code> range for potential future alignment with institutional classification baselines.</p>
+<p>Uses a 6-digit positional code format (<code>CCSSXX</code>) as a structural convention. This project has no affiliation with, and makes no claim of mapping compatibility to, Datonomy, GICS, or ICB. The format choice exists to make potential future crosswalks tractable, not to guarantee one today.</p>
+<h3 id="33-orthogonal-tags">3.3 Orthogonal tags<a class="headerlink" href="#33-orthogonal-tags" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Cardinality</th>
+<th>Why orthogonal to hierarchy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>chain_ecosystem</code></td>
+<td>~10</td>
+<td>A lending protocol on Solana co-moves with other Solana assets more than with lending protocols on other chains. Sector and chain are both real, both significant; neither subsumes the other.</td>
+</tr>
+</tbody>
+</table>
+<p>Tags can be added in future versions for further orthogonal axes (token economic model, settlement-layer dependency, regulatory regime) but each addition requires evidence that the new axis captures meaningful variance not absorbed by hierarchy or existing tags.</p>
+<h2 id="4-classification-process">4. Classification process<a class="headerlink" href="#4-classification-process" title="Permanent link">&para;</a></h2>
+<h3 id="41-new-asset">4.1 New asset<a class="headerlink" href="#41-new-asset" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Read</strong> whitepaper, protocol documentation, and a recent Token Terminal or DefiLlama snapshot of fee flow.</li>
+<li><strong>Classify on primary economic function</strong>, breaking ties in this order:</li>
+<li>Fee or revenue source (where does the value flow that accrues to the token?)</li>
+<li>Largest TVL or transaction-volume component</li>
+<li>Marketing positioning (lowest weight — tie-breaker only)</li>
+<li><strong>Assign chain_ecosystem</strong> by largest-TVL deployment chain at snapshot date.</li>
+<li><strong>Submit a PR</strong> adding one row to <code>classification/snapshot.csv</code> and one file <code>decisions/&lt;symbol&gt;.md</code> with the rationale (template in <a href="CONTRIBUTING.md">CONTRIBUTING.md</a>).</li>
+</ol>
+<h3 id="42-reclassification">4.2 Reclassification<a class="headerlink" href="#42-reclassification" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Trigger</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Protocol pivots primary use case (e.g., a launchpad adds a DEX as primary product)</td>
+<td>Sub-sector PR with effective date and rationale.</td>
+</tr>
+<tr>
+<td>Token rebrand with no economic change (MATIC → POL)</td>
+<td>Keep the same asset_id, update symbol, record the rename in <code>decisions/</code>.</td>
+</tr>
+<tr>
+<td>Token migration via swap contract (LUNA → LUNA2/LUNC)</td>
+<td>Mint a new asset_id; record the relationship in <code>decisions/</code>.</td>
+</tr>
+<tr>
+<td>Chain ecosystem shift (largest-TVL chain changes)</td>
+<td>Tag-only change.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Point-in-time (PIT) immutability contract.</strong> The <code>effective_from</code> field in <code>classification/snapshot.csv</code> records the date from which each classification row applies. Historical published panels are immutable. Reclassifications create new rows in <code>snapshot.csv</code> with a later <code>effective_from</code>; they never modify rows for past dates. A backtest pinned to a release tag (e.g. <code>git checkout v1.0.0</code>) will reproduce exactly across future taxonomy bumps.</p>
+<blockquote>
+<p><strong>Warning</strong>: running a historical backtest against <code>main</code> after a reclassification PR is merged WILL show different results for pre-reclass dates. For reproducible historical backtests, always check out a release tag.</p>
+</blockquote>
+<p><strong><code>effective_from</code> semantics</strong>: cells in the wide matrix dated before an asset's <code>effective_from</code> are <code>NaN</code>, meaning "asset not yet classified under this schema version" — not "asset does not exist". See <a href="SCHEMA.md">SCHEMA.md</a> for the full null policy.</p>
+<h3 id="43-cadence">4.3 Cadence<a class="headerlink" href="#43-cadence" title="Permanent link">&para;</a></h3>
+<p>Continuous PR review against <code>main</code>. The repository is tagged once per quarter (<code>v2026.Q2</code>, <code>v2026.Q3</code>, …) for consumers who require a stable reference. Between tags, <code>main</code> is always usable; tagged versions are immutable.</p>
+<h2 id="5-out-of-scope-intentionally">5. Out of scope (intentionally)<a class="headerlink" href="#5-out-of-scope-intentionally" title="Permanent link">&para;</a></h2>
+<p>The following are deliberately excluded from v1.0 to keep the scope tight. Each is a potential future extension only if community demand emerges:</p>
+<ul>
+<li><strong>Investable filters</strong> (mcap tier, ADV, listing venue) — these are properties of an asset's tradability, not its classification. This repository defines a <strong>coverage universe</strong> (which assets are classified); the <strong>investable universe</strong> (which assets a specific strategy trades) is determined downstream by each consumer applying their own filters. See <a href="UNIVERSE.md">UNIVERSE.md</a> for coverage criteria.</li>
+<li><strong>Regulatory tags</strong> — jurisdiction-specific, fast-changing, and outside the scope of an industry classification.</li>
+<li><strong>Stablecoin internals</strong> — peg mechanism details, reserve composition. We classify the <em>type</em> of stablecoin; deeper attribution is a separate dataset.</li>
+<li><strong>NFT collection-level classification</strong> — collections are not fungible assets.</li>
+<li><strong>Per-asset Sharpe / IR / drawdown statistics</strong> — these are derived analytics, not classification.</li>
+</ul>
+<h2 id="6-versioning">6. Versioning<a class="headerlink" href="#6-versioning" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Convention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Repository releases</td>
+<td>Quarterly tags <code>vYYYY.QN</code></td>
+</tr>
+<tr>
+<td><code>taxonomy.yaml</code> <code>version</code> field</td>
+<td>SemVer; bumped on structural change (new sub-sector, code reshuffle)</td>
+</tr>
+<tr>
+<td><code>classification/snapshot.csv</code></td>
+<td>Tracks <code>main</code>; tagged with each release</td>
+</tr>
+</tbody>
+</table>
+<p>A consumer should pin to a specific release tag for reproducible backtests.</p>
+<h2 id="7-references">7. References<a class="headerlink" href="#7-references" title="Permanent link">&para;</a></h2>
+<p>Academic and industry references that informed the design. Inclusion here is academic citation; no endorsement or affiliation is implied or claimed.</p>
+<ul>
+<li>MSCI, Coin Metrics, and Goldman Sachs (2022). <em>Datonomy Methodology.</em> (Digital-asset classification reference. Uses a 6-digit positional code format (<code>CCSSXX</code>) as a structural convention. This project has no affiliation with, and makes no claim of mapping compatibility to, Datonomy, GICS, or ICB. The format choice exists to make potential future crosswalks tractable, not to guarantee one today.)</li>
+<li>Bhojraj, S., Lee, C., and Oler, D. (2003). "What's My Line? A Comparison of Industry Classification Schemes for Capital Market Research." <em>Journal of Accounting Research</em>, 41(5).</li>
+<li>S&amp;P Global and MSCI. <em>Global Industry Classification Standard (GICS) Methodology.</em> (Cross-asset precedent for multi-level hierarchical industry classification.)</li>
+<li>FTSE Russell. <em>Industry Classification Benchmark (ICB) Ground Rules.</em></li>
+<li>Hoberg, G., and Phillips, G. (2016). "Text-Based Network Industries and Endogenous Product Differentiation." <em>Journal of Political Economy</em>.</li>
+</ul>
+<h3 id="trademark-notice">Trademark notice<a class="headerlink" href="#trademark-notice" title="Permanent link">&para;</a></h3>
+<p>GICS is a registered trademark of S&amp;P Global and MSCI Inc. Datonomy is a trademark of MSCI Inc. ICB is a trademark of FTSE International Limited. WorldQuant and BRAIN are trademarks of WorldQuant LLC. All other trademarks are the property of their respective owners. This project is independent of, and has no business relationship with, any of these organizations.</p>
+</article>
+</div>
+
+</main>
+<footer id="site-footer" role="contentinfo">
+<div class="container footer-inner">
+<p class="footer-text">Code: <a href="https://github.com/quantbai/crypto-sectors/blob/main/LICENSE" class="footer-link" target="_blank" rel="noopener noreferrer">MIT</a> &middot; Data: <a href="https://github.com/quantbai/crypto-sectors/blob/main/LICENSE-data" class="footer-link" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> &middot; No cookies. No tracking.</p>
+<p class="footer-text"><a href="https://github.com/quantbai/crypto-sectors" class="footer-link" target="_blank" rel="noopener noreferrer">quantbai/crypto-sectors</a></p>
+
+</div>
+</footer>
+</body>
+</html>

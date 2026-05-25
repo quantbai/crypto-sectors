@@ -112,7 +112,10 @@ function fmtPct(v, decimals = 1) {
 // Main entry
 // ---------------------------------------------------------------------------
 (async () => {
-  let taxonomy, validation;
+  // === QD-G v1.1: extend Promise.all to load descriptions.json ===
+  // If descriptions.json is absent (e.g. fresh clone before first fetch),
+  // degrade gracefully with empty descriptions map.
+  let taxonomy, validation, descriptionsData;
   try {
     [taxonomy, validation] = await Promise.all([
       fetch('data/taxonomy.json').then(r => r.json()),
@@ -125,6 +128,21 @@ function fmtPct(v, decimals = 1) {
     return;
   }
 
+  // descriptions.json is optional: load separately so core data failure
+  // doesn't prevent descriptions from loading (and vice versa).
+  try {
+    const descResp = await fetch('data/descriptions.json');
+    if (descResp.ok) {
+      descriptionsData = await descResp.json();
+    } else {
+      descriptionsData = { assets: {} };
+    }
+  } catch (_) {
+    descriptionsData = { assets: {} };
+  }
+  const descriptions = (descriptionsData && descriptionsData.assets) || {};
+  // === end QD-G ===
+
   // Build asset lookup by asset_id
   const assetById = {};
   taxonomy.assets_flat.forEach(a => { assetById[a.asset_id] = a; });
@@ -134,7 +152,7 @@ function fmtPct(v, decimals = 1) {
   const _inits = [
     ['Search',         () => initSearch(taxonomy.assets_flat)],
     ['Sunburst',       () => initSunburst(taxonomy.hierarchy, taxonomy.assets_flat)],
-    ['DetailCard',     () => initDetailCard()],
+    ['DetailCard',     () => initDetailCard(descriptions)],   // QD-G: pass descriptions
     ['Heatmap',        () => initHeatmap(taxonomy.chain_sector_matrix, taxonomy.assets_flat)],
     ['ValidationCard', () => initValidationCard(validation.headline, taxonomy.metadata)],
     ['KeyboardNav',    () => initKeyboardNav()],
@@ -864,11 +882,15 @@ function initSunburst(hierarchy, assetsFlat) {
 // ---------------------------------------------------------------------------
 // initDetailCard
 // ---------------------------------------------------------------------------
-function initDetailCard() {
+// === QD-G v1.1: accepts descriptions map {asset_id: {short_desc, cg_id, ok}} ===
+function initDetailCard(descriptions) {
   const emptyState = document.getElementById('detail-empty-state');
   const content = document.getElementById('detail-content');
 
   if (!emptyState || !content) return;
+
+  // Normalize to empty object if not provided (graceful degrade)
+  const descMap = descriptions || {};
 
   function updateCard(asset) {
     if (!asset) {
@@ -918,6 +940,30 @@ function initDetailCard() {
         decisionRow.hidden = true;
         if (decisionLink) decisionLink.setAttribute('tabindex', '-1');
       }
+
+      // === QD-G v1.1: About row — short description from descriptions.json ===
+      const aboutRow = document.getElementById('dv-about-row');
+      const aboutEl = document.getElementById('dv-about');
+      const descEntry = descMap[asset.asset_id];
+      const shortDesc = descEntry && descEntry.ok && descEntry.short_desc;
+      if (aboutRow && aboutEl) {
+        if (shortDesc) {
+          aboutEl.textContent = shortDesc;
+          aboutRow.hidden = false;
+        } else {
+          aboutRow.hidden = true;
+        }
+      }
+
+      // === QD-G v1.1: Full page link row ===
+      const fullpageRow = document.getElementById('dv-fullpage-row');
+      const fullpageLink = document.getElementById('dv-fullpage-link');
+      if (fullpageRow && fullpageLink) {
+        fullpageLink.href = `coins/${asset.asset_id}/`;
+        fullpageLink.setAttribute('tabindex', '0');
+        fullpageRow.hidden = false;
+      }
+      // === end QD-G ===
 
       emptyState.hidden = true;
       content.hidden = false;

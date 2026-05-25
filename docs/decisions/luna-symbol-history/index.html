@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decision: LUNA — symbol history and asset_id discipline — crypto-sectors</title>
+<meta name="description" content="Classification decision rationale for LUNA — symbol history and asset_id discipline.">
+<style>@font-face{font-family:'Geist';src:url('https://cdn.jsdelivr.net/npm/geist@1/dist/fonts/geist-sans/Geist-Variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}@font-face{font-family:'Geist Mono';src:url('https://cdn.jsdelivr.net/npm/geist@1/dist/fonts/geist-mono/GeistMono-Variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}html{background:hsl(220,18%,7%)}</style>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body data-theme="dark">
+<header id="site-header" role="banner">
+<div class="header-inner">
+<a href="../../" class="logo-link" aria-label="crypto-sectors home">
+<svg class="logo-icon" width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="16" cy="16" r="9" stroke="currentColor" stroke-width="2" fill="none" opacity="0.7"/><circle cx="16" cy="16" r="4" fill="currentColor" opacity="0.9"/></svg>
+<span class="logo-text">crypto-sectors</span>
+</a>
+<nav class="header-nav" aria-label="Site navigation">
+<a href="../../methodology/" class="nav-link">Methodology</a>
+<a href="../../validation/" class="nav-link">Validation</a>
+<a href="https://github.com/quantbai/crypto-sectors" class="nav-link" target="_blank" rel="noopener noreferrer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+GitHub
+</a>
+</nav>
+</div>
+</header>
+<main id="main-content">
+
+<div class="container prose-page">
+<p class="prose-breadcrumb">
+<a href="../../" class="accent-link">crypto-sectors</a>
+ &rsaquo; Decisions
+</p>
+<article class="prose">
+<h1 id="luna-symbol-history-and-asset_id-discipline">LUNA — symbol history and asset_id discipline<a class="headerlink" href="#luna-symbol-history-and-asset_id-discipline" title="Permanent link">&para;</a></h1>
+<p><strong>Decision</strong>: the symbol <code>LUNA</code> has referred to two distinct assets. We use
+asset_ids <code>terra-luna-classic</code> and <code>terra-luna-2</code> to keep them separate, and
+the symbol field tracks whichever the most recent canonical use is.</p>
+<p><strong>Date</strong>: 2026-05-23
+<strong>Effective from snapshot</strong>: v2026.Q2</p>
+<h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
+<ul>
+<li>2019-04 to 2022-05: <code>LUNA</code> referred to the Terra Classic network's native token. After the May 2022 collapse, the network was renamed Terra Classic and the token was rebranded to <code>LUNC</code>. This is <code>asset_id = terra-luna-classic</code>.</li>
+<li>2022-05 onwards: A new chain launched with a freshly minted token, originally labeled <code>LUNA2</code> and now commonly traded as <code>LUNA</code>. This is <code>asset_id = terra-luna-2</code>.</li>
+</ul>
+<p>The two assets are <strong>not</strong> the same instrument:
+- No 1:1 swap contract relates them.
+- The new chain has different validators, different supply, no historical state from the original Terra.
+- LUNC holders received a small airdrop allocation of LUNA2, but the bulk of value did not transfer.</p>
+<h2 id="why-this-matters-for-users-of-this-dataset">Why this matters for users of this dataset<a class="headerlink" href="#why-this-matters-for-users-of-this-dataset" title="Permanent link">&para;</a></h2>
+<p>Anyone joining a price series labeled <code>"LUNA"</code> from before and after May 2022
+risks stitching two unrelated assets into a single time series — the pre-collapse
+returns belong to a defunct asset, the post-launch returns belong to a new one.</p>
+<p><strong>Recommendation for backtests</strong>:
+- Use <code>asset_id</code>, not <code>symbol</code>, as the join key against this classification.
+- For pre-2022-05 LUNA data, use <code>asset_id = terra-luna-classic</code>.
+- For post-2022-05 LUNA data, use <code>asset_id = terra-luna-2</code>.
+- Do not splice their return series without explicit acknowledgment.</p>
+<h2 id="wide-matrix-implications">Wide-matrix implications<a class="headerlink" href="#wide-matrix-implications" title="Permanent link">&para;</a></h2>
+<p>In <code>classification/wide/*.parquet</code>, columns are asset_ids. <code>terra-luna-classic</code>
+and <code>terra-luna-2</code> appear as separate columns with non-overlapping date ranges
+(the original's effective period ends 2022-05-12; the new chain begins 2022-05-28).</p>
+<p>If a downstream user joins by symbol, the two assets will collide. This is why
+this repository uses asset_id consistently and recommends consumers do the same.</p>
+<h2 id="related-cases">Related cases<a class="headerlink" href="#related-cases" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>dydx-v3</code> vs <code>dydx</code>: dYdX migrated from an Ethereum-based v3 to a sovereign Cosmos chain (v4) in October 2023. Treated as two asset_ids for the same reasons.</li>
+<li><code>matic</code> vs <code>pol</code>: 1:1 contract migration with full economic continuity. Treated as the <em>same</em> asset, with <code>symbol</code> updated and <code>name</code> rewritten. No separate asset_id.</li>
+</ul>
+</article>
+<p class="prose-source-link">
+<a href="https://github.com/quantbai/crypto-sectors/blob/main/decisions/luna-symbol-history.md"
+   class="accent-link" target="_blank" rel="noopener noreferrer">
+View source on GitHub
+</a>
+</p>
+</div>
+
+</main>
+<footer id="site-footer" role="contentinfo">
+<div class="container footer-inner">
+<p class="footer-text">Code: <a href="https://github.com/quantbai/crypto-sectors/blob/main/LICENSE" class="footer-link" target="_blank" rel="noopener noreferrer">MIT</a> &middot; Data: <a href="https://github.com/quantbai/crypto-sectors/blob/main/LICENSE-data" class="footer-link" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> &middot; No cookies. No tracking.</p>
+<p class="footer-text"><a href="https://github.com/quantbai/crypto-sectors" class="footer-link" target="_blank" rel="noopener noreferrer">quantbai/crypto-sectors</a></p>
+
+</div>
+</footer>
+</body>
+</html>
