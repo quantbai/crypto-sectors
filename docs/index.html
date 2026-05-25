@@ -13,6 +13,9 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>@font-face{font-family:'Geist';src:url('https://cdn.jsdelivr.net/npm/geist@1/dist/fonts/geist-sans/Geist-Variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}@font-face{font-family:'Geist Mono';src:url('https://cdn.jsdelivr.net/npm/geist@1/dist/fonts/geist-mono/GeistMono-Variable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}html{background:hsl(220,18%,7%)}</style>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preload" as="fetch" href="data/taxonomy.json" crossorigin>
+<link rel="preload" as="fetch" href="data/validation.json" crossorigin>
+<link rel="preload" as="fetch" href="data/descriptions.json" crossorigin>
 <link rel="stylesheet" href="style.css">
 </head>
 <body data-theme="dark">
@@ -115,18 +118,13 @@ validated on <span class="mono">730</span> days of returns.
 </div>
 </aside>
 </div>
-<details class="sunburst-explorer" id="legend-explorer">
-<summary class="sunburst-explorer-summary" aria-label="Browse all 158 assets grouped by class">
-<span class="sunburst-explorer-label">Browse all <span class="mono">158</span> assets by class</span>
-<span class="sunburst-explorer-chevron" aria-hidden="true">&#x203A;</span>
-</summary>
-<div class="sunburst-explorer-body">
-<div class="legend-filter-wrap">
-<input type="search" id="legend-filter" class="legend-filter-input" placeholder="Filter by symbol or sector name..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="Filter hierarchy legend" aria-controls="legend-root">
+<aside class="sunburst-caption" id="legend-caption" aria-label="Current view caption" aria-live="polite">
+<div class="caption-header">
+<span class="caption-title" id="caption-title">All classes</span>
+<span class="caption-meta" id="caption-meta"></span>
 </div>
-<div id="legend-root" role="tree" aria-label="Asset classification hierarchy"></div>
-</div>
-</details>
+<div id="legend-root" role="list" aria-label="Items in current view"></div>
+</aside>
 </div>
 </section>
 <section id="heatmap-section" aria-labelledby="heatmap-title">

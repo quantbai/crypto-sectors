@@ -641,8 +641,13 @@ mark {
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
-  min-height: 280px;
-  overflow: hidden;
+  /* Match the sunburst chart height for visual symmetry across the hero row.
+     Content scrolls internally if it exceeds (e.g., assets with very long
+     About copy). Empty state still centers vertically. */
+  min-height: 640px;
+  max-height: 640px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .detail-empty {
@@ -1378,79 +1383,120 @@ text[role="button"]:focus-visible {
    bottom-sheet), detail card stays bottom-sheet.
    ========================================================================== */
 
-/* === Layout decision (v1.1.1, UX rework) ===
-   v1.1 put the legend alongside the chart in a right column, which
-   broke the v1.0 hero aesthetic (chart no longer centered, detail card
-   pushed down). v1.1.1 restores [chart | detail-card] as the hero row
-   and moves the legend into a full-width <details> disclosure below
-   the chart, collapsed by default. The legend becomes a secondary
-   browse tool — opt-in, not always-on.
+/* === Layout decision (v1.1.2, "live caption" rework) ===
+   v1.1.1 had a collapsed <details> disclosure with a static full-tree
+   legend. v1.1.2 turns it into a LIVE CAPTION that always reflects the
+   sunburst's current view — in overview mode it lists the 4 classes
+   (as a color key for the wedges); when zoomed it shows that
+   sub-sector's name + asset chips. The panel mirrors the chart 1:1,
+   no clicking required to read color meaning.
    ============================================== */
 
-/* Full-width disclosure container below the chart row */
-.sunburst-explorer {
-  grid-column: 1 / -1;          /* span full width if grid context */
+.sunburst-caption {
   margin-top: var(--space-6);
   background-color: var(--bg-1);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  overflow: hidden;
+  padding: var(--space-4) var(--space-5);
 }
 
-/* The clickable summary acts as a button */
-.sunburst-explorer-summary {
+.caption-header {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  padding: var(--space-3) var(--space-4);
-  cursor: pointer;
-  list-style: none;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--fg-1);
-  user-select: none;
-  transition: background-color 80ms;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--space-3);
 }
-.sunburst-explorer-summary::-webkit-details-marker { display: none; }
-.sunburst-explorer-summary::marker { content: ""; }
 
-.sunburst-explorer-summary:hover {
+.caption-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+.caption-meta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg-2);
+}
+
+/* In overview mode: 4 class rows, each with color dot, name, count */
+.caption-row {
+  display: grid;
+  grid-template-columns: 14px 1fr auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  margin-inline: calc(-1 * var(--space-3));
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color 60ms;
+}
+
+.caption-row:hover {
   background-color: var(--bg-2);
+}
+
+.caption-row-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.caption-row-label {
+  font-size: 14px;
   color: var(--fg-0);
 }
 
-.sunburst-explorer-label .mono {
-  color: var(--accent);
-  font-weight: 600;
-}
-
-.sunburst-explorer-chevron {
-  font-size: 18px;
+.caption-row-meta {
+  font-family: var(--font-mono);
+  font-size: 12px;
   color: var(--fg-2);
-  transition: transform 180ms var(--ease-out);
-  line-height: 1;
+  font-variant-numeric: tabular-nums;
 }
 
-/* Rotate chevron when open */
-.sunburst-explorer[open] > .sunburst-explorer-summary .sunburst-explorer-chevron {
-  transform: rotate(90deg);
-}
-
-.sunburst-explorer[open] > .sunburst-explorer-summary {
-  border-bottom: 1px solid var(--border);
-}
-
-/* Body shown when open */
-.sunburst-explorer-body {
+/* In zoomed mode: asset chips grid */
+.caption-chips {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding-top: var(--space-2);
 }
 
-/* (Legacy from v1.1 right-column legend — kept for any leftover refs.
-   New layout uses .sunburst-explorer-body as the legend container.) */
-.sunburst-right-col,
-.sunburst-legend {
-  /* both selectors are no-ops in v1.1.1 — replaced by .sunburst-explorer */
+.caption-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  background-color: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg-1);
+  cursor: pointer;
+  transition: all 80ms;
+}
+
+.caption-chip:hover {
+  background-color: var(--bg-3);
+  color: var(--fg-0);
+  border-color: var(--accent);
+}
+
+.caption-chip.active {
+  background-color: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--fg-0);
+}
+
+.caption-row.active {
+  background-color: var(--accent-dim);
 }
 
 /* Filter input row */
