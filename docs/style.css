@@ -1378,22 +1378,79 @@ text[role="button"]:focus-visible {
    bottom-sheet), detail card stays bottom-sheet.
    ========================================================================== */
 
-/* Right column wrapper — stacks legend above detail card */
-.sunburst-right-col {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  min-width: 0;
-}
+/* === Layout decision (v1.1.1, UX rework) ===
+   v1.1 put the legend alongside the chart in a right column, which
+   broke the v1.0 hero aesthetic (chart no longer centered, detail card
+   pushed down). v1.1.1 restores [chart | detail-card] as the hero row
+   and moves the legend into a full-width <details> disclosure below
+   the chart, collapsed by default. The legend becomes a secondary
+   browse tool — opt-in, not always-on.
+   ============================================== */
 
-/* Legend aside — scrollable panel */
-.sunburst-legend {
+/* Full-width disclosure container below the chart row */
+.sunburst-explorer {
+  grid-column: 1 / -1;          /* span full width if grid context */
+  margin-top: var(--space-6);
   background-color: var(--bg-1);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   overflow: hidden;
+}
+
+/* The clickable summary acts as a button */
+.sunburst-explorer-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  cursor: pointer;
+  list-style: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fg-1);
+  user-select: none;
+  transition: background-color 80ms;
+}
+.sunburst-explorer-summary::-webkit-details-marker { display: none; }
+.sunburst-explorer-summary::marker { content: ""; }
+
+.sunburst-explorer-summary:hover {
+  background-color: var(--bg-2);
+  color: var(--fg-0);
+}
+
+.sunburst-explorer-label .mono {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.sunburst-explorer-chevron {
+  font-size: 18px;
+  color: var(--fg-2);
+  transition: transform 180ms var(--ease-out);
+  line-height: 1;
+}
+
+/* Rotate chevron when open */
+.sunburst-explorer[open] > .sunburst-explorer-summary .sunburst-explorer-chevron {
+  transform: rotate(90deg);
+}
+
+.sunburst-explorer[open] > .sunburst-explorer-summary {
+  border-bottom: 1px solid var(--border);
+}
+
+/* Body shown when open */
+.sunburst-explorer-body {
   display: flex;
   flex-direction: column;
+}
+
+/* (Legacy from v1.1 right-column legend — kept for any leftover refs.
+   New layout uses .sunburst-explorer-body as the legend container.) */
+.sunburst-right-col,
+.sunburst-legend {
+  /* both selectors are no-ops in v1.1.1 — replaced by .sunburst-explorer */
 }
 
 /* Filter input row */
@@ -1644,56 +1701,12 @@ text[role="button"]:focus-visible {
   outline-offset: 1px;
 }
 
-/* Mobile toggle button — only shown on mobile (<1024px) */
-.legend-mobile-toggle {
-  display: none;
-  width: 100%;
-  padding: var(--space-3);
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--fg-1);
-  background: var(--bg-2);
-  border-top: 1px solid var(--border);
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 60ms;
-}
+/* (Legacy .legend-mobile-toggle removed in v1.1.1 — <details> handles
+   collapse natively across desktop and mobile, no JS toggle needed.) */
 
-.legend-mobile-toggle:hover {
-  background: var(--bg-3);
-  color: var(--fg-0);
-}
-
-/* ---------- Responsive overrides for legend ---------- */
-
-/* Tablet: legend is full-width below the chart, col stacks */
+/* ---------- Responsive ---------- */
 @media (max-width: 1023px) {
-  .sunburst-right-col {
-    width: min(100%, 540px);
-    margin-inline: auto;
-  }
-
   #legend-root {
-    max-height: 320px;
-  }
-}
-
-/* Mobile: show toggle, hide legend body by default */
-@media (max-width: 639px) {
-  .legend-mobile-toggle {
-    display: block;
-  }
-
-  #legend-root {
-    max-height: none;
-  }
-
-  /* When collapsed on mobile, legend-root is hidden via JS toggle */
-  .sunburst-legend.mobile-collapsed #legend-root {
-    display: none;
-  }
-
-  .sunburst-legend.mobile-collapsed .legend-filter-wrap {
-    display: none;
+    max-height: 360px;
   }
 }

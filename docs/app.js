@@ -1618,41 +1618,20 @@ function initLegend(hierarchy, assetsFlat) {
     if (idx > 0) items[idx - 1].focus();
   }
 
-  // ---------------------------------------------------------------------------
-  // Mobile toggle: show/hide entire legend body on narrow screens
-  // ---------------------------------------------------------------------------
-  const mobileToggle = document.getElementById('legend-mobile-toggle');
-  const legendAside  = root.closest('.sunburst-legend');
+  // (v1.1.1: legacy mobile toggle removed — <details> in index.html handles
+  // collapse natively across all viewports. The disclosure is closed by
+  // default so it never breaks the hero layout.)
 
-  function updateMobileToggle() {
-    if (!mobileToggle || !legendAside) return;
-    if (window.innerWidth < 640) {
-      mobileToggle.removeAttribute('hidden');
-      // Default: collapsed on mobile if not yet set
-      if (!legendAside.dataset.mobileInitialized) {
-        legendAside.classList.add('mobile-collapsed');
-        mobileToggle.setAttribute('aria-expanded', 'false');
-        mobileToggle.textContent = 'Show legend (' + assetsFlat.length + ' assets)';
-        legendAside.dataset.mobileInitialized = '1';
-      }
-    } else {
-      mobileToggle.setAttribute('hidden', '');
-      legendAside.classList.remove('mobile-collapsed');
+  // When user picks an asset (from anywhere) and the legend is closed,
+  // open it so they can see the highlighted row.
+  const explorer = document.getElementById('legend-explorer');
+  emitter.on('state:selectedAsset', asset => {
+    if (asset && explorer && !explorer.open) {
+      // Don't auto-open on the first selection from a sunburst click —
+      // only open if the user opened it before. Comment out to NEVER auto-open.
+      // explorer.open = true;
     }
-  }
-
-  if (mobileToggle) {
-    mobileToggle.addEventListener('click', () => {
-      const isNowCollapsed = legendAside.classList.toggle('mobile-collapsed');
-      mobileToggle.setAttribute('aria-expanded', String(!isNowCollapsed));
-      mobileToggle.textContent = isNowCollapsed
-        ? 'Show legend (' + assetsFlat.length + ' assets)'
-        : 'Hide legend';
-    });
-  }
-
-  updateMobileToggle();
-  window.addEventListener('resize', updateMobileToggle);
+  });
 
   // ---------------------------------------------------------------------------
   // Legend filter input: substring match on symbol + name
