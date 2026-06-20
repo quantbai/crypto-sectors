@@ -1,0 +1,7 @@
+# Runtime dependencies for scripts/ (v3 flat-sector pipeline)
+# Pinned to known-working ranges; bump in a dedicated PR.
+
+pandas>=2.1,<3.0
+numpy>=1.24,<3.0
+pyarrow>=14.0       # parquet I/O (read_parquet / to_parquet)
+pyyaml>=6.0         # taxonomy.yaml loader (validate_schema.py)

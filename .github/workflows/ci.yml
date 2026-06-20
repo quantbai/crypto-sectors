@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Schema integrity (sector.csv <-> taxonomy <-> tiers <-> returns)
+        run: python scripts/validate_schema.py
+
+      - name: Build derived artifacts (smoke — script must run cleanly)
+        run: python scripts/build_sector_field.py
+
+      - name: Derived artifacts in sync with source
+        run: |
+          python - <<'EOF'
+          import json, subprocess, sys
+          import pandas as pd
+
+          # sector_roles.json is JSON (byte-stable) — assert the rebuilt file matches the commit.
+          committed = subprocess.check_output(
+              ["git", "show", "HEAD:classification/sector_roles.json"]).decode("utf-8")
+          with open("classification/sector_roles.json", encoding="utf-8") as f:
+              rebuilt = f.read()
+          if json.loads(committed) != json.loads(rebuilt):
+              print("classification/sector_roles.json out of sync — run build_sector_field.py and commit.")
+              sys.exit(1)
+
+          # PIT panel dtype + shape contract (parquet is not byte-stable across envs, so check content).
+          panel = pd.read_parquet("classification/sector_panel.parquet")
+          assert all(str(d) == "string" for d in panel.dtypes.unique()), f"panel dtype: {panel.dtypes.unique()}"
+          src = pd.read_csv("classification/sector.csv")
+          assert panel.shape[1] == len(src), f"panel cols {panel.shape[1]} != {len(src)} assets"
+          print("[ci] derived artifacts in sync; panel dtype + shape OK")
+          EOF
+
+      - name: Validation smoke (200-perm — kernel must run cleanly)
+        run: python scripts/validate_sector_okx.py --n-perm 200 --cohesion-perm 200 --variants ALL,TOP30 --outdir /tmp/ci_validation

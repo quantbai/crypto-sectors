@@ -1,0 +1,233 @@
+symbol,sector,role,cg_id,okx_instid,audit_from,prev_label,note
+ETHW,OTHER,RESIDUAL,,ETHW-USDT-SWAP,,(new),zombie/near-dead chain -> non-directional
+ICX,OTHER,RESIDUAL,,ICX-USDT-SWAP,,(new),zombie/near-dead chain -> non-directional
+LRC,OTHER,RESIDUAL,,LRC-USDT-SWAP,,(new),zombie/near-dead chain -> non-directional
+LUNA,OTHER,RESIDUAL,,LUNA-USDT-SWAP,,(new),zombie/near-dead chain -> non-directional
+ONE,OTHER,RESIDUAL,,ONE-USDT-SWAP,,(new),zombie/near-dead chain -> non-directional
+0G,ai_infrastructure,RESIDUAL,zero-gravity,0G-USDT-SWAP,smart_contract_platform,smart_contract_platform,"reaudit 2026-06-17: smart_contract_platform->ai_infrastructure (economics-first, adversarial)"
+AIXBT,ai_infrastructure,RESIDUAL,,AIXBT-USDT-SWAP,,(new),promoted: AI inference/agent/data fees
+ALLO,ai_infrastructure,RESIDUAL,allora,ALLO-USDT-SWAP,,(new),promoted: AI inference/agent/data fees
+ATH,ai_infrastructure,RESIDUAL,aethir,ATH-USDT-SWAP,information_technology,information_technology,audit2026-06-14: IT->ai_infra; Aethir AI-focused GPU-as-a-service (metered AI-compute); GPU trio unified
+COAI,ai_infrastructure,RESIDUAL,chainopera-ai,COAI-USDT-SWAP,,(new),promoted: AI inference/agent/data fees
+GLM,ai_infrastructure,RESIDUAL,golem,GLM-USDT-SWAP,information_technology,information_technology,audit2026-06-14: IT->ai_infra; Golem decentralized GPU/compute marketplace; GPU trio unified
+GRASS,ai_infrastructure,RESIDUAL,grass,GRASS-USDT-SWAP,,(new),promoted: AI inference/agent/data fees
+KITE,ai_infrastructure,RESIDUAL,kite-2,KITE-USDT-SWAP,information_technology,information_technology,audit2026-06-14: IT->ai_infra; sovereign L1 for autonomous AI-agent payments; metered AI-agent execution
+NMR,ai_infrastructure,RESIDUAL,,NMR-USDT-SWAP,,(new),promoted: AI inference/agent/data fees
+RECALL,ai_infrastructure,RESIDUAL,,RECALL-USDT-SWAP,,(new),promoted: AI inference/agent/data fees
+RENDER,ai_infrastructure,RESIDUAL,render-token,RENDER-USDT-SWAP,information_technology,information_technology,audit2026-06-14: IT->ai_infra; decentralized GPU render/compute marketplace; GPU trio unified
+SAHARA,ai_infrastructure,RESIDUAL,sahara-ai,SAHARA-USDT-SWAP,information_technology,information_technology,audit2026-06-14: IT->ai_infra; live driver is metered AI data/model/inference marketplace (Sahara Chain not yet live)
+SAPIEN,ai_infrastructure,RESIDUAL,,SAPIEN-USDT-SWAP,,(new),promoted: AI inference/agent/data fees
+SHELL,ai_infrastructure,RESIDUAL,,SHELL-USDT-SWAP,,(new),promoted: AI inference/agent/data fees
+TAO,ai_infrastructure,RESIDUAL,bittensor,TAO-USDT-SWAP,,information_technology,promoted: AI inference/agent/data fees
+THETA,ai_infrastructure,RESIDUAL,theta-token,THETA-USDT-SWAP,media_content,media_content,"reaudit 2026-06-17: media_content->ai_infrastructure (economics-first, adversarial)"
+VANA,ai_infrastructure,RESIDUAL,,VANA-USDT-SWAP,,(new),promoted: AI inference/agent/data fees
+VIRTUAL,ai_infrastructure,RESIDUAL,virtual-protocol,VIRTUAL-USDT-SWAP,information_technology,information_technology,audit2026-06-14: IT->ai_infra; AI-agent launchpad/marketplace (inference+agent-creation fees -> buyback/burn); child AIXBT already ai_infra
+BNB,captive_franchise,FACTOR,binancecoin,BNB-USDT-SWAP,,captive_franchise,
+CRO,captive_franchise,FACTOR,crypto-com-chain,CRO-USDT-SWAP,,captive_franchise,
+OKB,captive_franchise,FACTOR,okb,OKB-USDT-SWAP,,(new),
+TON,captive_franchise,FACTOR,the-open-network,TON-USDT-SWAP,,captive_franchise,
+AR,compute_storage,FACTOR,arweave,AR-USDT-SWAP,,compute_storage,
+FIL,compute_storage,FACTOR,filecoin,FIL-USDT-SWAP,,compute_storage,
+ICP,compute_storage,FACTOR,internet-computer,ICP-USDT-SWAP,,compute_storage,
+WAL,compute_storage,FACTOR,walrus-2,WAL-USDT-SWAP,,compute_storage,
+1INCH,defi,RESIDUAL,1inch,1INCH-USDT-SWAP,,defi,
+AAVE,defi,RESIDUAL,aave,AAVE-USDT-SWAP,,defi,
+AERO,defi,RESIDUAL,aerodrome-finance,AERO-USDT-SWAP,,defi,
+AEVO,defi,RESIDUAL,,AEVO-USDT-SWAP,,(new),
+APR,defi,RESIDUAL,,APR-USDT-SWAP,,(new),
+ASTER,defi,RESIDUAL,astar,ASTER-USDT-SWAP,,defi,
+AUCTION,defi,RESIDUAL,,AUCTION-USDT-SWAP,,(new),
+AVNT,defi,RESIDUAL,avantis,AVNT-USDT-SWAP,,(new),
+BARD,defi,RESIDUAL,lombard-protocol,BARD-USDT-SWAP,,(new),
+BIO,defi,RESIDUAL,bio-protocol,BIO-USDT-SWAP,,(new),
+BLUR,defi,RESIDUAL,,BLUR-USDT-SWAP,,(new),
+COMP,defi,RESIDUAL,compound-governance-token,COMP-USDT-SWAP,,defi,
+CRV,defi,RESIDUAL,curve-dao-token,CRV-USDT-SWAP,,defi,
+CVX,defi,RESIDUAL,convex-finance,CVX-USDT-SWAP,,defi,
+DYDX,defi,RESIDUAL,dydx-chain,DYDX-USDT-SWAP,,defi,
+EDEN,defi,RESIDUAL,openeden,EDEN-USDT-SWAP,,(new),
+EIGEN,defi,RESIDUAL,eigenlayer,EIGEN-USDT-SWAP,,defi,
+ENA,defi,RESIDUAL,ethena,ENA-USDT-SWAP,,defi,
+ETHFI,defi,RESIDUAL,ether-fi,ETHFI-USDT-SWAP,,defi,
+GMX,defi,RESIDUAL,,GMX-USDT-SWAP,,(new),
+HOME,defi,RESIDUAL,home,HOME-USDT-SWAP,,(new),
+HUMA,defi,RESIDUAL,huma-finance,HUMA-USDT-SWAP,,(new),
+HYPE,defi,RESIDUAL,hyperliquid,HYPE-USDT-SWAP,,defi,
+JTO,defi,RESIDUAL,jito-governance-token,JTO-USDT-SWAP,,defi,
+JUP,defi,RESIDUAL,jupiter-exchange-solana,JUP-USDT-SWAP,,defi,
+KMNO,defi,RESIDUAL,kamino,KMNO-USDT-SWAP,,defi,
+LAB,defi,RESIDUAL,,LAB-USDT-SWAP,,(new),
+LDO,defi,RESIDUAL,lido-dao,LDO-USDT-SWAP,,defi,
+LQTY,defi,RESIDUAL,,LQTY-USDT-SWAP,,(new),
+MET,defi,RESIDUAL,,MET-USDT-SWAP,,(new),
+MMT,defi,RESIDUAL,momentum-2,MMT-USDT-SWAP,,(new),
+MORPHO,defi,RESIDUAL,morpho,MORPHO-USDT-SWAP,,defi,
+ONDO,defi,RESIDUAL,ondo-finance,ONDO-USDT-SWAP,,defi,
+ORDER,defi,RESIDUAL,,ORDER-USDT-SWAP,,(new),
+PENDLE,defi,RESIDUAL,pendle,PENDLE-USDT-SWAP,,defi,
+PUMP,defi,RESIDUAL,pump-fun,PUMP-USDT-SWAP,,defi,
+RAY,defi,RESIDUAL,raydium,RAY-USDT-SWAP,,defi,
+RESOLV,defi,RESIDUAL,resolv,RESOLV-USDT-SWAP,,(new),
+RSR,defi,RESIDUAL,reserve-rights-token,RSR-USDT-SWAP,,defi,
+SKY,defi,RESIDUAL,sky,SKY-USDT-SWAP,,defi,
+SNX,defi,RESIDUAL,havven,SNX-USDT-SWAP,,defi,
+SPK,defi,RESIDUAL,spark-2,SPK-USDT-SWAP,,(new),
+SUSHI,defi,RESIDUAL,,SUSHI-USDT-SWAP,,(new),
+SYRUP,defi,RESIDUAL,,SYRUP-USDT-SWAP,,(new),
+UNI,defi,RESIDUAL,uniswap,UNI-USDT-SWAP,,defi,
+WET,defi,RESIDUAL,,WET-USDT-SWAP,,(new),
+WLFI,defi,RESIDUAL,world-liberty-financial,WLFI-USDT-SWAP,,defi,
+WOO,defi,RESIDUAL,,WOO-USDT-SWAP,,(new),
+YB,defi,RESIDUAL,,YB-USDT-SWAP,,(new),
+YFI,defi,RESIDUAL,,YFI-USDT-SWAP,,(new),
+ZRX,defi,RESIDUAL,,ZRX-USDT-SWAP,,(new),
+ARB,eth_scaling,FACTOR,arbitrum,ARB-USDT-SWAP,,eth_scaling,
+CELO,eth_scaling,FACTOR,,CELO-USDT-SWAP,,(new),
+LINEA,eth_scaling,FACTOR,linea,LINEA-USDT-SWAP,,eth_scaling,
+METIS,eth_scaling,FACTOR,,METIS-USDT-SWAP,,(new),
+OP,eth_scaling,FACTOR,optimism,OP-USDT-SWAP,,eth_scaling,
+PLUME,eth_scaling,FACTOR,,PLUME-USDT-SWAP,,(new),
+SOON,eth_scaling,FACTOR,soon-2,SOON-USDT-SWAP,interoperability,(new),audit2026-06-14: interoperability->eth_scaling; SOON Mainnet is SVM rollup settling to Ethereum; gas/staking token
+SOPH,eth_scaling,FACTOR,,SOPH-USDT-SWAP,,(new),
+STRK,eth_scaling,FACTOR,starknet,STRK-USDT-SWAP,,eth_scaling,
+ZK,eth_scaling,FACTOR,zksync,ZK-USDT-SWAP,,eth_scaling,
+2Z,information_technology,FACTOR,doublezero,2Z-USDT-SWAP,,information_technology,
+ACH,information_technology,FACTOR,alchemy-pay,ACH-USDT-SWAP,OTHER,(new),audit2026-06-14: OTHER->IT; live fiat-crypto payment rail (not zombie); open payment middleware -> IT residual
+ARKM,information_technology,FACTOR,arkham,ARKM-USDT-SWAP,,(new),
+BICO,information_technology,FACTOR,,BICO-USDT-SWAP,,(new),
+ENS,information_technology,FACTOR,ethereum-name-service,ENS-USDT-SWAP,,information_technology,
+ENSO,information_technology,FACTOR,enso,ENSO-USDT-SWAP,,(new),
+GPS,information_technology,FACTOR,,GPS-USDT-SWAP,,(new),
+GRT,information_technology,FACTOR,the-graph,GRT-USDT-SWAP,,information_technology,
+H,information_technology,FACTOR,humanity,H-USDT-SWAP,,(new),
+KAITO,information_technology,FACTOR,kaito,KAITO-USDT-SWAP,,information_technology,
+LA,information_technology,FACTOR,,LA-USDT-SWAP,,(new),
+MASK,information_technology,FACTOR,,MASK-USDT-SWAP,,(new),
+PARTI,information_technology,FACTOR,particle-network,PARTI-USDT-SWAP,interoperability,(new),"reaudit 2026-06-17: interoperability->information_technology (economics-first, adversarial)"
+PIEVERSE,information_technology,FACTOR,pieverse,PIEVERSE-USDT-SWAP,ai_infrastructure,(new),"audit2026-06-14: ai_infra->IT; agentic payment/neobank stack, AI is UX not metered AI -> payment middleware residual"
+PROVE,information_technology,FACTOR,succinct,PROVE-USDT-SWAP,,(new),
+SENT,information_technology,FACTOR,sentient,SENT-USDT-SWAP,,information_technology,
+SIGN,information_technology,FACTOR,,SIGN-USDT-SWAP,,(new),
+SSV,information_technology,FACTOR,,SSV-USDT-SWAP,,(new),
+TRUST,information_technology,FACTOR,,TRUST-USDT-SWAP,,(new),
+WCT,information_technology,FACTOR,,WCT-USDT-SWAP,,(new),
+WLD,information_technology,FACTOR,worldcoin-wld,WLD-USDT-SWAP,ai_infrastructure,information_technology,audit2026-06-14: ai_infra->IT; value = World ID proof-of-personhood verification fees; no metered AI (AI is narrative)
+ZBT,information_technology,FACTOR,zerobase,ZBT-USDT-SWAP,,(new),
+ATOM,interoperability,FACTOR,cosmos,ATOM-USDT-SWAP,,interoperability,
+BABY,interoperability,FACTOR,babylon,BABY-USDT-SWAP,smart_contract_platform,(new),"reaudit 2026-06-17: smart_contract_platform->interoperability (economics-first, adversarial)"
+DOT,interoperability,FACTOR,polkadot,DOT-USDT-SWAP,,interoperability,
+INIT,interoperability,FACTOR,,INIT-USDT-SWAP,smart_contract_platform,(new),"reaudit 2026-06-17: smart_contract_platform->interoperability (economics-first, adversarial)"
+KSM,interoperability,FACTOR,,KSM-USDT-SWAP,,(new),
+TIA,interoperability,FACTOR,celestia,TIA-USDT-SWAP,,interoperability,
+W,interoperability,FACTOR,wormhole,W-USDT-SWAP,,(new),
+ZRO,interoperability,FACTOR,layerzero,ZRO-USDT-SWAP,,interoperability,
+BAT,media_content,RESIDUAL,basic-attention-token,BAT-USDT-SWAP,,media_content,
+LPT,media_content,RESIDUAL,livepeer,LPT-USDT-SWAP,,media_content,
+ZORA,media_content,RESIDUAL,,ZORA-USDT-SWAP,metaverse_gaming,(new),audit2026-06-14: metaverse_gaming->media_content; onchain social/content rail (creator coins); media-consumption driver
+ACT,meme,FACTOR,act-i-the-ai-prophecy,ACT-USDT-SWAP,,(new),
+BOME,meme,FACTOR,,BOME-USDT-SWAP,,(new),
+BONK,meme,FACTOR,bonk,BONK-USDT-SWAP,,meme,
+BRETT,meme,FACTOR,,BRETT-USDT-SWAP,,(new),
+DOGE,meme,FACTOR,dogecoin,DOGE-USDT-SWAP,,meme,
+FARTCOIN,meme,FACTOR,fartcoin,FARTCOIN-USDT-SWAP,,(new),
+FLOKI,meme,FACTOR,floki,FLOKI-USDT-SWAP,,meme,
+GIGGLE,meme,FACTOR,giggle-fund,GIGGLE-USDT-SWAP,,(new),
+HMSTR,meme,FACTOR,hamster-kombat,HMSTR-USDT-SWAP,metaverse_gaming,(new),"audit2026-06-14: metaverse_gaming->meme; Telegram tap-to-earn, no fee/burn/paid-game economy; attention-driven (NOT/PENGU peer)"
+JELLYJELLY,meme,FACTOR,jelly-my-jelly,JELLYJELLY-USDT-SWAP,,(new),
+MEME,meme,FACTOR,memecoin-2,MEME-USDT-SWAP,,(new),
+MEW,meme,FACTOR,,MEW-USDT-SWAP,,(new),
+MOODENG,meme,FACTOR,moo-deng,MOODENG-USDT-SWAP,,(new),
+MUBARAK,meme,FACTOR,,MUBARAK-USDT-SWAP,,(new),
+NEIRO,meme,FACTOR,,NEIRO-USDT-SWAP,,(new),
+NOT,meme,FACTOR,notcoin,NOT-USDT-SWAP,,(new),
+ORDI,meme,FACTOR,ordinals,ORDI-USDT-SWAP,,(new),
+PENGU,meme,FACTOR,pudgy-penguins,PENGU-USDT-SWAP,,meme,
+PEOPLE,meme,FACTOR,constitutiondao,PEOPLE-USDT-SWAP,,(new),
+PEPE,meme,FACTOR,pepe,PEPE-USDT-SWAP,,meme,
+PIPPIN,meme,FACTOR,pippin,PIPPIN-USDT-SWAP,,(new),
+PNUT,meme,FACTOR,peanut-the-squirrel,PNUT-USDT-SWAP,,(new),
+POPCAT,meme,FACTOR,,POPCAT-USDT-SWAP,,(new),
+SATS,meme,FACTOR,,SATS-USDT-SWAP,,(new),
+SHIB,meme,FACTOR,shiba-inu,SHIB-USDT-SWAP,,meme,
+SPX,meme,FACTOR,spx6900,SPX-USDT-SWAP,,meme,
+TRUMP,meme,FACTOR,official-trump,TRUMP-USDT-SWAP,,meme,
+TURBO,meme,FACTOR,turbo,TURBO-USDT-SWAP,,(new),
+USELESS,meme,FACTOR,useless-3,USELESS-USDT-SWAP,,(new),
+WIF,meme,FACTOR,dogwifcoin,WIF-USDT-SWAP,,meme,
+AGLD,metaverse_gaming,FACTOR,,AGLD-USDT-SWAP,,(new),
+ANIME,metaverse_gaming,FACTOR,,ANIME-USDT-SWAP,,(new),
+APE,metaverse_gaming,FACTOR,apecoin,APE-USDT-SWAP,,metaverse_gaming,
+AXS,metaverse_gaming,FACTOR,axie-infinity,AXS-USDT-SWAP,,metaverse_gaming,
+BEAT,metaverse_gaming,FACTOR,,BEAT-USDT-SWAP,,(new),
+BIGTIME,metaverse_gaming,FACTOR,,BIGTIME-USDT-SWAP,,(new),
+CHZ,metaverse_gaming,FACTOR,chiliz,CHZ-USDT-SWAP,,metaverse_gaming,
+DOOD,metaverse_gaming,FACTOR,,DOOD-USDT-SWAP,meme,(new),audit2026-06-14: meme->metaverse_gaming; Doodles NFT/entertainment IP brand with live product (WLFI precedent)
+ENJ,metaverse_gaming,FACTOR,enjincoin,ENJ-USDT-SWAP,,(new),
+GALA,metaverse_gaming,FACTOR,gala,GALA-USDT-SWAP,,metaverse_gaming,
+GMT,metaverse_gaming,FACTOR,,GMT-USDT-SWAP,,(new),
+IMX,metaverse_gaming,FACTOR,immutable-x,IMX-USDT-SWAP,,metaverse_gaming,
+KGEN,metaverse_gaming,FACTOR,,KGEN-USDT-SWAP,ai_infrastructure,(new),audit2026-06-14: ai_infra->metaverse_gaming; meters verified-gamer distribution/UA to publishers; AI is downstream buyer
+MAGIC,metaverse_gaming,FACTOR,,MAGIC-USDT-SWAP,ai_infrastructure,(new),audit2026-06-14: ai_infra->metaverse_gaming; Treasure DAO cross-game currency; AI agents are gameplay features
+MANA,metaverse_gaming,FACTOR,decentraland,MANA-USDT-SWAP,,metaverse_gaming,
+ME,metaverse_gaming,FACTOR,magic-eden,ME-USDT-SWAP,,(new),
+OL,metaverse_gaming,FACTOR,openloot,OL-USDT-SWAP,,(new),
+SAND,metaverse_gaming,FACTOR,the-sandbox,SAND-USDT-SWAP,,metaverse_gaming,
+YGG,metaverse_gaming,FACTOR,yield-guild-games,YGG-USDT-SWAP,,(new),
+API3,oracles_data,RESIDUAL,,API3-USDT-SWAP,,(new),promoted out of IT: oracle/data-verification
+AT,oracles_data,RESIDUAL,,AT-USDT-SWAP,,(new),promoted out of IT: oracle/data-verification
+BAND,oracles_data,RESIDUAL,,BAND-USDT-SWAP,,(new),promoted out of IT: oracle/data-verification
+LINK,oracles_data,RESIDUAL,chainlink,LINK-USDT-SWAP,,information_technology,promoted out of IT: oracle/data-verification
+PYTH,oracles_data,RESIDUAL,pyth-network,PYTH-USDT-SWAP,,information_technology,promoted out of IT: oracle/data-verification
+TRB,oracles_data,RESIDUAL,tellor,TRB-USDT-SWAP,,(new),promoted out of IT: oracle/data-verification
+TRUTH,oracles_data,RESIDUAL,swarm-network,TRUTH-USDT-SWAP,,(new),promoted out of IT: oracle/data-verification
+UMA,oracles_data,RESIDUAL,,UMA-USDT-SWAP,,(new),promoted out of IT: oracle/data-verification
+DASH,privacy,FACTOR,dash,DASH-USDT-SWAP,,privacy,
+ZEC,privacy,FACTOR,zcash,ZEC-USDT-SWAP,,privacy,
+ZEN,privacy,FACTOR,zencash,ZEN-USDT-SWAP,,privacy,
+A,smart_contract_platform,FACTOR,,A-USDT-SWAP,,smart_contract_platform,
+ADA,smart_contract_platform,FACTOR,cardano,ADA-USDT-SWAP,,smart_contract_platform,
+ALGO,smart_contract_platform,FACTOR,algorand,ALGO-USDT-SWAP,,smart_contract_platform,
+APT,smart_contract_platform,FACTOR,aptos,APT-USDT-SWAP,,smart_contract_platform,
+AVAX,smart_contract_platform,FACTOR,avalanche-2,AVAX-USDT-SWAP,,smart_contract_platform,
+BERA,smart_contract_platform,FACTOR,berachain-bera,BERA-USDT-SWAP,,smart_contract_platform,
+CC,smart_contract_platform,FACTOR,canton-network,CC-USDT-SWAP,,(new),
+CFX,smart_contract_platform,FACTOR,conflux-token,CFX-USDT-SWAP,,smart_contract_platform,
+CORE,smart_contract_platform,FACTOR,coredaoorg,CORE-USDT-SWAP,,(new),
+EGLD,smart_contract_platform,FACTOR,elrond-erd-2,EGLD-USDT-SWAP,,smart_contract_platform,
+ETC,smart_contract_platform,FACTOR,ethereum-classic,ETC-USDT-SWAP,,smart_contract_platform,
+ETH,smart_contract_platform,FACTOR,ethereum,ETH-USDT-SWAP,,smart_contract_platform,
+FLOW,smart_contract_platform,FACTOR,,FLOW-USDT-SWAP,,(new),
+HBAR,smart_contract_platform,FACTOR,hedera-hashgraph,HBAR-USDT-SWAP,,smart_contract_platform,
+INJ,smart_contract_platform,FACTOR,injective-protocol,INJ-USDT-SWAP,,smart_contract_platform,
+IOST,smart_contract_platform,FACTOR,,IOST-USDT-SWAP,,(new),
+IOTA,smart_contract_platform,FACTOR,iota,IOTA-USDT-SWAP,information_technology,information_technology,audit2026-06-14: IT->SCP; post-Rebased (2025-05) sovereign MoveVM L1; IoT-middleware mechanism retired
+IP,smart_contract_platform,FACTOR,story-2,IP-USDT-SWAP,media_content,media_content,"reaudit 2026-06-17: media_content->smart_contract_platform (economics-first, adversarial)"
+LAYER,smart_contract_platform,FACTOR,solayer,LAYER-USDT-SWAP,,(new),
+MERL,smart_contract_platform,FACTOR,merlin-chain,MERL-USDT-SWAP,,(new),
+MINA,smart_contract_platform,FACTOR,,MINA-USDT-SWAP,,(new),
+MON,smart_contract_platform,FACTOR,monad,MON-USDT-SWAP,,smart_contract_platform,
+MOVE,smart_contract_platform,FACTOR,movement,MOVE-USDT-SWAP,,(new),
+NEAR,smart_contract_platform,FACTOR,near,NEAR-USDT-SWAP,,smart_contract_platform,
+NEO,smart_contract_platform,FACTOR,neo,NEO-USDT-SWAP,,smart_contract_platform,
+NIGHT,smart_contract_platform,FACTOR,midnight-3,NIGHT-USDT-SWAP,,(new),
+ONT,smart_contract_platform,FACTOR,,ONT-USDT-SWAP,,(new),
+PI,smart_contract_platform,FACTOR,pi-network,PI-USDT-SWAP,,(new),
+POL,smart_contract_platform,FACTOR,polygon-ecosystem-token,POL-USDT-SWAP,,smart_contract_platform,
+QTUM,smart_contract_platform,FACTOR,qtum,QTUM-USDT-SWAP,,smart_contract_platform,
+RLS,smart_contract_platform,FACTOR,,RLS-USDT-SWAP,,(new),
+S,smart_contract_platform,FACTOR,,S-USDT-SWAP,,smart_contract_platform,
+SEI,smart_contract_platform,FACTOR,sei-network,SEI-USDT-SWAP,,smart_contract_platform,
+SOL,smart_contract_platform,FACTOR,solana,SOL-USDT-SWAP,,smart_contract_platform,
+STX,smart_contract_platform,FACTOR,blockstack,STX-USDT-SWAP,,smart_contract_platform,
+SUI,smart_contract_platform,FACTOR,sui,SUI-USDT-SWAP,,smart_contract_platform,
+XPL,smart_contract_platform,FACTOR,plasma-finance,XPL-USDT-SWAP,,smart_contract_platform,
+XTZ,smart_contract_platform,FACTOR,tezos,XTZ-USDT-SWAP,,smart_contract_platform,
+ZETA,smart_contract_platform,FACTOR,,ZETA-USDT-SWAP,,(new),
+ZIL,smart_contract_platform,FACTOR,,ZIL-USDT-SWAP,,(new),
+BCH,value_transfer,FACTOR,bitcoin-cash,BCH-USDT-SWAP,,value_transfer,
+BTC,value_transfer,FACTOR,bitcoin,BTC-USDT-SWAP,,value_transfer,
+LTC,value_transfer,FACTOR,litecoin,LTC-USDT-SWAP,,value_transfer,
+RVN,value_transfer,FACTOR,,RVN-USDT-SWAP,,(new),
+TRX,value_transfer,FACTOR,tron,TRX-USDT-SWAP,captive_franchise,tron_ecosystem,"tron_ecosystem singleton on OKX -> captive_franchise (USDT settlement franchise) | reaudit 2026-06-17: captive_franchise->value_transfer (economics-first, adversarial)"
+XLM,value_transfer,FACTOR,stellar,XLM-USDT-SWAP,,value_transfer,
+XRP,value_transfer,FACTOR,ripple,XRP-USDT-SWAP,,value_transfer,

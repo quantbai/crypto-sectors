@@ -1,0 +1,446 @@
+# =============================================================================
+# crypto-sectors taxonomy
+# =============================================================================
+# Single flat `sector` classification field for the 232-coin OKX crypto-native
+# perpetual universe. Empirically validated for cross-sectional group_neut-style
+# factor neutralization.
+#
+# This file is the source of truth for label definitions, precedence / boundary
+# rules, and FACTOR/RESIDUAL governance. classification/sector.csv is the
+# authoritative per-asset mapping (232 rows); scripts/validate_schema.py asserts
+# referential integrity between the two.
+#
+# License: Data (this file + classification/) CC BY 4.0; Code (scripts/) MIT.
+# =============================================================================
+
+release_date: "2026-06-20"
+
+# =============================================================================
+# SECTOR LABELS  (15 flat labels, one per asset, no hierarchy)
+# =============================================================================
+# Design goals: economics-first assignment (whitepaper + chain data; no return
+# history needed on day one); optimized for group_neut variance reduction;
+# 10,000-perm validated on the 232-coin OKX perpetual universe.
+#
+# Validated (10,000-perm, production OTHER-collapse kernel):
+#   ALL    (232, min_assets=30): VR 12.91%, null 8.22%,  excess +4.69pp, p=0.0001
+#   TOP30  (min_assets=20):      VR 22.78%, null 16.03%, excess +6.75pp, p=0.0008
+#   TOP50  (min_assets=30):      VR 17.97%, null 11.50%, excess +6.48pp, p=0.0001
+#   TOP100 (min_assets=40):      VR 17.46%, null 11.75%, excess +5.71pp, p=0.0001
+#
+# NOT A RISK MODEL: this is a validated classification (an input to a risk
+# model's exposure matrix), not a covariance / factor risk model.
+# =============================================================================
+
+labels:
+
+  # ---------------------------------------------------------------------------
+  # FACTOR labels — strong cohesion (mean intra-group market-residual corr
+  # vs 10k-perm null; see validation/sector_okx/cohesion_sector.csv)
+  # ---------------------------------------------------------------------------
+
+  - name: privacy
+    cohesion_mean_resid_corr: +0.55
+    role: FACTOR
+    definition: >
+      Native currencies of non-smart-contract chains where transaction-level
+      privacy is the primary protocol feature (mandatory or opt-in CoinJoin /
+      shielded pools). DCR reclassified from value_transfer: Decred ships
+      opt-in CoinJoin (StakeShuffle / CoinShuffle++) as a flagship protocol
+      feature and forms the cleanest bootstrap cluster (0.99 pairwise) with
+      zec / dash / zen. Shared regulatory / delisting tail risk is the
+      decisive economic argument.
+    members_snapshot: [zec, dash, zen, dcr]
+
+  - name: captive_franchise
+    cohesion_mean_resid_corr: +0.30
+    role: FACTOR
+    definition: >
+      Quasi-equity tokens of a captive-distribution franchise monetized via fee /
+      burn or buyback: the token holder captures a share of the operator's revenue,
+      and captive customer flow gives the token a platform-equity profile distinct
+      from both sovereign L1s and open DeFi protocols. Ex-ante eligibility floor:
+      parent platform / franchise has operated >= 3 years with realized captive
+      distribution (exchange customer base, messenger user base, or default-wallet
+      placement) AND the token has a live fee / burn or buyback linkage to franchise
+      revenue. Aspirational distribution channels without realized flow (xpl, kaia)
+      do NOT qualify and remain in smart_contract_platform. Current members:
+      Binance / BNB, Crypto.com / CRO, Nexo, Telegram / TON, TrustWallet / TWT.
+      Operator identity beats the token's host chain (nexo's ETH chain tag is
+      irrelevant for a CeFi lender) and beats the operator's own ecosystem (bnb is
+      Binance equity first, gas token second).
+    members_snapshot: [bnb, cro, nexo, ton, twt]
+
+  - name: value_transfer
+    cohesion_mean_resid_corr: +0.23
+    role: FACTOR
+    definition: >
+      Native currencies of non-smart-contract chains whose primary purpose is
+      store of value and payment / settlement, including bank-rail remittance
+      coins (xrp, xlm). Value accrues from monetary-premium adoption of the
+      chain as a payment network; there is no application-layer cash flow to
+      price. TRX placement (re-audit 2026-06-17): trx -> value_transfer,
+      superseding any prior captive_franchise placement. captive_franchise
+      requires a captive OFF-CHAIN operator (exchange / messenger / default-wallet)
+      feeding fees; trx has none. Its value accrual is chain-native USDT-settlement
+      fee / burn — a settlement asset alongside xrp / xlm, not exchange-equity like
+      bnb / cro. Confirmed on both the economics lens and the data lens (trx
+      market-resid corr to value_transfer 0.44 > captive 0.38).
+    members_snapshot: [btc, bch, ltc, xrp, xlm, trx]
+
+  - name: compute_storage
+    cohesion_mean_resid_corr: +0.18
+    role: FACTOR
+    definition: >
+      Tokens metering decentralized compute and permanent / long-duration storage
+      where payment is burned or locked for resource usage: Filecoin (storage deal
+      payments), Arweave (permanent storage endowment), ICP (cycles-burn cloud
+      compute), Walrus (storage on Sui). The burn-or-lock-for-resource economic
+      model is crisper and more homogeneous than the broad IT bucket. ICP carries
+      a smart-contract-platform form but is classified compute_storage: the
+      cycles-burn mechanism IS the token economics (Rule 7). WAL included on
+      protocol economics despite its young 2025 listing and current Sui-beta
+      correlation (exception register: classification follows protocol economics,
+      mirroring the TRX precedent logic). Payment-for-GPU marketplaces (render,
+      glm, ath) are NOT compute_storage: payment is transferred to providers, not
+      burned / locked; they go to ai_infrastructure.
+    members_snapshot: [fil, ar, icp, wal]
+
+  - name: meme
+    cohesion_mean_resid_corr: +0.10
+    role: FACTOR
+    definition: >
+      Currencies whose value is driven by social-community network effects rather
+      than protocol utility. The return driver is attention-flow speculation on
+      community strength; there is no fee, burn, or utility claim to anchor
+      valuation. Meme identity beats host chain: bonk / wif / pengu stay meme
+      despite Solana; banana stays meme despite BNB Chain.
+    members_snapshot: [doge, shib, pepe, bonk, wif, floki, pengu, trump, spx, banana]
+
+  # ---------------------------------------------------------------------------
+  # FACTOR labels — weak but statistically significant cohesion
+  # ---------------------------------------------------------------------------
+
+  - name: eth_scaling
+    cohesion_mean_resid_corr: +0.04
+    role: FACTOR
+    definition: >
+      Tokens of rollups and validity layers that process transactions off Ethereum
+      and settle to it for security. Fee revenue and security inherit from Ethereum
+      settlement, making these tokens levered claims on Ethereum blockspace demand
+      minus the L1's own value capture. The test is settlement dependence on
+      Ethereum. Sidechains with their own validator sets are NOT eth_scaling even
+      if EVM-compatible: pol runs its own validator set with no per-block Ethereum
+      settlement and is classified smart_contract_platform.
+    members_snapshot: [arb, op, strk, zk, linea]
+
+  - name: metaverse_gaming
+    cohesion_mean_resid_corr: +0.04
+    role: FACTOR
+    definition: >
+      Tokens of virtual worlds, blockchain games, gaming infrastructure, and fan /
+      NFT engagement platforms. Value accrues from consumer entertainment spend
+      inside tokenized game and fan economies — a discretionary-consumption driver
+      distinct from financial protocols and infrastructure. kgen (verified-gamer
+      distribution; AI is a data buyer) and magic (cross-game currency; AI agents
+      are gameplay features) stay here, not ai_infrastructure: AI is a client
+      vertical for these protocols, not the metered resource.
+    members_snapshot: [sand, mana, axs, gala, imx, ape, chz, prime]
+
+  - name: interoperability
+    cohesion_mean_resid_corr: +0.03
+    role: FACTOR
+    definition: >
+      Tokens securing cross-chain messaging, shared security, modular data
+      availability, and build-your-own-chain hubs. Value accrues from other chains
+      renting security, data availability, or message-passing — a sell-side
+      infrastructure claim on multi-chain activity. Honestly weak statistical
+      cohesion (0.03); kept separate because renting infrastructure to other chains
+      is economically distinct from running a single application economy. baby and
+      init are classified here (2026-06-17 audit): both are modular / shared-security
+      infrastructure, not sovereign-consensus L1s.
+    members_snapshot: [dot, atom, tia, zro, baby, init]
+
+  # ---------------------------------------------------------------------------
+  # FACTOR labels — marginal cohesion (significant only because large n tightens
+  # the null; mostly market beta — treat with caution for group_neut)
+  # ---------------------------------------------------------------------------
+
+  - name: smart_contract_platform
+    cohesion_mean_resid_corr: +0.013
+    role: FACTOR
+    definition: >
+      Sovereign-consensus general-purpose L1 gas / staking tokens. Value accrues
+      from fee / burn and staking demand generated by the chain's own application
+      ecosystem. POL reclassified from eth_scaling: Polygon PoS runs its own
+      validator set and does not settle to Ethereum for per-block security (pol-to-
+      L2 corr -0.05; trades with old-guard alts). xpl and kaia remain here —
+      "established franchise" test not met (aspirational distribution channels,
+      not captive fee / burn revenue). ip reclassified here from media_content
+      (2026-06-17 audit): Story Protocol is a sovereign L1 for IP licensing, not
+      a content-distribution application. The big-bucket caveat applies: at n~30
+      most co-movement is market beta; cohesion is marginal.
+    members_snapshot: [eth, sol, ada, sui, avax, hbar, near, etc, algo, apt, flr,
+                        vet, inj, stx, sei, xtz, mon, gno, kaia, cfx, xpl, neo,
+                        sonic, vaulta, egld, bera, qtum, pol, ip]
+
+  - name: information_technology
+    cohesion_mean_resid_corr: +0.011
+    role: FACTOR
+    definition: >
+      Residual infrastructure / services bucket: tokens that meter decentralized IT
+      resources and middleware sold to on-chain applications — data feeds and oracles
+      not captured by oracles_data (qnt, kaito), IoT / DePIN (jasmy, iota, hnt),
+      identity and wallets (wld, ens, safe), and ZK-prover infrastructure (prove, la,
+      zbt; sells proof generation, not AI — carve a verifiable_compute label once
+      >=3 sub-leaf members are live). Also: parti (reclassified from interoperability,
+      2026-06-17 audit) and ach (live fiat-crypto payment rail, retained here from
+      zombie audit). Heterogeneous by construction: every proposed sub-split tested
+      dead or negative. Negative intra-group cohesion at certain windows is disclosed
+      in validation/sector_okx/REPORT.md — demeaning against a noisy mean is unbiased
+      for group_neut, but readers must not mistake this bucket for a cohesive sector.
+      wld stays here: World ID sells proof-of-personhood verification fees (non-AI
+      middleware); AI is a narrative wrapper, not the live fee mechanism.
+    members_snapshot: [qnt, kaito, jasmy, iota, hnt, wld, ens, safe, glm, render,
+                        ath, sent, vvv, 2z, parti, ach, prove, la, zbt]
+
+  # ---------------------------------------------------------------------------
+  # RESIDUAL labels — intra-group corr indistinguishable from null; demean is
+  # ~a no-op; POOLED into OTHER in the production group_neut kernel
+  # ---------------------------------------------------------------------------
+
+  - name: defi
+    cohesion_mean_resid_corr: +0.003
+    role: RESIDUAL
+    definition: >
+      Governance and fee-share tokens of open on-chain financial applications:
+      spot DEXes, perp DEXes, lending protocols, stablecoin issuers, liquid
+      staking / restaking governance tokens, asset management, yield aggregation,
+      RWA issuers. Value accrues from protocol fee share or governance over
+      on-chain financial flows. Statistically residual (large bucket, no shared
+      post-market factor at the aggregate level) but economically real; candidate
+      for sub-division (dex / lending / lsd / rwa / perps) once each sub-leaf has
+      >=3 live members. Pooled to OTHER in the group_neut kernel.
+    members_snapshot: [uni, cake, aero, crv, 1inch, ray, jup, rune, pump, hype,
+                        dydx, snx, aster, aave, comp, morpho, fluid, kmno, sky,
+                        ena, ff, rsr, ldo, jto, ethfi, eigen, pendle, cvx, ondo, wlfi]
+
+  - name: ai_infrastructure
+    cohesion_mean_resid_corr: -0.002
+    role: RESIDUAL
+    definition: >
+      Tokens whose value accrual IS metered artificial intelligence: per-inference
+      payments, AI-agent execution / agent marketplaces, AI data / model
+      marketplaces, or AI-dedicated compute including decentralized GPU-compute
+      markets. Carved out of information_technology as an organizational label;
+      statistically residual in the current universe (intra-group corr ~null).
+      Pooled to OTHER in the group_neut kernel until sub-division yields >=3-member
+      leaves with demonstrated cohesion (candidate splits: gpu-compute / agents /
+      data). 0g reclassified here from smart_contract_platform (2026-06-17 audit):
+      the AI data layer IS the protocol value proposition. theta reclassified here
+      from media_content (2026-06-17 audit): Theta's video delivery is AI compute
+      infrastructure, not content distribution.
+      THREE-WAY BOUNDARY RULE (apply in order):
+        (1) IN -> the token's value IS metered AI (thing sold / burned / staked for
+            is AI inference, agent execution, AI data / models, or AI compute):
+            tao, virtual, kite, sahara, ath, render, glm, 0g, theta, aixbt etc.
+        (2) OUT to functional home -> AI is a CLIENT VERTICAL or downstream buyer,
+            not the metered resource: kgen -> metaverse_gaming; magic ->
+            metaverse_gaming.
+        (3) OUT to information_technology -> AI is NARRATIVE only; live fee
+            mechanism is non-AI middleware: wld (World ID proof-of-personhood) -> IT.
+      Decentralized GPU-compute marketplaces (ath / render / glm) are unified here,
+      NOT split by AI-workload-mix (economic twins: pay-for-GPU markets, identical
+      token mechanism). Payment transferred to providers -> NOT compute_storage.
+    members_snapshot: [tao, virtual, kite, sahara, 0g, theta, aixbt, allo, coai,
+                        grass, nmr, recall, sapien, shell, vana]
+
+  - name: oracles_data
+    cohesion_mean_resid_corr: +0.008
+    role: RESIDUAL
+    definition: >
+      Tokens whose value accrues from selling off-chain data into smart contracts,
+      data verification, or dispute-staking: per-query fees, dispute bonds. Oracle
+      middleware sold per-use, NOT DeFi fee share. Carved out of information_technology
+      as an organizational label; statistically residual (intra-group corr ~null).
+      Pooled to OTHER in the group_neut kernel.
+    members_snapshot: [link, pyth, api3, band, trb, uma, at, truth]
+
+  - name: media_content
+    cohesion_mean_resid_corr: +0.005
+    role: RESIDUAL
+    definition: >
+      Tokens of content distribution, streaming, advertising, and IP-licensing
+      applications. Value is metered usage of creator-economy rails (video delivery,
+      transcoding, ad impressions, IP royalties) — media-consumption demand rather
+      than financial or compute demand. theta was reclassified to ai_infrastructure
+      (2026-06-17 audit); ip was reclassified to smart_contract_platform. Pooled
+      to OTHER in the group_neut kernel.
+    members_snapshot: [lpt, bat]
+
+  - name: OTHER
+    cohesion_mean_resid_corr: null
+    role: RESIDUAL
+    definition: >
+      Non-directional residual and per-day n<3 collapse target. Two populations:
+      (1) Non-directional instruments: on-chain derivatives, tokenized commodities,
+          claim tokens (paxg, gas) — excluded from the permutation validation
+          universe; the n>=3 floor does not apply.
+      (2) Near-dead chains with no live directional driver: luna (Terra 2.0), ethw,
+          icx, one (Harmony), lrc (Loopring). The OTHER bar is the ABSENCE of a live
+          directional driver, not the absence of an L1 mechanism. ach was REMOVED from
+          OTHER (live fiat-crypto payment rail; sits in information_technology).
+      In the group_neut kernel: RESIDUAL-labelled coins (defi, ai_infrastructure,
+      oracles_data, media_content) are also pooled here per day, then market-
+      neutralized as a single OTHER pool. Any FACTOR group with <3 live members on
+      a given day collapses to OTHER for that day.
+    members_snapshot: [paxg, gas, luna, ethw, icx, one, lrc]
+
+# =============================================================================
+# PRECEDENCE / BOUNDARY RULES  (apply in order; first matching rule wins)
+# =============================================================================
+
+precedence_rules:
+
+  - rule: 1
+    name: derivative_wrapper
+    text: >
+      A token whose value is contractually derived from an underlying asset or
+      claim (tokenized commodities, claim tokens) -> OTHER (non-directional pool),
+      regardless of host chain or issuer.
+
+  - rule: 2
+    name: meme
+    text: >
+      A token whose own documentation offers community / attention as the value
+      proposition, with no protocol cash-flow or utility claim -> meme, regardless
+      of host chain. Meme identity beats chain: bonk / wif / pengu stay meme
+      despite Solana; banana stays meme despite BNB Chain.
+
+  - rule: 3
+    name: tron_cashflow_settlement
+    text: >
+      TRX -> value_transfer. TRX's value accrual is chain-native USDT-settlement
+      fee / burn — a settlement asset alongside xrp / xlm. captive_franchise
+      requires a captive OFF-CHAIN operator (exchange / messenger / default-wallet)
+      feeding fees; TRX has none. The tron_ecosystem label (trx + jst + sun) was
+      dissolved for the 232-coin OKX universe because jst and sun are not
+      OKX-listed and the complex carve is not supported at n=1.
+
+  - rule: 4
+    name: captive_franchise
+    text: >
+      A token issued by a captive-distribution franchise that meets the ex-ante
+      eligibility floor (parent platform >= 3 years operated with realized captive
+      distribution AND live fee / burn or buyback linkage to franchise revenue) ->
+      captive_franchise, regardless of host chain or nominal application function.
+      Resolved members: bnb (Binance exchange equity), cro (Crypto.com exchange
+      equity), nexo (CeFi lender equity), ton (Telegram ~1B-user messenger
+      franchise), twt (Binance-default wallet franchise). Rule 4 is ordered before
+      Rule 5; ton and twt are resolved here, not in the function_beats_chain step.
+      Aspirational distribution channels without realized flow (xpl, kaia) do NOT
+      qualify.
+
+  - rule: 5
+    name: function_beats_chain_applications
+    text: >
+      An application token goes to its functional group (defi, ai_infrastructure,
+      oracles_data, information_technology, compute_storage, metaverse_gaming,
+      media_content) regardless of host chain. cake stays defi despite statistical
+      pull toward a BNB-eco cluster; jup / ray / kmno stay defi despite Solana.
+      Note: ton and twt are resolved by Rule 4 before this rule fires.
+
+  - rule: 6
+    name: settlement_dependence_chains
+    text: >
+      A chain token whose execution layer settles to Ethereum AND whose fee revenue
+      derives from scaling Ethereum -> eth_scaling. Sidechains with their own
+      validator sets are NOT eth_scaling even if EVM-compatible (pol fails this test;
+      it runs its own validator set). A token securing cross-chain messaging, shared
+      security, or build-your-own-chain hubs -> interoperability. A sovereign-
+      consensus general-purpose L1 -> smart_contract_platform.
+
+  - rule: 7
+    name: compute_storage
+    text: >
+      A token metering decentralized compute or permanent / long-duration storage
+      where the economic model is burn-or-lock-for-resource (Filecoin storage deal
+      payments, Arweave permanent storage endowment, ICP cycles-burn, Walrus
+      storage) -> compute_storage. Young listings without stable correlation history
+      are classified on protocol economics, not realized correlation (wal precedent).
+      Payment-for-GPU marketplaces where payment flows to providers (not burned /
+      locked) -> ai_infrastructure, not compute_storage.
+
+  - rule: 8
+    name: currency
+    text: >
+      A native currency of a non-smart-contract chain -> privacy if transaction-level
+      privacy is the primary protocol feature (mandatory or opt-in shielded pools /
+      mixing: zec, dash, zen, dcr), else value_transfer (store-of-value and payment /
+      settlement coins including xrp, xlm, trx by Rule 3 override).
+
+  - rule: 9
+    name: flagship_resource_beats_generic_gas
+    text: >
+      When a sovereign-L1 form and a flagship metered-resource mechanism coexist,
+      the metered resource wins: icp (cycles-burn cloud compute) -> compute_storage,
+      not smart_contract_platform; 0g (AI data layer) -> ai_infrastructure, not
+      smart_contract_platform. Precedents: icp, render (GPU compute beats media-
+      encoding form), 0g (AI data beats L1 form).
+
+  - rule: 10
+    name: residual_honesty
+    text: >
+      If no rule fires cleanly, assign the broadest applicable economic parent
+      (smart_contract_platform, defi, information_technology), register the asset in
+      the exception register (decisions/), and never invent a group to house it. A
+      statistical misfit stays in its economic home unless an economic re-reading
+      justifies the move (the TRX precedent standard).
+
+# =============================================================================
+# FACTOR / RESIDUAL GOVERNANCE
+# =============================================================================
+# Each label is tagged FACTOR or RESIDUAL by its mean intra-group market-residual
+# pairwise correlation vs a size-preserving 10,000-perm null.
+# Source: validation/sector_okx/cohesion_sector.csv.
+#
+# group_neut POLICY (production OTHER-collapse kernel):
+#   Per day:
+#   - Demean returns WITHIN each FACTOR sector with >=3 live members.
+#   - Pool RESIDUAL-labelled coins AND any sub-3-member FACTOR group into OTHER,
+#     then demean that OTHER pool (market-neutralize).
+#   This kernel is conservative; a naive "demean within every label" overstates VR.
+#
+# HONESTY NOTES:
+#   - ai_infrastructure and oracles_data are RESIDUAL (do not pass cohesion alone);
+#     kept as organizational labels, pooled in group_neut; candidates for sub-division
+#     (defi -> dex / lending / lsd / rwa / perps; ai -> gpu-compute / agents / data)
+#     once each sub-leaf has >=3 live members.
+#   - The big buckets (smart_contract_platform, information_technology, defi) are
+#     mostly market beta; their statistical significance comes from large n, not
+#     strong cohesion.
+#   - NOT A RISK MODEL: this is a validated classification (an input to a risk
+#     model's exposure matrix), not a covariance / factor risk model.
+#   - Deployment gate: validated for research + group-neutralization; alpha-capital
+#     deployment is paper-trading-gated.
+#
+# FACTOR summary (mean market-residual intra-group corr):
+#   STRONG:   privacy (+0.55), captive_franchise (+0.30), value_transfer (+0.23),
+#             compute_storage (+0.18), meme (+0.10)
+#   WEAK:     eth_scaling (+0.04), metaverse_gaming (+0.04), interoperability (+0.03)
+#   MARGINAL: smart_contract_platform (+0.013), information_technology (+0.011)
+#
+# RESIDUAL (pooled to OTHER in group_neut):
+#   defi (+0.003), ai_infrastructure (-0.002), oracles_data (+0.008),
+#   media_content (+0.005), OTHER (residual by design)
+# =============================================================================
+
+# =============================================================================
+# IDENTITY ANCHOR NOTE
+# =============================================================================
+# classification/sector.csv carries cg_id and okx_instid columns as identity
+# anchors. Ticker-collision mis-resolution risk is real: eden = openeden-eden,
+# NOT the dead Eden Network MEV token; ol = openloot, NOT OpenLedger (which
+# trades as OPEN and is not OKX-listed). Resolve every asset by cg_id slug,
+# never by ticker alone.
+# =============================================================================
