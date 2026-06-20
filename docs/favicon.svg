@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <!-- Hierarchy icon: three concentric arc rings in accent cyan -->
-  <circle cx="16" cy="16" r="14" stroke="hsl(186,70%,58%)" stroke-width="2" fill="none"/>
-  <circle cx="16" cy="16" r="9" stroke="hsl(186,70%,58%)" stroke-width="2" fill="none" opacity="0.7"/>
-  <circle cx="16" cy="16" r="4" fill="hsl(186,70%,58%)" opacity="0.9"/>
-</svg>

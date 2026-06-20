@@ -1,12 +1,7 @@
-# Runtime dependencies for scripts/
-# Pinned to known-working versions; bump in a dedicated PR.
+# Runtime dependencies for scripts/ (v3 flat-sector pipeline)
+# Pinned to known-working ranges; bump in a dedicated PR.
 
-pandas>=2.0,<3.0
+pandas>=2.1,<3.0
 numpy>=1.24,<3.0
-pyyaml>=6.0
-pyarrow>=14.0       # for parquet I/O
-matplotlib>=3.7
-scipy>=1.10
-scikit-learn>=1.3
-markdown>=3.5        # for build_site.py: render MD to HTML (no JS templating)
-requests>=2.31       # fetch_descriptions.py uses urllib stdlib; requests kept for optional use
+pyarrow>=14.0       # parquet I/O (read_parquet / to_parquet)
+pyyaml>=6.0         # taxonomy.yaml loader (validate_schema.py)

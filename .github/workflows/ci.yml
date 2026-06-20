@@ -18,66 +18,34 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Validate schema (taxonomy + snapshot referential integrity)
+      - name: Schema integrity (sector.csv <-> taxonomy <-> tiers <-> returns)
         run: python scripts/validate_schema.py
 
-      - name: Build matrices (smoke test — script must run cleanly)
-        run: python scripts/build_matrices.py
+      - name: Build derived artifacts (smoke — script must run cleanly)
+        run: python scripts/build_sector_field.py
 
-      - name: Compute validation (smoke test — script must run cleanly)
-        run: python scripts/compute_validation.py
-
-      - name: Dtype + index + NaN assertion
+      - name: Derived artifacts in sync with source
         run: |
           python - <<'EOF'
+          import json, subprocess, sys
           import pandas as pd
 
-          # wide index dtype
-          for col in ["class_code","sector_code","sub_sector_code"]:
-              w = pd.read_parquet(f"classification/wide/{col}.parquet")
-              assert str(w.index.dtype) == "datetime64[ns]", f"{col} wide index dtype: {w.index.dtype}"
-              dtypes = w.dtypes.unique()
-              assert len(dtypes) == 1 and str(dtypes[0]) == "Int64", f"{col} wide column dtypes: {dtypes}"
-
-          # panel column dtypes
-          panel = pd.read_parquet("classification/long/panel.parquet")
-          for col in ["class_code","sector_code","sub_sector_code"]:
-              assert str(panel[col].dtype) == "Int64", f"panel {col} dtype: {panel[col].dtype}"
-
-          # panel must have no NaN code rows (panel only stores existence rows)
-          nan_rows = panel[panel["sector_code"].isna()]
-          assert len(nan_rows) == 0, f"panel has {len(nan_rows)} NaN sector_code rows — PIT lookup broken"
-
-          print("[ci] dtype + index + NaN assertions passed")
-          EOF
-
-      - name: Content-equality check on rebuilt CSV matrices
-        run: |
-          python - <<'EOF'
-          import pandas as pd
-          import subprocess, sys
-
-          # Compare each CSV matrix's content (not bytes) against the committed version.
-          # Parquet is intentionally excluded — pyarrow output is not byte-stable across
-          # environments even with identical input, so we trust CSV as the canonical
-          # text form and require parquet only to deserialize correctly.
-          mismatches = []
-          for csv in [
-              "classification/wide/class_code.csv",
-              "classification/wide/sector_code.csv",
-              "classification/wide/sub_sector_code.csv",
-              "classification/wide/chain_ecosystem.csv",
-              "classification/long/panel.csv",
-          ]:
-              committed = subprocess.check_output(["git", "show", f"HEAD:{csv}"]).decode("utf-8")
-              with open(csv, encoding="utf-8") as f:
-                  rebuilt = f.read()
-              if committed.strip() != rebuilt.strip():
-                  mismatches.append(csv)
-          if mismatches:
-              print(f"Out of sync (rebuild + commit needed):")
-              for m in mismatches:
-                  print(f"  - {m}")
+          # sector_roles.json is JSON (byte-stable) — assert the rebuilt file matches the commit.
+          committed = subprocess.check_output(
+              ["git", "show", "HEAD:classification/sector_roles.json"]).decode("utf-8")
+          with open("classification/sector_roles.json", encoding="utf-8") as f:
+              rebuilt = f.read()
+          if json.loads(committed) != json.loads(rebuilt):
+              print("classification/sector_roles.json out of sync — run build_sector_field.py and commit.")
               sys.exit(1)
-          print(f"All {5} CSV artifacts in sync with snapshot.csv.")
+
+          # PIT panel dtype + shape contract (parquet is not byte-stable across envs, so check content).
+          panel = pd.read_parquet("classification/sector_panel.parquet")
+          assert all(str(d) == "string" for d in panel.dtypes.unique()), f"panel dtype: {panel.dtypes.unique()}"
+          src = pd.read_csv("classification/sector.csv")
+          assert panel.shape[1] == len(src), f"panel cols {panel.shape[1]} != {len(src)} assets"
+          print("[ci] derived artifacts in sync; panel dtype + shape OK")
           EOF
+
+      - name: Validation smoke (200-perm — kernel must run cleanly)
+        run: python scripts/validate_sector_okx.py --n-perm 200 --cohesion-perm 200 --variants ALL,TOP30 --outdir /tmp/ci_validation

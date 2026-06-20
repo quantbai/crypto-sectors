@@ -6,76 +6,155 @@ Format: `[vX.Y.Z] YYYY-MM-DD — N assets — Summary`.
 
 ---
 
-## [v1.0.0] — Pending (target: 2026-Q2)
+## [v3.0.0] — 2026-06-20 — 232 assets — Pivot to single flat `sector` field on OKX 232-coin perp universe
 
-**158 assets · 4 classes · 14 sectors · ~35 sub-sectors**
+### Breaking pivot: discard v2 4-tier MSCI hierarchy and 135-asset Section-4 universe
 
-Changes from v1.0-RC2:
+The product is now a **single flat `sector` field** for the 232-coin OKX USDT-margined perpetual
+universe (daily log-returns 2019-11-27 to 2026-06-13, 2391 rows). The prior v2 product — a
+4-tier MSCI-style hierarchy (`class_code`, `sector_code`, `sub_sector_code`, `chain_ecosystem`)
+on a 135-asset universe and its associated Section-4 validation — is **discarded in its entirety**.
 
-- Version string bumped from `1.0.0-RC2` to `1.0.0` in `methodology.md` and `taxonomy.yaml`
-- Final CI green on all checks required before tag is pushed
-- No content changes from RC2
+#### The field
+
+15 flat sector labels (one layer, no hierarchy, no numeric codes). Identity-anchored by `cg_id`
+(CoinGecko slug) + `okx_instid` to avoid ticker-collision mis-resolution.
+
+**FACTOR sectors** (within-group demean removes a real shared return factor):
+- Strong: `privacy` (+0.55), `captive_franchise` (+0.30), `value_transfer` (+0.23),
+  `compute_storage` (+0.18), `meme` (+0.10)
+- Weak but significant: `eth_scaling` (+0.04), `metaverse_gaming` (+0.04),
+  `interoperability` (+0.03)
+- Marginal (significant because large n tightens the null; mostly market beta — treat with
+  caution): `smart_contract_platform` (+0.013), `information_technology` (+0.011)
+
+**RESIDUAL sectors** (intra-group corr indistinguishable from null; pooled to OTHER in
+`group_neut`): `defi` (+0.003), `ai_infrastructure` (-0.002), `oracles_data` (+0.008),
+`media_content` (+0.005), OTHER.
+
+(Numbers = mean intra-group market-residual pairwise correlation, 10k-perm;
+see `validation/sector_okx/cohesion_sector.csv`.)
+
+#### Production kernel
+
+Per day: demean returns within each FACTOR sector with >=3 live members; pool RESIDUAL-labelled
+coins AND any sub-3-member FACTOR group into OTHER, then demean that OTHER pool
+(market-neutralize). This OTHER-collapse kernel is the conservative/honest kernel; a naive
+"demean within every label" overstates VR.
+
+#### Validation (10,000-perm, production OTHER-collapse kernel)
+
+Per-day cross-sectional variance reduction vs a size-preserving label-shuffle null, averaged
+over days with >= min_assets valid coins:
+
+| Universe | min_assets | VR     | Null   | Excess   | p      |
+|----------|-----------|--------|--------|----------|--------|
+| ALL (232)| 30        | 12.91% | 8.22%  | +4.69pp  | 0.0001 |
+| TOP30    | 20        | 22.78% | 16.03% | +6.75pp  | 0.0008 |
+| TOP50    | 30        | 17.97% | 11.50% | +6.48pp  | 0.0001 |
+| TOP100   | 40        | 17.46% | 11.75% | +5.71pp  | 0.0001 |
+
+**Status**: validated for research and group-neutralization use; alpha-capital deployment
+remains paper-trading-gated.
+
+#### Honesty notes
+
+- `ai_infrastructure` and `oracles_data` are NEW carve-outs that are **RESIDUAL** — they do
+  not pass cohesion alone. Kept as organizational labels, pooled in `group_neut`; candidates
+  for sub-division once each sub-leaf has >=3 live members.
+- The big buckets (`smart_contract_platform`, `information_technology`, `defi`) are mostly
+  market beta; their statistical significance comes from large n, not strong cohesion.
+- NOT A RISK MODEL: this is a validated classification (an input to a risk model's exposure
+  matrix), not a covariance/factor risk model.
+
+#### New published files
+
+- `classification/sector.csv` — committed source of truth; columns: symbol, sector, role,
+  cg_id, okx_instid, audit_from, prev_label, note (232 rows)
+- `classification/sector.parquet` — parquet mirror (derived by `build_sector_field.py`)
+- `classification/sector_panel.parquet` — PIT (date x symbol) label matrix, pandas
+  StringDtype, `<NA>` before listing; the `group_neut` input
+- `classification/sector_roles.json` — label -> {role, n, mean_resid_corr, cohesion_p}
+- `classification/universe_tiers.json` — TOP10/20/30/50/100 membership lists
+- `data/returns.parquet` — 232-symbol daily log-returns (replaces `data/daily_returns.parquet`)
+- `taxonomy.yaml` — flat sector label definitions (economics-first), precedence/boundary
+  rules, FACTOR/RESIDUAL governance note; no 4-tier hierarchy
+- `decisions/sector-field.md` — master memo (v3 pivot rationale)
+- `decisions/sector-field-okx-2026-06.md` — audit record
+- `research/` — 128 per-coin economic-rationale notes
+- `validation/sector_okx/` — varred_sector.json, cohesion_sector.csv, run_10k.log, REPORT.md
+- `scripts/` — build_sector_field.py, validate_sector_okx.py, validate_schema.py
+- `.github/workflows/ci.yml` — CI: build + schema-validate + smoke-validate on published files
+
+#### Removed / discarded files
+
+All v2 artifacts are removed: `class_code`, `sector_code`, `sub_sector_code`,
+`chain_ecosystem` hierarchy fields; `classification/snapshot.csv`; `classification/wide/*`;
+`classification/long/*`; `data/daily_returns.parquet`; `validation/section4/`;
+scripts `build_matrices.py`, `validate_paper_section4.py`,
+`validate_section4_robustness.py`, `validate_universe_variants.py`,
+`validate_extra_group_fields.py`, `build_group_fields.py`, `ols_groundtruth.py`,
+`rerun_43_pit.py`, `validate_sector_field.py`, `audit_universe.py`;
+`vol_bucket`, `beta_bucket`, `age_bucket` fields; `CONTRIBUTING.md`, `DESIGN.md`,
+`GOVERNANCE.md`, `UNIVERSE.md`, `docs/`.
 
 ---
 
-## [v1.0.0-RC2] — 2026-05-24
+> The entries below predate the v3.0.0 pivot and describe the discarded 4-tier / 135-asset product. Their file paths, field names, and numbers (e.g. 44.07%) are historical and no longer apply to the current product.
 
-**158 assets · 4 classes · 14 sectors · ~35 sub-sectors**
+## [v2.1.0-dev] — In development
 
-Changes from v1.0-RC1 (this batch, QD-A scope):
+### sector field: single recommended group axis for cross-sectional factor neutralization (2026-06-10)
 
-- **Schema: `effective_from` column added to `classification/snapshot.csv`** (all 158 rows = `2024-05-23`, the min date in `data/daily_returns.parquet`). Establishes SCD-lite PIT semantics: reclassifications from v1.1 onward will add new rows with later `effective_from` dates rather than overwriting existing rows.
-- **PRIME reclassification**: sub_sector_code `301092` (RWA Issuer — Governance, sector 3010 DeFi) → `305020` (Gaming, sector 3050 Metaverse). Echelon Prime is a gaming-economy protocol for AAA studios, not an RWA issuer. See `decisions/prime.md`.
-- **Datonomy affiliation language corrected**: removed unsubstantiated "round-trip compatibility" claim from `methodology.md §3.2`, `§7`, and `taxonomy.yaml` header. Replaced with factual disclaimer per D2 in the upgrade plan.
-- **New documents added**: `SCHEMA.md`, `UNIVERSE.md`, `GOVERNANCE.md`, `CHANGELOG.md`.
-- **`decisions/luna-symbol-history.md` corrected**: `terra-luna-original` → `terra-luna-classic` to match snapshot asset_id.
-- **`methodology.md §4.2`**: added PIT immutability contract and git-tag warning.
-- **`methodology.md §5`**: "Universe filters" reworded to "investable filters" to clarify coverage vs tradability distinction.
-- **`methodology.md` version**: `1.0.0` → `1.0.0-RC2`.
+New flat `sector` field — 13 directional labels on 133 directional assets (+1
+non-directional `onchain_derivatives` bucket, universe-gated to `<NA>` in the wide
+matrix). Validated at 23.45% per-day variance reduction (min_assets=30, 10,000-perm
+confirmatory run complete at the 10,000-perm standard, p=0.0001 / p_holm=0.0004,
+p_holm=0.002) vs 15.68% `sector_code` / 16.94% `chain_ecosystem` published baselines.
+4 distinct universes (ALL / TOP30 / TOP50 / TOP100); TOP50 ≡ PIT-strict by construction
+(same 50 assets). TOP30: 44.07% (p_holm 0.003), TOP50: 31.43% (p_holm 0.002),
+TOP100: 24.83% (p_holm 0.002) — Holm-significant in all four universes (m=4).
+Selected by a 3-designer / 3-judge panel from three candidate designs; the statistical
+design rejected (TOP30 p=0.62, same sub_sector failure mode).
+
+**Status**: validated for research and group-neutralization use; alpha-capital
+deployment remains paper-trading-gated pending market-cap-weighted replication
+(no historical supply data in repo yet) — same gate as the published Section-4 fields.
+
+- `classification/snapshot.csv`: new `sector` column
+- `classification/wide/sector.parquet` + `sector.csv`: new (date × asset_id) matrix;
+  pandas StringDtype (not object); paxg/gas columns all-`<NA>` (class-40 universe gate)
+- `classification/long/panel.parquet` + `panel.csv`: `sector` field added to long panel
+- `taxonomy.yaml`: `sector_field:` section with 14 enumerated labels + `crosswalk:`
+  reconciliation table; version bumped to 2.1.0-dev
+- `SCHEMA.md`: `sector` field documented with StringDtype, three NaN causes, class-40
+  gate, consumer contract (per-day min-group collapse), and CI checks 14-17
+- `scripts/validate_schema.py`: checks 14-17 added (StringDtype, column set, class-40
+  gate, no label drift, ≥3 live members per directional label from 2024-01-01)
+- `scripts/build_matrices.py`: universe-gates class-40 assets (paxg/gas) to `<NA>` in
+  `classification/wide/sector.parquet`; casts sector label matrices to pandas StringDtype
+- `scripts/validate_sector_field.py`: standalone validation script for the `sector` field
+- `validation/sector_field/REPORT.md`: full validation report
+- `decisions/sector-field.md`: master memo — design provenance, panel decision, amendments,
+  refused moves, selection-bias note (9-design search; selection premium ≈ 2pp)
+- `decisions/pol.md`: appended Amendment 1 (POL → `smart_contract_platform`) + axis
+  reconciliation paragraph
+- `decisions/dcr.md`: new — DCR → `privacy` (opt-in StakeShuffle; regulatory tail-risk
+  deciding argument; bootstrap 0.99 corroborating)
+- `decisions/ton.md`: new — TON → `captive_franchise`
+- `decisions/twt.md`: new — TWT → `captive_franchise`
+- `decisions/wal.md`: new — WAL → `compute_storage`
+- `decisions/trx.md`: appended sector-field placement (`tron_ecosystem`) cross-reference
 
 ---
 
-## [v1.0.0-RC1] — 2026-05-23
+## [v2.0.0] — In development
 
-**158 assets · 4 classes · 14 sectors · ~35 sub-sectors**
+Initial public release. Pre-v2 development history (taxonomy iteration, universe lockdown, returns-data backfill, empirical-validation rewrite) is consolidated into this release and not separately versioned.
 
-Initial public release candidate. Built from scratch over one development sprint.
+### Section 4 statistical rework (2026-05-27, post AQR P0/P1 audit)
 
-Key decisions baked in at RC1:
-
-- Three-level hierarchy (class → sector → sub-sector) sized for a universe of ~150–300 assets, matching precedent from institutional equity classification systems adjusted for digital-asset universe size.
-- `chain_ecosystem` as an orthogonal tag rather than a hierarchy level; chain effects in crypto can rival sector effects and forcing them into the hierarchy distorts both axes.
-- Sub-sector codes ending `90`–`99` reserved as community extensions (e.g., 301090 Liquid Staking, 301091 Liquid Restaking).
-- 6-digit `CCSSXX` positional code format chosen to make potential future crosswalks to institutional classification systems tractable.
-- `asset_id` (stable, lowercase, hyphenated) as canonical key; `symbol` in a lookup table. Handles LUNA/LUNC collision and MATIC/POL rename correctly.
-- Empirical validation via within-vs-between correlation bootstrap (results in `validation.md`).
-- CI: referential integrity check (`validate_schema.py`) + CSV content equality.
-
-Pre-RC1 development history (not tagged):
-
-- **v0.2** (internal): Merged `304091` (DePIN Compute), `304092` (DePIN AI), `304093` (AI Agents) into `304020` (Compute & Private Storage) after intra-group correlations were negative on split. Deprecated slots documented in `taxonomy.yaml`. Added `202090` (Restaking Infrastructure) deprecated slot after EIGEN moved to 301091.
-- **v0.1** (internal): Initial 4-class skeleton. DEX / Lending / L1 / L2 as the primary sectors. DePIN split into three sub-sectors (later merged in v0.2). No empirical validation yet.
-
----
-
-## Known open issues — v1.0.1 candidates
-
-- **PENGU classification**: currently `102010` (Meme Coins). Under review for possible reclassification to `305030` (NFT Ecosystems) given Pudgy Penguins' NFT collection origin. Needs correlation evidence. Track in GitHub Issues.
-
----
-
-## v1.1 Forward contract — `reclassifications.csv`
-
-Starting in v1.1, all reclassification events will be recorded in a dedicated audit file `classification/reclassifications.csv`. This is a commitment, not a v1.0 deliverable.
-
-**Planned schema (5 columns)**:
-
-| Column | dtype | Description |
-|---|---|---|
-| `asset_id` | string | Stable asset identifier (join key) |
-| `field` | string | Which field changed: `class_code`, `sector_code`, `sub_sector_code`, or `chain_ecosystem` |
-| `old_value` | string | Value before the reclassification (stored as string to handle mixed types) |
-| `new_value` | string | Value after the reclassification |
-| `effective_from` | date | Date from which the new value applies; matches the new row in `snapshot.csv` |
-
-Each row in `reclassifications.csv` corresponds to one new row added to `snapshot.csv` with a later `effective_from`. The old row in `snapshot.csv` is never deleted — it remains as historical record.
+- §4.2: re-anchored on per-day variance-reduction metric. Independent OLS sanity check (`scripts/ols_groundtruth.py`) confirmed the prior time-invariant dummy framing answered the wrong question (R² ≈ 0.0001 because chain/sector main effects average out). The new framing is identical to the group_neut production semantics and is internally consistent with §4.4.
+- §4.3: fixed rolling within-group correlation bug (was demeaning within group only, producing structural -1/(k-1) negative bias). Now demeans cross-sectionally using the full universe in each window. Added a PIT-strict variant that filters by `effective_from`.
+- §4.4: vectorised inner kernels (~50× speedup); scaled permutation null from 200 to 10,000 draws; replaced independent chain/sector permutation with joint `(chain, sector)` pair shuffle for two-factor schemes; added Holm-Bonferroni step-down correction over the 5 tests.
+- Validated group fields under Holm-Bonferroni at α=0.05: `chain_ecosystem` (24.16% standalone reduction), `sector_code` (25.48% standalone), joint chain+sector (40.73%). `sub_sector_code` is NOT validated (14/32 active sub-sectors have n<3). `class_code` remains reference-only (4 groups, one with n=2).

@@ -1,105 +1,238 @@
 # crypto-sectors
 
-> Open hierarchical industry classification for digital assets, validated against daily returns.
+> A single flat `sector` field for the 232-coin OKX perpetual universe, empirically validated for cross-sectional group-neutralization (`group_neut`).
 
-[![CI](https://github.com/quantbai/crypto-sectors/actions/workflows/ci.yml/badge.svg)](https://github.com/quantbai/crypto-sectors/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
 [![License: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](LICENSE-data)
 
-**[Live demo](https://quantbai.github.io/crypto-sectors/)** — interactive sunburst, search, asset cards
+---
 
-A community-maintained, hierarchical industry classification for digital assets. Designed for cross-sectional risk decomposition, sector-neutral portfolio construction, and peer-group analysis. The hierarchy is informed by established institutional classification methodologies — see [methodology.md](methodology.md) for citations.
+## What this is
+
+**crypto-sectors** publishes one thing: a single flat `sector` label for every coin in the
+232-coin OKX USDT-margined perpetual universe, validated for use as a group-neutralization
+(`group_neut`) input in cross-sectional crypto factor research.
+
+Universe: 232 crypto-native coins. Identity anchored by `cg_id` (CoinGecko slug) +
+`okx_instid` to prevent ticker-collision mis-resolution. Daily log-returns span
+2019-11-27 to 2026-06-13 (2391 rows).
+
+This is **not** a covariance model or a risk model. It is a validated classification — an
+input to an exposure matrix. Do not use sector labels as regression variables or factor
+returns directly.
 
 ---
 
-## What you get
+## The 15-label sector field
 
-| File | Description |
+One layer, no hierarchy, no numeric codes. Each label is defined economics-first in
+`taxonomy.yaml` with ordered precedence rules.
+
+### FACTOR sectors — within-group demean removes a real shared return factor
+
+**STRONG** (mean intra-group market-residual pairwise correlation, 10k-perm):
+
+| Sector | Mean residual corr |
 |---|---|
-| [`taxonomy.yaml`](taxonomy.yaml) | Source of truth — class / sector / sub-sector definitions and codes |
-| [`classification/snapshot.csv`](classification/snapshot.csv) | Current classification of every covered asset |
-| [`classification/wide/<field>.parquet`](classification/wide/) | (date × asset) matrices, drop-in for `group_neut` style operations |
-| [`classification/long/panel.parquet`](classification/long/) | (date, asset_id, codes) long form for SQL warehouses |
-| [`decisions/`](decisions/) | One file per non-trivial classification decision — the audit trail |
-| [`methodology.md`](methodology.md) | The rulebook — how classifications are made |
-| [`validation.md`](validation.md) | Empirical evidence the classification co-moves on daily returns |
-| [`UNIVERSE.md`](UNIVERSE.md) | Coverage universe — selection criteria, exclusions, and graduation rules |
-| [`GOVERNANCE.md`](GOVERNANCE.md) | Maintainer council, PR merge thresholds, conflict-of-interest policy, appeals |
-| [`SCHEMA.md`](SCHEMA.md) | Dtype contract for all published fields; Int64 numpy-safety warning |
-| [`CHANGELOG.md`](CHANGELOG.md) | Version history; v1.1 reclassifications.csv forward contract |
+| `privacy` | +0.55 |
+| `captive_franchise` | +0.30 |
+| `value_transfer` | +0.23 |
+| `compute_storage` | +0.18 |
+| `meme` | +0.10 |
+
+**WEAK but significant:**
+
+| Sector | Mean residual corr |
+|---|---|
+| `eth_scaling` | +0.04 |
+| `metaverse_gaming` | +0.04 |
+| `interoperability` | +0.03 |
+
+**MARGINAL** — significant only because large n tightens the permutation null; cohesion
+is mostly market beta. Treat with caution:
+
+| Sector | Mean residual corr |
+|---|---|
+| `smart_contract_platform` | +0.013 |
+| `information_technology` | +0.011 |
+
+### RESIDUAL sectors — intra-group correlation indistinguishable from null
+
+Demean within these groups is approximately a no-op. They are **pooled into OTHER** in
+the production `group_neut` kernel. Kept as organizational labels; candidates for
+sub-division once each sub-leaf has >= 3 live members.
+
+| Sector | Mean residual corr |
+|---|---|
+| `defi` | +0.003 |
+| `ai_infrastructure` | -0.002 |
+| `oracles_data` | +0.008 |
+| `media_content` | +0.005 |
+| `OTHER` | (catch-all) |
+
+Full per-label statistics: `validation/sector_okx/cohesion_sector.csv`.
+
+---
+
+## Validation — 10,000-perm, production OTHER-collapse kernel
+
+Method: per-day cross-sectional variance reduction (VR) vs a size-preserving label-shuffle
+null, averaged over days with >= `min_assets` valid coins.
+
+| Slice | n coins | min_assets | VR | Null mean | Excess | p |
+|---|---|---|---|---|---|---|
+| ALL | 232 | 30 | 12.91% | 8.22% | +4.69 pp | 0.0001 |
+| TOP30 | top 30 | 20 | 22.78% | 16.03% | +6.75 pp | 0.0008 |
+| TOP50 | top 50 | 30 | 17.97% | 11.50% | +6.48 pp | 0.0001 |
+| TOP100 | top 100 | 40 | 17.46% | 11.75% | +5.71 pp | 0.0001 |
+
+Full run log: `validation/sector_okx/run_10k.log`. Summary: `validation/sector_okx/REPORT.md`.
+
+---
+
+## Production OTHER-collapse kernel
+
+This is the conservative/honest kernel — what `group_neut` does and what the VR numbers
+above measure. A naive "demean within every label" overstates VR.
+
+**Per day:**
+1. Identify FACTOR sectors with >= 3 live members on that date.
+2. Demean returns within each such group.
+3. Pool RESIDUAL-labelled coins **and** any FACTOR group with < 3 live members on that
+   date into a single `OTHER` bucket.
+4. Demean the `OTHER` pool (market-neutralize the remainder).
+
+---
+
+## Honesty notes
+
+- **`ai_infrastructure` and `oracles_data`** are new carve-outs that are RESIDUAL — they
+  do not pass cohesion alone. Kept as organizational labels, pooled into `OTHER` in
+  `group_neut`. Candidates for sub-division (e.g., `defi` -> dex/lending/lsd/rwa/perps;
+  `ai_infrastructure` -> gpu-compute/agents/data) once each sub-leaf has >= 3 live members.
+
+- **Big buckets** (`smart_contract_platform`, `information_technology`, `defi`) are mostly
+  market beta. Their statistical significance comes from large n tightening the null, not
+  from strong cohesion.
+
+- **NOT A RISK MODEL.** This is a validated classification — an input to a risk model's
+  exposure matrix. It is not a covariance model or factor risk model.
+
+- **Deployment gate.** Validated for research and group-neutralization. Alpha-capital
+  deployment is paper-trading-gated.
+
+---
+
+## Repository contents
+
+| Path | Description |
+|---|---|
+| `classification/sector.csv` | Committed source of truth. Columns: `symbol`, `sector`, `role`, `cg_id`, `okx_instid`, `audit_from`, `prev_label`, `note`. 232 rows. |
+| `classification/sector.parquet` | Parquet mirror (derived by `scripts/build_sector_field.py`). |
+| `classification/sector_panel.parquet` | PIT (date × symbol) label matrix, pandas `StringDtype`, `<NA>` before listing. The direct `group_neut` input. |
+| `classification/sector_roles.json` | `label -> {role, n, mean_resid_corr, cohesion_p}` |
+| `classification/universe_tiers.json` | TOP10/20/30/50/100 membership lists. |
+| `data/returns.parquet` | 232-symbol daily log-returns. |
+| `taxonomy.yaml` | Flat sector label definitions (economics-first), precedence/boundary rules, FACTOR/RESIDUAL governance note. No 4-tier hierarchy. |
+| `decisions/` | Per-coin economic rationale. `decisions/sector-field.md` is the master memo; `decisions/sector-field-okx-2026-06.md` is the audit record. |
+| `research/` | 128 per-coin economic-rationale notes. |
+| `validation/sector_okx/` | `varred_sector.json`, `cohesion_sector.csv`, `run_10k.log`, `REPORT.md`. |
+| `scripts/` | `build_sector_field.py`, `validate_sector_okx.py`, `validate_schema.py`, `README.md`. |
+| `.github/workflows/ci.yml` | CI: build + schema-validate + smoke-validate on published files. |
+
+---
 
 ## Quick start
 
 ```python
 import pandas as pd
 
-# Wide matrix: dates × asset_ids, cells = integer sector code
-sector = pd.read_parquet(
-    "https://raw.githubusercontent.com/quantbai/crypto-sectors/main/classification/wide/sector_code.parquet"
-)
+# Load the PIT label panel and returns
+panel   = pd.read_parquet("classification/sector_panel.parquet")   # date x symbol, StringDtype
+returns = pd.read_parquet("data/returns.parquet")                   # date x symbol, float64
 
-# Or just the latest snapshot for human reading
-snapshot = pd.read_csv(
-    "https://raw.githubusercontent.com/quantbai/crypto-sectors/main/classification/snapshot.csv"
-)
-print(snapshot.head())
+# Align
+common_dates  = panel.index.intersection(returns.index)
+common_assets = panel.columns.intersection(returns.columns)
+panel   = panel.loc[common_dates, common_assets]
+returns = returns.loc[common_dates, common_assets]
+
+
+def group_neut_day(ret: pd.Series, lbl: pd.Series) -> pd.Series:
+    """
+    Production OTHER-collapse group_neut for one cross-section.
+
+    - FACTOR groups with >= 3 live members: demean within group.
+    - RESIDUAL labels + any FACTOR group with < 3 live members:
+      pooled into OTHER, then market-neutralized.
+    """
+    # Drop assets missing either return or label
+    valid = ret.dropna().index.intersection(lbl.dropna().index)
+    r = ret[valid].copy()
+    g = lbl[valid].copy()
+
+    # Load FACTOR labels (from classification/sector_roles.json in practice)
+    FACTOR_LABELS = {
+        "privacy", "captive_franchise", "value_transfer", "compute_storage", "meme",
+        "eth_scaling", "metaverse_gaming", "interoperability",
+        "smart_contract_platform", "information_technology",
+    }
+
+    # Collapse RESIDUAL labels and under-populated FACTOR groups into OTHER
+    counts = g.value_counts()
+    def collapse(label):
+        if label not in FACTOR_LABELS:
+            return "OTHER"
+        if counts.get(label, 0) < 3:
+            return "OTHER"
+        return label
+
+    g = g.map(collapse)
+
+    # Within-group demean
+    group_means = r.groupby(g).mean()
+    return r - g.map(group_means)
+
+
+# Apply to a single date
+date = "2025-01-15"
+neutralized = group_neut_day(returns.loc[date], panel.loc[date])
 ```
 
-For a sector-neutralization example:
+---
 
-```python
-import datetime
+## Reproduce
 
-# date must be a datetime.date (not pd.Timestamp) to index the wide matrix
-date = datetime.date(2025, 1, 15)
+```bash
+# Derive parquet + panel + roles from sector.csv (committed source of truth)
+python scripts/build_sector_field.py
 
-# Note: cells before effective_from (2024-05-23) are NaN — a sane backtest
-# starts on or after that date.
-sector = pd.read_parquet(
-    "https://raw.githubusercontent.com/quantbai/crypto-sectors/main/classification/wide/sector_code.parquet"
-)
+# Full 10,000-perm validation (~1.5 h)
+python scripts/validate_sector_okx.py --n-perm 10000
 
-# Align sector codes to alpha column order; prevents silent NaN from column mismatch
-sector_row = sector.loc[pd.Timestamp(date)].reindex(alpha.columns)
+# Smoke test (fast)
+python scripts/validate_sector_okx.py --n-perm 200
 
-# Cross-sectional demean within sector — a standard alpha-research operation
-# (.T.groupby().T replaces the deprecated groupby(axis=1))
-# Note: assets with NA sector_row (e.g. pre-effective_from, no-returns) are
-# silently set to NaN in alpha_demeaned. Filter or impute upstream.
-alpha_demeaned = alpha.sub(alpha.T.groupby(sector_row).transform("mean").T)
+# Referential integrity check
+python scripts/validate_schema.py
 ```
 
-## Coverage
+---
 
-- **Universe**: 158 actively classified digital assets. See [UNIVERSE.md](UNIVERSE.md) for selection criteria and exclusions.
-- **Hierarchy**: 4 classes → 14 sectors → ~35 sub-sectors (community-maintained, with extensions in the 90–99 slot of each sector)
-- **Orthogonal tag**: `chain_ecosystem` (BTC, ETH, SOL, BNB, …) — categorical `FILTER_ONLY` tag; see [SCHEMA.md](SCHEMA.md) for usage guidance. Do not use as a direct numeric alpha factor.
-- **Update cadence**: quarterly snapshot tags (`v2026.Q2`, `v2026.Q3`, …), continuous PR review
+## Status
 
-## Validation in one sentence
+**v3.0.0** — single flat `sector` field on the 232-coin OKX perpetual universe.
 
-> Same-sector daily returns co-move significantly more than cross-sector returns (bootstrap-CI spread well above zero), and the classification recovers the same cluster structure that an unsupervised Ward-linkage clustering of correlations would find. See [validation.md](validation.md).
+Validated for research and group-neutralization. Alpha-capital deployment is
+paper-trading-gated.
 
-## Why this exists
-
-| Existing source | Limitation |
-|---|---|
-| Commercial institutional classifications | Methodology often public, but asset-level mappings are paid products |
-| CoinGecko / CMC categories | Marketing tags — not mutually exclusive, no formal methodology, no empirical validation |
-| Internal fund taxonomies | Each fund reinvents the wheel; nothing comparable across teams |
-
-This repository: open methodology, open mappings, empirically validated, community-curated.
-
-## Contribute
-
-Add a new token, propose a reclassification, or open a sub-sector discussion — see [CONTRIBUTING.md](CONTRIBUTING.md). Most PRs are one line in `classification/snapshot.csv` plus a short `decisions/<symbol>.md`.
+---
 
 ## License
 
-Code (`scripts/`) — MIT. Classification data (`taxonomy.yaml`, `classification/`, `decisions/`) — [CC BY 4.0](LICENSE-data). Attribute as:
+Code (`scripts/`) — [MIT](LICENSE).
+Data (`taxonomy.yaml`, `classification/`, `decisions/`) — [CC BY 4.0](LICENSE-data).
 
-> crypto-sectors contributors (2026). _crypto-sectors: an open industry classification for digital assets._ https://github.com/quantbai/crypto-sectors
+Attribution:
 
-## Notice of non-affiliation
-
-This is an independent open-source project. It is not affiliated with, endorsed by, or sponsored by MSCI Inc., S&P Global, FTSE Russell, Coin Metrics, Goldman Sachs, WorldQuant LLC, or any other commercial index, classification, or analytics provider. References to third-party methodologies in [methodology.md](methodology.md) are academic citations and do not imply any business relationship. All trademarks are the property of their respective owners.
+> crypto-sectors contributors (2026). *crypto-sectors: a validated sector classification for the OKX crypto perpetual universe.* https://github.com/quantbai/crypto-sectors
