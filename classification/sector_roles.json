@@ -5,28 +5,22 @@
   "mean_resid_corr": 0.0298,
   "cohesion_p": 0.0717
  },
- "ai_infrastructure": {
-  "role": "RESIDUAL",
-  "n": 18,
-  "mean_resid_corr": -0.0023,
-  "cohesion_p": 0.0846
- },
  "captive_franchise": {
   "role": "FACTOR",
-  "n": 4,
-  "mean_resid_corr": 0.3003,
+  "n": 6,
+  "mean_resid_corr": 0.1712,
   "cohesion_p": 0.0001
  },
  "compute_storage": {
   "role": "FACTOR",
-  "n": 4,
-  "mean_resid_corr": 0.1821,
-  "cohesion_p": 0.0001
+  "n": 9,
+  "mean_resid_corr": 0.0605,
+  "cohesion_p": 0.0009
  },
  "defi": {
   "role": "RESIDUAL",
-  "n": 51,
-  "mean_resid_corr": 0.0026,
+  "n": 52,
+  "mean_resid_corr": 0.0023,
   "cohesion_p": 0.0001
  },
  "eth_scaling": {
@@ -36,10 +30,10 @@
   "cohesion_p": 0.0018
  },
  "information_technology": {
-  "role": "FACTOR",
-  "n": 22,
-  "mean_resid_corr": 0.011,
-  "cohesion_p": 0.0016
+  "role": "RESIDUAL",
+  "n": 29,
+  "mean_resid_corr": 0.0041,
+  "cohesion_p": 0.0026
  },
  "interoperability": {
   "role": "FACTOR",
@@ -47,29 +41,23 @@
   "mean_resid_corr": 0.0293,
   "cohesion_p": 0.0173
  },
- "media_content": {
-  "role": "RESIDUAL",
-  "n": 3,
-  "mean_resid_corr": 0.0051,
-  "cohesion_p": 0.3207
- },
  "meme": {
   "role": "FACTOR",
-  "n": 30,
-  "mean_resid_corr": 0.0969,
+  "n": 31,
+  "mean_resid_corr": 0.0908,
   "cohesion_p": 0.0001
  },
  "metaverse_gaming": {
   "role": "FACTOR",
-  "n": 19,
-  "mean_resid_corr": 0.0359,
+  "n": 18,
+  "mean_resid_corr": 0.0378,
   "cohesion_p": 0.0001
  },
  "oracles_data": {
   "role": "RESIDUAL",
-  "n": 8,
-  "mean_resid_corr": 0.0077,
-  "cohesion_p": 0.1151
+  "n": 9,
+  "mean_resid_corr": -0.0008,
+  "cohesion_p": 0.1939
  },
  "privacy": {
   "role": "FACTOR",
@@ -79,8 +67,8 @@
  },
  "smart_contract_platform": {
   "role": "FACTOR",
-  "n": 40,
-  "mean_resid_corr": 0.0129,
+  "n": 45,
+  "mean_resid_corr": 0.0095,
   "cohesion_p": 0.0001
  },
  "value_transfer": {

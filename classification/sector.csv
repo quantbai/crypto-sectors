@@ -4,31 +4,20 @@ ICX,OTHER,RESIDUAL,,ICX-USDT-SWAP,,(new),zombie/near-dead chain -> non-direction
 LRC,OTHER,RESIDUAL,,LRC-USDT-SWAP,,(new),zombie/near-dead chain -> non-directional
 LUNA,OTHER,RESIDUAL,,LUNA-USDT-SWAP,,(new),zombie/near-dead chain -> non-directional
 ONE,OTHER,RESIDUAL,,ONE-USDT-SWAP,,(new),zombie/near-dead chain -> non-directional
-0G,ai_infrastructure,RESIDUAL,zero-gravity,0G-USDT-SWAP,smart_contract_platform,smart_contract_platform,"reaudit 2026-06-17: smart_contract_platform->ai_infrastructure (economics-first, adversarial)"
-AIXBT,ai_infrastructure,RESIDUAL,,AIXBT-USDT-SWAP,,(new),promoted: AI inference/agent/data fees
-ALLO,ai_infrastructure,RESIDUAL,allora,ALLO-USDT-SWAP,,(new),promoted: AI inference/agent/data fees
-ATH,ai_infrastructure,RESIDUAL,aethir,ATH-USDT-SWAP,information_technology,information_technology,audit2026-06-14: IT->ai_infra; Aethir AI-focused GPU-as-a-service (metered AI-compute); GPU trio unified
-COAI,ai_infrastructure,RESIDUAL,chainopera-ai,COAI-USDT-SWAP,,(new),promoted: AI inference/agent/data fees
-GLM,ai_infrastructure,RESIDUAL,golem,GLM-USDT-SWAP,information_technology,information_technology,audit2026-06-14: IT->ai_infra; Golem decentralized GPU/compute marketplace; GPU trio unified
-GRASS,ai_infrastructure,RESIDUAL,grass,GRASS-USDT-SWAP,,(new),promoted: AI inference/agent/data fees
-KITE,ai_infrastructure,RESIDUAL,kite-2,KITE-USDT-SWAP,information_technology,information_technology,audit2026-06-14: IT->ai_infra; sovereign L1 for autonomous AI-agent payments; metered AI-agent execution
-NMR,ai_infrastructure,RESIDUAL,,NMR-USDT-SWAP,,(new),promoted: AI inference/agent/data fees
-RECALL,ai_infrastructure,RESIDUAL,,RECALL-USDT-SWAP,,(new),promoted: AI inference/agent/data fees
-RENDER,ai_infrastructure,RESIDUAL,render-token,RENDER-USDT-SWAP,information_technology,information_technology,audit2026-06-14: IT->ai_infra; decentralized GPU render/compute marketplace; GPU trio unified
-SAHARA,ai_infrastructure,RESIDUAL,sahara-ai,SAHARA-USDT-SWAP,information_technology,information_technology,audit2026-06-14: IT->ai_infra; live driver is metered AI data/model/inference marketplace (Sahara Chain not yet live)
-SAPIEN,ai_infrastructure,RESIDUAL,,SAPIEN-USDT-SWAP,,(new),promoted: AI inference/agent/data fees
-SHELL,ai_infrastructure,RESIDUAL,,SHELL-USDT-SWAP,,(new),promoted: AI inference/agent/data fees
-TAO,ai_infrastructure,RESIDUAL,bittensor,TAO-USDT-SWAP,,information_technology,promoted: AI inference/agent/data fees
-THETA,ai_infrastructure,RESIDUAL,theta-token,THETA-USDT-SWAP,media_content,media_content,"reaudit 2026-06-17: media_content->ai_infrastructure (economics-first, adversarial)"
-VANA,ai_infrastructure,RESIDUAL,,VANA-USDT-SWAP,,(new),promoted: AI inference/agent/data fees
-VIRTUAL,ai_infrastructure,RESIDUAL,virtual-protocol,VIRTUAL-USDT-SWAP,information_technology,information_technology,audit2026-06-14: IT->ai_infra; AI-agent launchpad/marketplace (inference+agent-creation fees -> buyback/burn); child AIXBT already ai_infra
 BNB,captive_franchise,FACTOR,binancecoin,BNB-USDT-SWAP,,captive_franchise,
 CRO,captive_franchise,FACTOR,crypto-com-chain,CRO-USDT-SWAP,,captive_franchise,
+ME,captive_franchise,FACTOR,magic-eden,ME-USDT-SWAP,,metaverse_gaming,"reaudit 2026-06-20: metaverse_gaming->captive_franchise; single-operator off-chain revenue buyback loop, no in-world utility"
+NMR,captive_franchise,FACTOR,,NMR-USDT-SWAP,,ai_infrastructure,"promoted: AI inference/agent/data fees | dissolve ai_infra 2026-06-20: single-company ML-tournament stake/collateral, off-chain scoring + buyback -> captive_franchise"
 OKB,captive_franchise,FACTOR,okb,OKB-USDT-SWAP,,(new),
 TON,captive_franchise,FACTOR,the-open-network,TON-USDT-SWAP,,captive_franchise,
 AR,compute_storage,FACTOR,arweave,AR-USDT-SWAP,,compute_storage,
+ATH,compute_storage,FACTOR,aethir,ATH-USDT-SWAP,information_technology,ai_infrastructure,"audit2026-06-14: IT->ai_infra; Aethir AI-focused GPU-as-a-service (metered AI-compute); GPU trio unified | dissolve ai_infra 2026-06-20: Aethir GPU-compute DePIN, paid per GPU-hour -> compute_storage (same mechanism as RENDER/FIL)"
 FIL,compute_storage,FACTOR,filecoin,FIL-USDT-SWAP,,compute_storage,
+GLM,compute_storage,FACTOR,golem,GLM-USDT-SWAP,information_technology,ai_infrastructure,audit2026-06-14: IT->ai_infra; Golem decentralized GPU/compute marketplace; GPU trio unified | dissolve ai_infra 2026-06-20: Golem P2P CPU/GPU compute marketplace -> compute_storage
+GRASS,compute_storage,FACTOR,grass,GRASS-USDT-SWAP,,ai_infrastructure,promoted: AI inference/agent/data fees | dissolve ai_infra 2026-06-20: residential-bandwidth DePIN -> compute_storage
 ICP,compute_storage,FACTOR,internet-computer,ICP-USDT-SWAP,,compute_storage,
+LPT,compute_storage,FACTOR,livepeer,LPT-USDT-SWAP,,media_content,dissolve media_content 2026-06-20: Livepeer metered GPU transcode/AI-inference market -> compute_storage
+RENDER,compute_storage,FACTOR,render-token,RENDER-USDT-SWAP,information_technology,ai_infrastructure,audit2026-06-14: IT->ai_infra; decentralized GPU render/compute marketplace; GPU trio unified | dissolve ai_infra 2026-06-20: GPU render marketplace (GPU-hour burn-mint) -> compute_storage
 WAL,compute_storage,FACTOR,walrus-2,WAL-USDT-SWAP,,compute_storage,
 1INCH,defi,RESIDUAL,1inch,1INCH-USDT-SWAP,,defi,
 AAVE,defi,RESIDUAL,aave,AAVE-USDT-SWAP,,defi,
@@ -40,7 +29,7 @@ AUCTION,defi,RESIDUAL,,AUCTION-USDT-SWAP,,(new),
 AVNT,defi,RESIDUAL,avantis,AVNT-USDT-SWAP,,(new),
 BARD,defi,RESIDUAL,lombard-protocol,BARD-USDT-SWAP,,(new),
 BIO,defi,RESIDUAL,bio-protocol,BIO-USDT-SWAP,,(new),
-BLUR,defi,RESIDUAL,,BLUR-USDT-SWAP,,(new),
+BLUR,defi,RESIDUAL,,BLUR-USDT-SWAP,,defi,reaudit 2026-06-20: confirmed defi; NFT marketplace + Blend NFT-lending (defi enumerates both; fee-switch unpassed is irrelevant)
 COMP,defi,RESIDUAL,compound-governance-token,COMP-USDT-SWAP,,defi,
 CRV,defi,RESIDUAL,curve-dao-token,CRV-USDT-SWAP,,defi,
 CVX,defi,RESIDUAL,convex-finance,CVX-USDT-SWAP,,defi,
@@ -75,6 +64,7 @@ SPK,defi,RESIDUAL,spark-2,SPK-USDT-SWAP,,(new),
 SUSHI,defi,RESIDUAL,,SUSHI-USDT-SWAP,,(new),
 SYRUP,defi,RESIDUAL,,SYRUP-USDT-SWAP,,(new),
 UNI,defi,RESIDUAL,uniswap,UNI-USDT-SWAP,,defi,
+VIRTUAL,defi,RESIDUAL,virtual-protocol,VIRTUAL-USDT-SWAP,information_technology,ai_infrastructure,audit2026-06-14: IT->ai_infra; AI-agent launchpad/marketplace (inference+agent-creation fees -> buyback/burn); child AIXBT already ai_infra | dissolve ai_infra 2026-06-20: bonding-curve launchpad + DEX (1% fee->buyback) -> defi (pump.fun->Raydium analog)
 WET,defi,RESIDUAL,,WET-USDT-SWAP,,(new),
 WLFI,defi,RESIDUAL,world-liberty-financial,WLFI-USDT-SWAP,,defi,
 WOO,defi,RESIDUAL,,WOO-USDT-SWAP,,(new),
@@ -91,28 +81,35 @@ SOON,eth_scaling,FACTOR,soon-2,SOON-USDT-SWAP,interoperability,(new),audit2026-0
 SOPH,eth_scaling,FACTOR,,SOPH-USDT-SWAP,,(new),
 STRK,eth_scaling,FACTOR,starknet,STRK-USDT-SWAP,,eth_scaling,
 ZK,eth_scaling,FACTOR,zksync,ZK-USDT-SWAP,,eth_scaling,
-2Z,information_technology,FACTOR,doublezero,2Z-USDT-SWAP,,information_technology,
-ACH,information_technology,FACTOR,alchemy-pay,ACH-USDT-SWAP,OTHER,(new),audit2026-06-14: OTHER->IT; live fiat-crypto payment rail (not zombie); open payment middleware -> IT residual
-ARKM,information_technology,FACTOR,arkham,ARKM-USDT-SWAP,,(new),
-BICO,information_technology,FACTOR,,BICO-USDT-SWAP,,(new),
-ENS,information_technology,FACTOR,ethereum-name-service,ENS-USDT-SWAP,,information_technology,
-ENSO,information_technology,FACTOR,enso,ENSO-USDT-SWAP,,(new),
-GPS,information_technology,FACTOR,,GPS-USDT-SWAP,,(new),
-GRT,information_technology,FACTOR,the-graph,GRT-USDT-SWAP,,information_technology,
-H,information_technology,FACTOR,humanity,H-USDT-SWAP,,(new),
-KAITO,information_technology,FACTOR,kaito,KAITO-USDT-SWAP,,information_technology,
-LA,information_technology,FACTOR,,LA-USDT-SWAP,,(new),
-MASK,information_technology,FACTOR,,MASK-USDT-SWAP,,(new),
-PARTI,information_technology,FACTOR,particle-network,PARTI-USDT-SWAP,interoperability,(new),"reaudit 2026-06-17: interoperability->information_technology (economics-first, adversarial)"
-PIEVERSE,information_technology,FACTOR,pieverse,PIEVERSE-USDT-SWAP,ai_infrastructure,(new),"audit2026-06-14: ai_infra->IT; agentic payment/neobank stack, AI is UX not metered AI -> payment middleware residual"
-PROVE,information_technology,FACTOR,succinct,PROVE-USDT-SWAP,,(new),
-SENT,information_technology,FACTOR,sentient,SENT-USDT-SWAP,,information_technology,
-SIGN,information_technology,FACTOR,,SIGN-USDT-SWAP,,(new),
-SSV,information_technology,FACTOR,,SSV-USDT-SWAP,,(new),
-TRUST,information_technology,FACTOR,,TRUST-USDT-SWAP,,(new),
-WCT,information_technology,FACTOR,,WCT-USDT-SWAP,,(new),
-WLD,information_technology,FACTOR,worldcoin-wld,WLD-USDT-SWAP,ai_infrastructure,information_technology,audit2026-06-14: ai_infra->IT; value = World ID proof-of-personhood verification fees; no metered AI (AI is narrative)
-ZBT,information_technology,FACTOR,zerobase,ZBT-USDT-SWAP,,(new),
+2Z,information_technology,RESIDUAL,doublezero,2Z-USDT-SWAP,,information_technology,
+ACH,information_technology,RESIDUAL,alchemy-pay,ACH-USDT-SWAP,OTHER,(new),audit2026-06-14: OTHER->IT; live fiat-crypto payment rail (not zombie); open payment middleware -> IT residual
+AIXBT,information_technology,RESIDUAL,,AIXBT-USDT-SWAP,,ai_infrastructure,promoted: AI inference/agent/data fees | dissolve ai_infra 2026-06-20: token hold-gates access to off-chain market-intel SaaS -> IT middleware (buyback secondary)
+ARKM,information_technology,RESIDUAL,arkham,ARKM-USDT-SWAP,,(new),
+BAT,information_technology,RESIDUAL,basic-attention-token,BAT-USDT-SWAP,,media_content,dissolve media_content 2026-06-20: Brave ad-spend routing middleware (single operator) -> IT
+BICO,information_technology,RESIDUAL,,BICO-USDT-SWAP,,(new),
+COAI,information_technology,RESIDUAL,chainopera-ai,COAI-USDT-SWAP,,ai_infrastructure,promoted: AI inference/agent/data fees | dissolve ai_infra 2026-06-20: credits for AI-agent terminal/API access -> IT (GPU layer + PoI L1 not yet live)
+ENS,information_technology,RESIDUAL,ethereum-name-service,ENS-USDT-SWAP,,information_technology,
+ENSO,information_technology,RESIDUAL,enso,ENSO-USDT-SWAP,,(new),
+GPS,information_technology,RESIDUAL,,GPS-USDT-SWAP,,(new),
+GRT,information_technology,RESIDUAL,the-graph,GRT-USDT-SWAP,,information_technology,
+H,information_technology,RESIDUAL,humanity,H-USDT-SWAP,,(new),
+KAITO,information_technology,RESIDUAL,kaito,KAITO-USDT-SWAP,,information_technology,
+LA,information_technology,RESIDUAL,,LA-USDT-SWAP,,(new),
+MASK,information_technology,RESIDUAL,,MASK-USDT-SWAP,,(new),
+PARTI,information_technology,RESIDUAL,particle-network,PARTI-USDT-SWAP,interoperability,(new),"reaudit 2026-06-17: interoperability->information_technology (economics-first, adversarial)"
+PIEVERSE,information_technology,RESIDUAL,pieverse,PIEVERSE-USDT-SWAP,ai_infrastructure,(new),"audit2026-06-14: ai_infra->IT; agentic payment/neobank stack, AI is UX not metered AI -> payment middleware residual"
+PROVE,information_technology,RESIDUAL,succinct,PROVE-USDT-SWAP,,(new),
+RECALL,information_technology,RESIDUAL,,RECALL-USDT-SWAP,,ai_infrastructure,promoted: AI inference/agent/data fees | dissolve ai_infra 2026-06-20: on-chain skill-competition/AgentRank curation service -> IT (explicitly NOT a storage token)
+SAHARA,information_technology,RESIDUAL,sahara-ai,SAHARA-USDT-SWAP,information_technology,ai_infrastructure,audit2026-06-14: IT->ai_infra; live driver is metered AI data/model/inference marketplace (Sahara Chain not yet live) | dissolve ai_infra 2026-06-20: live Data Services access/lockup platform -> IT (Sahara Chain testnet only; flip to SCP at mainnet)
+SAPIEN,information_technology,RESIDUAL,,SAPIEN-USDT-SWAP,,ai_infrastructure,promoted: AI inference/agent/data fees | dissolve ai_infra 2026-06-20: human data-labeling marketplace (stake+PoQ); off-chain output -> IT (not oracle/DePIN)
+SENT,information_technology,RESIDUAL,sentient,SENT-USDT-SWAP,,information_technology,
+SHELL,information_technology,RESIDUAL,,SHELL-USDT-SWAP,,ai_infrastructure,promoted: AI inference/agent/data fees | dissolve ai_infra 2026-06-20: MyShell AI-agent creator SaaS access/payment token -> IT
+SIGN,information_technology,RESIDUAL,,SIGN-USDT-SWAP,,(new),
+SSV,information_technology,RESIDUAL,,SSV-USDT-SWAP,,(new),
+TRUST,information_technology,RESIDUAL,,TRUST-USDT-SWAP,,(new),
+WCT,information_technology,RESIDUAL,,WCT-USDT-SWAP,,(new),
+WLD,information_technology,RESIDUAL,worldcoin-wld,WLD-USDT-SWAP,ai_infrastructure,information_technology,audit2026-06-14: ai_infra->IT; value = World ID proof-of-personhood verification fees; no metered AI (AI is narrative)
+ZBT,information_technology,RESIDUAL,zerobase,ZBT-USDT-SWAP,,(new),
 ATOM,interoperability,FACTOR,cosmos,ATOM-USDT-SWAP,,interoperability,
 BABY,interoperability,FACTOR,babylon,BABY-USDT-SWAP,smart_contract_platform,(new),"reaudit 2026-06-17: smart_contract_platform->interoperability (economics-first, adversarial)"
 DOT,interoperability,FACTOR,polkadot,DOT-USDT-SWAP,,interoperability,
@@ -121,9 +118,6 @@ KSM,interoperability,FACTOR,,KSM-USDT-SWAP,,(new),
 TIA,interoperability,FACTOR,celestia,TIA-USDT-SWAP,,interoperability,
 W,interoperability,FACTOR,wormhole,W-USDT-SWAP,,(new),
 ZRO,interoperability,FACTOR,layerzero,ZRO-USDT-SWAP,,interoperability,
-BAT,media_content,RESIDUAL,basic-attention-token,BAT-USDT-SWAP,,media_content,
-LPT,media_content,RESIDUAL,livepeer,LPT-USDT-SWAP,,media_content,
-ZORA,media_content,RESIDUAL,,ZORA-USDT-SWAP,metaverse_gaming,(new),audit2026-06-14: metaverse_gaming->media_content; onchain social/content rail (creator coins); media-consumption driver
 ACT,meme,FACTOR,act-i-the-ai-prophecy,ACT-USDT-SWAP,,(new),
 BOME,meme,FACTOR,,BOME-USDT-SWAP,,(new),
 BONK,meme,FACTOR,bonk,BONK-USDT-SWAP,,meme,
@@ -154,6 +148,7 @@ TRUMP,meme,FACTOR,official-trump,TRUMP-USDT-SWAP,,meme,
 TURBO,meme,FACTOR,turbo,TURBO-USDT-SWAP,,(new),
 USELESS,meme,FACTOR,useless-3,USELESS-USDT-SWAP,,(new),
 WIF,meme,FACTOR,dogwifcoin,WIF-USDT-SWAP,,meme,
+ZORA,meme,FACTOR,,ZORA-USDT-SWAP,metaverse_gaming,media_content,"audit2026-06-14: metaverse_gaming->media_content; onchain social/content rail (creator coins); media-consumption driver | dissolve media_content 2026-06-20: live content-coin L2 but zero holder accrual (official ""for fun only"") -> meme attention"
 AGLD,metaverse_gaming,FACTOR,,AGLD-USDT-SWAP,,(new),
 ANIME,metaverse_gaming,FACTOR,,ANIME-USDT-SWAP,,(new),
 APE,metaverse_gaming,FACTOR,apecoin,APE-USDT-SWAP,,metaverse_gaming,
@@ -169,10 +164,10 @@ IMX,metaverse_gaming,FACTOR,immutable-x,IMX-USDT-SWAP,,metaverse_gaming,
 KGEN,metaverse_gaming,FACTOR,,KGEN-USDT-SWAP,ai_infrastructure,(new),audit2026-06-14: ai_infra->metaverse_gaming; meters verified-gamer distribution/UA to publishers; AI is downstream buyer
 MAGIC,metaverse_gaming,FACTOR,,MAGIC-USDT-SWAP,ai_infrastructure,(new),audit2026-06-14: ai_infra->metaverse_gaming; Treasure DAO cross-game currency; AI agents are gameplay features
 MANA,metaverse_gaming,FACTOR,decentraland,MANA-USDT-SWAP,,metaverse_gaming,
-ME,metaverse_gaming,FACTOR,magic-eden,ME-USDT-SWAP,,(new),
 OL,metaverse_gaming,FACTOR,openloot,OL-USDT-SWAP,,(new),
 SAND,metaverse_gaming,FACTOR,the-sandbox,SAND-USDT-SWAP,,metaverse_gaming,
 YGG,metaverse_gaming,FACTOR,yield-guild-games,YGG-USDT-SWAP,,(new),
+ALLO,oracles_data,RESIDUAL,allora,ALLO-USDT-SWAP,,ai_infrastructure,"promoted: AI inference/agent/data fees | dissolve ai_infra 2026-06-20: appchain outputs only verified ML prediction feeds, hosts no 3rd-party contracts -> oracles_data"
 API3,oracles_data,RESIDUAL,,API3-USDT-SWAP,,(new),promoted out of IT: oracle/data-verification
 AT,oracles_data,RESIDUAL,,AT-USDT-SWAP,,(new),promoted out of IT: oracle/data-verification
 BAND,oracles_data,RESIDUAL,,BAND-USDT-SWAP,,(new),promoted out of IT: oracle/data-verification
@@ -184,6 +179,7 @@ UMA,oracles_data,RESIDUAL,,UMA-USDT-SWAP,,(new),promoted out of IT: oracle/data-
 DASH,privacy,FACTOR,dash,DASH-USDT-SWAP,,privacy,
 ZEC,privacy,FACTOR,zcash,ZEC-USDT-SWAP,,privacy,
 ZEN,privacy,FACTOR,zencash,ZEN-USDT-SWAP,,privacy,
+0G,smart_contract_platform,FACTOR,zero-gravity,0G-USDT-SWAP,smart_contract_platform,ai_infrastructure,"reaudit 2026-06-17: smart_contract_platform->ai_infrastructure (economics-first, adversarial) | dissolve ai_infra 2026-06-20: sovereign EVM L1 (Aristotle mainnet); value at L1 gas/staking not DePIN"
 A,smart_contract_platform,FACTOR,,A-USDT-SWAP,,smart_contract_platform,
 ADA,smart_contract_platform,FACTOR,cardano,ADA-USDT-SWAP,,smart_contract_platform,
 ALGO,smart_contract_platform,FACTOR,algorand,ALGO-USDT-SWAP,,smart_contract_platform,
@@ -202,6 +198,7 @@ INJ,smart_contract_platform,FACTOR,injective-protocol,INJ-USDT-SWAP,,smart_contr
 IOST,smart_contract_platform,FACTOR,,IOST-USDT-SWAP,,(new),
 IOTA,smart_contract_platform,FACTOR,iota,IOTA-USDT-SWAP,information_technology,information_technology,audit2026-06-14: IT->SCP; post-Rebased (2025-05) sovereign MoveVM L1; IoT-middleware mechanism retired
 IP,smart_contract_platform,FACTOR,story-2,IP-USDT-SWAP,media_content,media_content,"reaudit 2026-06-17: media_content->smart_contract_platform (economics-first, adversarial)"
+KITE,smart_contract_platform,FACTOR,kite-2,KITE-USDT-SWAP,information_technology,ai_infrastructure,"audit2026-06-14: IT->ai_infra; sovereign L1 for autonomous AI-agent payments; metered AI-agent execution | dissolve ai_infra 2026-06-20: sovereign EVM PoS L1; KITE=gas/staking, agent-payment settles in stablecoins (AI=narrative)"
 LAYER,smart_contract_platform,FACTOR,solayer,LAYER-USDT-SWAP,,(new),
 MERL,smart_contract_platform,FACTOR,merlin-chain,MERL-USDT-SWAP,,(new),
 MINA,smart_contract_platform,FACTOR,,MINA-USDT-SWAP,,(new),
@@ -220,6 +217,9 @@ SEI,smart_contract_platform,FACTOR,sei-network,SEI-USDT-SWAP,,smart_contract_pla
 SOL,smart_contract_platform,FACTOR,solana,SOL-USDT-SWAP,,smart_contract_platform,
 STX,smart_contract_platform,FACTOR,blockstack,STX-USDT-SWAP,,smart_contract_platform,
 SUI,smart_contract_platform,FACTOR,sui,SUI-USDT-SWAP,,smart_contract_platform,
+TAO,smart_contract_platform,FACTOR,bittensor,TAO-USDT-SWAP,,ai_infrastructure,"promoted: AI inference/agent/data fees | dissolve ai_infra 2026-06-20: Subtensor sovereign L1; TAO=block-reward/staking, ML subnets are apps on the chain"
+THETA,smart_contract_platform,FACTOR,theta-token,THETA-USDT-SWAP,media_content,ai_infrastructure,"reaudit 2026-06-17: media_content->ai_infrastructure (economics-first, adversarial) | dissolve ai_infra 2026-06-20: sovereign EVM L1; EdgeCloud fees in TFUEL not THETA -> THETA is L1 security asset"
+VANA,smart_contract_platform,FACTOR,,VANA-USDT-SWAP,,ai_infrastructure,"promoted: AI inference/agent/data fees | dissolve ai_infra 2026-06-20: sovereign EVM L1; VANA=gas/staking, Data DAOs are third-party contracts"
 XPL,smart_contract_platform,FACTOR,plasma-finance,XPL-USDT-SWAP,,smart_contract_platform,
 XTZ,smart_contract_platform,FACTOR,tezos,XTZ-USDT-SWAP,,smart_contract_platform,
 ZETA,smart_contract_platform,FACTOR,,ZETA-USDT-SWAP,,(new),
